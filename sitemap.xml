@@ -1,31 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
   <url>
     <loc>https://faahims.rehab/</loc>
     <lastmod>2025-09-02</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>hourly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://faahims.rehab/join</loc>
+    <loc>https://faahims.rehab/join.html</loc>
+    <lastmod>2025-09-02</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://faahims.rehab/discussion.html</loc>
+    <lastmod>2025-09-02</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://faahims.rehab/topics.html</loc>
+    <lastmod>2025-09-02</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://faahims.rehab/forum-home.html</loc>
+    <lastmod>2025-09-02</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://faahims.rehab/faa-hims-guide.html</loc>
     <lastmod>2025-09-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://faahims.rehab/discussion</loc>
+    <loc>https://faahims.rehab/pilot-medical-certification.html</loc>
     <lastmod>2025-09-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://faahims.rehab/topics</loc>
+    <loc>https://faahims.rehab/hims-requirements.html</loc>
     <lastmod>2025-09-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://faahims.rehab/forum-home</loc>
+    <loc>https://faahims.rehab/aviation-medical-recovery.html</loc>
     <lastmod>2025-09-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
