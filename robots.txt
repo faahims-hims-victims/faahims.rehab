@@ -1,30 +1,37 @@
 User-agent: *
 Allow: /
 
-# Encourage indexing of main SEO pages
+# High-priority SEO pages for FAA HIMS
 Allow: /index.html
 Allow: /join.html
 Allow: /discussion.html
 Allow: /topics.html
 Allow: /forum-home.html
+Allow: /faa-hims-guide.html
+Allow: /pilot-medical-certification.html
+Allow: /hims-requirements.html
+Allow: /aviation-medical-recovery.html
 
-# Block sensitive/private content patterns
+# Block sensitive content
 Disallow: /safe-zone/
-Disallow: /*safe-zone*
 Disallow: /*private*
 Disallow: /*confidential*
 Disallow: /login
 Disallow: /admin/
 
-# SEO optimization
+# Enhanced SEO directives
 Sitemap: https://faahims.rehab/sitemap.xml
-Crawl-delay: 1
+Crawl-delay: 0
 
-# Specific directives for major search engines
+# Search engine specific optimization
 User-agent: Googlebot
+Crawl-delay: 0
 Allow: /
-Crawl-delay: 1
 
-User-agent: Bingbot  
+User-agent: Bingbot
+Crawl-delay: 1
 Allow: /
-Crawl-delay: 2
+
+User-agent: Slurp
+Crawl-delay: 1
+Allow: /
