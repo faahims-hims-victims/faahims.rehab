@@ -1,3 +1,30 @@
 User-agent: *
 Allow: /
+
+# Encourage indexing of main SEO pages
+Allow: /index.html
+Allow: /join.html
+Allow: /discussion.html
+Allow: /topics.html
+Allow: /forum-home.html
+
+# Block sensitive/private content patterns
+Disallow: /safe-zone/
+Disallow: /*safe-zone*
+Disallow: /*private*
+Disallow: /*confidential*
+Disallow: /login
+Disallow: /admin/
+
+# SEO optimization
 Sitemap: https://faahims.rehab/sitemap.xml
+Crawl-delay: 1
+
+# Specific directives for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot  
+Allow: /
+Crawl-delay: 2
