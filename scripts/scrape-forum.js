@@ -256,7 +256,7 @@ function createSEORedirectPage(originalContent, pageType, originalUrl) {
             // Show FAA HIMS content briefly for user context, then redirect
             setTimeout(() => {
                 window.location.href = '${originalUrl}';
-            }, 5000); // 2 second delay to show relevant content
+            }, 12000); // 2 second delay to show relevant content
         }
     </script>
     
