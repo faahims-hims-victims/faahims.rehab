@@ -3,10 +3,7 @@ name: Mirror Forum Content
 on:
   schedule:
     - cron: '0 6 * * *'  # Daily at 6 AM UTC
-  workflow_dispatch:      # Allows manual triggering
-  push:
-    paths:
-      - 'scripts/scrape-forum.js'  # Trigger when scraper is updated
+  workflow_dispatch:      # Manual trigger button
 
 jobs:
   mirror-content:
@@ -15,28 +12,38 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        
+      
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
         
-    - name: Install dependencies
-      run: npm install cheerio  # For HTML parsing
-      
-    - name: Run forum scraper
+    - name: Debug secrets (remove this step after testing)
+      run: |
+        echo "Checking if secrets are available..."
+        echo "Username length: ${#FORUM_USERNAME}"
+        echo "Password length: ${#FORUM_PASSWORD}"
+        echo "Proxy length: ${#PROXY_URL}"
+      env:
+        FORUM_USERNAME: ${{ secrets.FORUM_USERNAME }}
+        FORUM_PASSWORD: ${{ secrets.FORUM_PASSWORD }}
+        PROXY_URL: ${{ secrets.PROXY_URL }}
+        
+    - name: Run authenticated scraper
+      env:
+        FORUM_USERNAME: ${{ secrets.FORUM_USERNAME }}
+        FORUM_PASSWORD: ${{ secrets.FORUM_PASSWORD }}
+        PROXY_URL: ${{ secrets.PROXY_URL }}
       run: node scripts/scrape-forum.js
       
     - name: Commit and push changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action Bot"
-        git add .
+        git add *.html
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "Auto-update: Mirror forum content $(date)"
+          git commit -m "Update forum mirror - $(date)"
           git push
         fi
