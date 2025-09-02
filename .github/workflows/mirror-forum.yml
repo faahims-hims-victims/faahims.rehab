@@ -1,22 +1,20 @@
-name: Mirror Forum Content and Deploy
+name: FAA HIMS SEO Optimization & Forum Mirror
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # Daily at 6 AM UTC
-  workflow_dispatch:      # Manual trigger button
+    - cron: '0 */6 * * *'  # Every 6 hours for fresh content
+  workflow_dispatch:
   push:
-    branches: [ main ]    # Deploy on push to main
+    branches: [ main ]
 
 jobs:
-  mirror-and-deploy:
+  seo-optimization:
     runs-on: ubuntu-latest
     
-    # Add the required environment
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     
-    # Required permissions for GitHub Pages deployment
     permissions:
       contents: write
       pages: write
@@ -41,15 +39,21 @@ jobs:
         PROXY_URL: ${{ secrets.PROXY_URL }}
       run: node scripts/scrape-forum.js
       
-    - name: Commit scraped content
+    - name: Create optimized SEO landing pages
+      run: node scripts/create-seo-pages.js
+      
+    - name: Generate enhanced sitemap
+      run: node scripts/generate-sitemap.js
+      
+    - name: Commit all SEO content
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action Bot"
         git add *.html *.xml
         if git diff --staged --quiet; then
-          echo "No new content to commit"
+          echo "No new FAA HIMS content to commit"
         else
-          git commit -m "Update FAA HIMS forum mirror - $(date '+%Y-%m-%d %H:%M UTC')"
+          git commit -m "🎯 Update FAA HIMS SEO content & forum mirror - $(date '+%Y-%m-%d %H:%M UTC')"
           git push
         fi
         
@@ -64,3 +68,6 @@ jobs:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
+      
+    - name: Submit to search engines
+      run: node scripts/submit-to-search-engines.js
