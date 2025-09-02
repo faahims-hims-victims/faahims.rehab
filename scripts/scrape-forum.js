@@ -480,3 +480,27 @@ function updateSitemap() {
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://faahims.rehab/discussion</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://faahims.rehab/topics</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://faahims.rehab/forum-home</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>`;
+  
+  fs.writeFileSync('sitemap.xml', sitemap);
+  console.log('✓ Updated sitemap.xml');
+}
+
+main().catch(console.error);
