@@ -1,38 +1,61 @@
-name: Mirror Forum Content
+name: Mirror Forum Content and Deploy
 
 on:
   schedule:
     - cron: '0 6 * * *'  # Daily at 6 AM UTC
-  workflow_dispatch:      # Manual trigger
+  workflow_dispatch:      # Manual trigger button
+  push:
+    branches: [ main ]    # Deploy on push to main
 
 jobs:
-  mirror-content:
+  mirror-and-deploy:
     runs-on: ubuntu-latest
+    
+    # Required permissions for GitHub Pages deployment
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+      actions: read
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      
+      with:
+        fetch-depth: 0
+        
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
         
-    - name: Run authenticated scraper
+    - name: Run authenticated forum scraper
       env:
         FORUM_USERNAME: ${{ secrets.FORUM_USERNAME }}
         FORUM_PASSWORD: ${{ secrets.FORUM_PASSWORD }}
         PROXY_URL: ${{ secrets.PROXY_URL }}
       run: node scripts/scrape-forum.js
       
-    - name: Commit and push changes
+    - name: Commit scraped content
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action Bot"
         git add *.html *.xml
         if git diff --staged --quiet; then
-          echo "No changes to commit"
+          echo "No new content to commit"
         else
-          git commit -m "Update FAA HIMS forum mirror - $(date)"
+          git commit -m "Update FAA HIMS forum mirror - $(date '+%Y-%m-%d %H:%M UTC')"
           git push
         fi
+        
+    - name: Setup GitHub Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Upload Pages artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.'
+        
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
