@@ -2,8 +2,8 @@ name: Mirror Forum Content
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # Daily at 6 AM UTC
-  workflow_dispatch:      # Manual trigger button
+    - cron: '0 6 * * *'
+  workflow_dispatch:
 
 jobs:
   mirror-content:
@@ -18,16 +18,18 @@ jobs:
       with:
         node-version: '18'
         
-    - name: Debug secrets (remove this step after testing)
-      run: |
-        echo "Checking if secrets are available..."
-        echo "Username length: ${#FORUM_USERNAME}"
-        echo "Password length: ${#FORUM_PASSWORD}"
-        echo "Proxy length: ${#PROXY_URL}"
+    - name: Install dependencies
+      run: npm install cheerio
+        
+    - name: Debug secrets
       env:
         FORUM_USERNAME: ${{ secrets.FORUM_USERNAME }}
         FORUM_PASSWORD: ${{ secrets.FORUM_PASSWORD }}
         PROXY_URL: ${{ secrets.PROXY_URL }}
+      run: |
+        echo "Username length: ${#FORUM_USERNAME}"
+        echo "Password length: ${#FORUM_PASSWORD}"
+        echo "Proxy length: ${#PROXY_URL}"
         
     - name: Run authenticated scraper
       env:
