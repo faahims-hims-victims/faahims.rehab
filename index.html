@@ -10,7 +10,6 @@
     
     <!-- SERP-Visible Elements -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='4' y='3' width='16' height='18' rx='2' fill='%23edf2f7' stroke='%231a365d' stroke-width='1.5'/%3E%3Cpath d='M12 7v6M9 10h6' stroke='%233182ce' stroke-width='2'/%3E%3Ccircle cx='12' cy='13' r='2' fill='none' stroke='%232c5282' stroke-width='1'/%3E%3Cpath d='M8 17h8' stroke='%231a365d' stroke-width='1'/%3E%3C/svg%3E">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='4' y='3' width='16' height='18' rx='2' fill='%23edf2f7' stroke='%231a365d' stroke-width='1.5'/%3E%3Cpath d='M12 7v6M9 10h6' stroke='%233182ce' stroke-width='2'/%3E%3Ccircle cx='12' cy='13' r='2' fill='none' stroke='%232c5282' stroke-width='1'/%3E%3Cpath d='M8 17h8' stroke='%231a365d' stroke-width='1'/%3E%3C/svg%3E">
     
     <!-- Enhanced Open Graph -->
     <meta property="og:title" content="FAA HIMS Program Professional Community | Aviation Medical Certification Support">
@@ -18,15 +17,6 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://faahims.rehab/">
     <meta property="og:site_name" content="FAA HIMS Program Community">
-    <meta property="og:image" content="https://faahims.rehab/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="FAA HIMS Program Professional Community | Aviation Medical Certification Support">
-    <meta name="twitter:description" content="Professional community for aviation medical practitioners and certified pilots navigating FAA HIMS program requirements. Expert guidance, case studies, and evidence-based resources.">
-    <meta name="twitter:image" content="https://faahims.rehab/og-image.jpg">
     
     <!-- Enhanced Schema.org -->
     <script type="application/ld+json">
@@ -37,173 +27,70 @@
       "description": "Professional community for aviation medical practitioners and certified pilots navigating FAA HIMS program requirements. Expert guidance, case studies, and evidence-based resources.",
       "url": "https://faahims.rehab/",
       "discussionUrl": "https://hims-victims.freeforums.net",
-      "image": "https://faahims.rehab/og-image.jpg",
       "author": {
         "@type": "Organization",
-        "name": "FAA HIMS Program Community",
-        "url": "https://faahims.rehab"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "FAA HIMS Program Community",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://faahims.rehab/logo.png"
-        }
+        "name": "FAA HIMS Program Community"
       },
       "about": [
         {
           "@type": "Thing",
           "name": "FAA HIMS Program",
-          "description": "Federal Aviation Administration Human Intervention Motivation Study program for pilot medical certification and substance abuse recovery",
-          "sameAs": "https://www.faa.gov/pilots/medical/"
-        },
-        {
-          "@type": "Thing",
-          "name": "Pilot Medical Certification",
-          "description": "Aviation medical certification process and requirements for professional pilots seeking medical certificate reinstatement"
+          "description": "Federal Aviation Administration Human Intervention Motivation Study program for pilot medical certification and substance abuse recovery"
         }
       ],
-      "keywords": ["FAA HIMS program", "pilot medical certification", "aviation medical recovery", "medical certificate reinstatement", "pilot rehabilitation"],
-      "audience": {
-        "@type": "Audience",
-        "audienceType": "Aviation Professionals"
-      }
+      "keywords": ["FAA HIMS program", "pilot medical certification", "aviation medical recovery", "medical certificate reinstatement", "pilot rehabilitation"]
     }
     </script>
     
-    <!-- FIXED 12-second redirect -->
+    <!-- SIMPLIFIED WORKING 12-SECOND REDIRECT -->
     <script>
-        (function() {
-            'use strict';
+        // Simple, reliable redirect function
+        function initRedirect() {
+            // Basic bot detection
+            var userAgent = navigator.userAgent.toLowerCase();
+            var isBot = /bot|crawl|spider|index|google|bing|yahoo|facebook|twitter/.test(userAgent);
             
-            // Enhanced bot detection
-            const userAgent = navigator.userAgent.toLowerCase();
-            const isBot = /bot|crawl|spider|slurp|index|google|bing|yahoo|facebook|twitter|linkedin|facebookexternalhit|whatsapp|telegram|slack|yandex|baidu|duckduckbot/.test(userAgent);
-            const isHeadless = !!(navigator.webdriver || window.navigator.webdriver || window.callPhantom || window._phantom);
-            const hasWebDriver = 'webdriver' in navigator;
-            
-            // Only redirect real users with proper browser environment
-            if (!isBot && !isHeadless && !hasWebDriver && typeof window !== 'undefined' && window.location && window.location.href) {
-                let countdown = 12;
-                let redirectExecuted = false;
-                
-                // Create professional countdown notification
-                const notification = document.createElement('div');
-                notification.id = 'professional-redirect-notification';
-                notification.style.cssText = `
-                    position: fixed;
-                    top: 20px;
-                    right: 20px;
-                    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
-                    color: white;
-                    padding: 20px 25px;
-                    border-radius: 8px;
-                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-                    font-size: 14px;
-                    font-weight: 500;
-                    z-index: 10000;
-                    box-shadow: 0 8px 25px rgba(26, 54, 93, 0.4);
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    min-width: 280px;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                `;
-                
-                function updateNotification() {
-                    if (notification && !redirectExecuted) {
-                        notification.innerHTML = `
-                            <div style="display: flex; align-items: center; margin-bottom: 8px;">
-                                <svg style="width: 16px; height: 16px; margin-right: 8px; fill: currentColor;" viewBox="0 0 24 24">
-                                    <path d="M12 2l3.09 6.26L22 9l-6.91 3.74L12 22l-3.09-8.26L2 9l6.91-.74L12 2z"/>
-                                </svg>
-                                <span style="font-weight: 600;">HIMS Professional Community</span>
-                            </div>
-                            <div style="font-size: 13px; opacity: 0.9; margin-bottom: 8px;">Connecting in ${countdown} seconds</div>
-                            <div style="font-size: 12px; opacity: 0.8;">Click to join immediately</div>
-                        `;
-                    }
-                }
-                
-                // Add click handler for immediate redirect
-                notification.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    if (!redirectExecuted) {
-                        redirectExecuted = true;
-                        window.location.href = 'https://hims-victims.freeforums.net/';
-                    }
-                });
-                
-                // Add hover effect
-                notification.addEventListener('mouseenter', function() {
-                    if (!redirectExecuted) {
-                        notification.style.transform = 'translateY(-2px)';
-                        notification.style.boxShadow = '0 12px 35px rgba(26, 54, 93, 0.5)';
-                    }
-                });
-                
-                notification.addEventListener('mouseleave', function() {
-                    if (!redirectExecuted) {
-                        notification.style.transform = 'translateY(0)';
-                        notification.style.boxShadow = '0 8px 25px rgba(26, 54, 93, 0.4)';
-                    }
-                });
-                
-                updateNotification();
-                
-                // Wait for DOM to be ready before adding notification
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', function() {
-                        document.body.appendChild(notification);
-                    });
-                } else {
-                    document.body.appendChild(notification);
-                }
-                
-                // Countdown timer with safety checks
-                const timer = setInterval(function() {
-                    if (redirectExecuted) {
-                        clearInterval(timer);
-                        return;
-                    }
-                    
-                    countdown--;
-                    if (countdown > 0) {
-                        updateNotification();
-                    } else {
-                        clearInterval(timer);
-                        if (notification) {
-                            notification.innerHTML = '<div style="font-weight: 600;">Connecting now...</div>';
-                        }
-                        
-                        // Execute redirect with safety checks
-                        setTimeout(function() {
-                            if (!redirectExecuted && window.location && window.location.href) {
-                                redirectExecuted = true;
-                                try {
-                                    window.location.href = 'https://hims-victims.freeforums.net/';
-                                } catch (e) {
-                                    // Fallback redirect method
-                                    window.location.replace('https://hims-victims.freeforums.net/');
-                                }
-                            }
-                        }, 800);
-                    }
-                }, 1000);
-                
-                // Safety timeout - force redirect after 15 seconds regardless
-                setTimeout(function() {
-                    if (!redirectExecuted && window.location && window.location.href) {
-                        redirectExecuted = true;
-                        try {
-                            window.location.href = 'https://hims-victims.freeforums.net/';
-                        } catch (e) {
-                            window.location.replace('https://hims-victims.freeforums.net/');
-                        }
-                    }
-                }, 15000);
+            if (isBot) {
+                console.log('Bot detected, no redirect');
+                return;
             }
-        })();
+            
+            var countdown = 12;
+            var targetUrl = 'https://hims-victims.freeforums.net/';
+            
+            // Create simple notification
+            var notification = document.createElement('div');
+            notification.style.cssText = 'position:fixed;top:20px;right:20px;background:#1a365d;color:white;padding:20px;border-radius:8px;font-family:sans-serif;z-index:10000;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
+            notification.innerHTML = 'Connecting to HIMS forum in ' + countdown + ' seconds<br><small>Click to join now</small>';
+            
+            // Add click handler
+            notification.onclick = function() {
+                window.location.href = targetUrl;
+            };
+            
+            document.body.appendChild(notification);
+            
+            // Countdown timer
+            var timer = setInterval(function() {
+                countdown--;
+                notification.innerHTML = 'Connecting to HIMS forum in ' + countdown + ' seconds<br><small>Click to join now</small>';
+                
+                if (countdown <= 0) {
+                    clearInterval(timer);
+                    notification.innerHTML = 'Redirecting now...';
+                    setTimeout(function() {
+                        window.location.href = targetUrl;
+                    }, 500);
+                }
+            }, 1000);
+        }
+        
+        // Initialize redirect when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initRedirect);
+        } else {
+            initRedirect();
+        }
     </script>
     
     <style>
@@ -249,9 +136,9 @@
         
         .professional-preview-section { margin: 50px 0; }
         
-        .case-studies-section, .forum-activity-section, .professional-guidance-section, .membership-benefits { margin: 60px 0; }
+        .case-studies-section, .forum-activity-section, .membership-benefits { margin: 60px 0; }
         
-        .case-studies-section h2, .forum-activity-section h2, .professional-guidance-section h2, .membership-benefits h2 { 
+        .case-studies-section h2, .forum-activity-section h2, .membership-benefits h2 { 
             color: #1a365d; margin-bottom: 30px; font-size: 1.8em; 
             font-weight: 600; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;
             display: flex; align-items: center;
@@ -312,35 +199,6 @@
         .activity-engagement { color: #718096; font-size: 0.9em; }
         .activity-item h3 { color: #1a365d; margin: 10px 0 15px; font-size: 1.2em; }
         .activity-item p { color: #4a5568; line-height: 1.6; }
-        .activity-meta { 
-            margin-top: 15px; color: #718096; font-size: 0.9em;
-            background: #f7fafc; padding: 8px 12px; border-radius: 4px;
-        }
-        
-        .guidance-categories { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 25px; margin: 30px 0; 
-        }
-        .guidance-category { 
-            background: #ffffff; padding: 25px; 
-            border: 1px solid #e2e8f0; border-radius: 8px;
-            box-shadow: 0 1px 6px rgba(0,0,0,0.06);
-            border-left: 4px solid #2c5282;
-        }
-        .guidance-category h3 { 
-            color: #1a365d; margin-bottom: 15px; font-size: 1.1em;
-            display: flex; align-items: center;
-        }
-        .guidance-category ul { list-style: none; padding: 0; margin: 0; }
-        .guidance-category li { 
-            margin: 8px 0; color: #4a5568; padding-left: 16px;
-            position: relative; line-height: 1.5;
-        }
-        .guidance-category li::before {
-            content: '•'; color: #3182ce; font-weight: bold; 
-            position: absolute; left: 0;
-        }
         
         .benefits-grid { 
             display: grid; 
@@ -403,7 +261,7 @@
         
         @media (max-width: 768px) {
             .header h1 { font-size: 2.2em; }
-            .case-studies-grid, .guidance-categories, .benefits-grid { grid-template-columns: 1fr; }
+            .case-studies-grid, .benefits-grid { grid-template-columns: 1fr; }
             .case-header, .activity-header { flex-direction: column; align-items: flex-start; }
             .section-icon { width: 20px; height: 20px; margin-right: 8px; }
         }
@@ -536,23 +394,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="case-study">
-                    <div class="case-header">
-                        <span class="case-type">
-                          <svg class="inline-icon"><use href="#aviation-professional"></use></svg>
-                          Flight Instructor
-                        </span>
-                        <span class="case-outcome">Ongoing Monitoring</span>
-                    </div>
-                    <div class="case-content">
-                        <p>Currently progressing through HIMS program requirements with regular AME consultations and compliance monitoring. Professional guidance from community members has been instrumental in navigation of program procedures.</p>
-                        <div class="case-details">
-                            <span>Timeline: In progress</span>
-                            <span>Status: Active monitoring</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         
@@ -572,9 +413,6 @@
                     </div>
                     <h3>HIMS-Approved Treatment Facility Evaluations</h3>
                     <p>Comprehensive analysis of FAA-approved treatment facilities, including program structures, completion rates, and member experiences. Contributors provide detailed insights on facility selection criteria and treatment outcomes.</p>
-                    <div class="activity-meta">
-                        <span>Contributors: Aviation medical professionals and program participants</span>
-                    </div>
                 </div>
                 
                 <div class="activity-item">
@@ -587,81 +425,6 @@
                     </div>
                     <h3>Aviation Medical Examiner Consultation Guidelines</h3>
                     <p>Professional guidance on AME selection, evaluation preparation, and documentation requirements. Discussion includes contributions from HIMS-approved AMEs and pilots with successful evaluation experiences.</p>
-                    <div class="activity-meta">
-                        <span>Contributors: Aviation medical examiners and certified pilots</span>
-                    </div>
-                </div>
-                
-                <div class="activity-item">
-                    <div class="activity-header">
-                        <span class="activity-type">
-                          <svg class="inline-icon"><use href="#legal-compliance"></use></svg>
-                          Regulatory Updates
-                        </span>
-                        <span class="activity-engagement">Current Information</span>
-                    </div>
-                    <h3>Recent HIMS Program Policy Updates</h3>
-                    <p>Analysis of recent FAA policy changes affecting HIMS program participants, including updated requirements, compliance procedures, and implementation timelines for current and prospective participants.</p>
-                    <div class="activity-meta">
-                        <span>Contributors: Legal professionals and program administrators</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="professional-guidance-section">
-            <h2>
-              <svg class="section-icon"><use href="#professional-guidance"></use></svg>
-              Professional Consultation Areas
-            </h2>
-            <div class="guidance-categories">
-                <div class="guidance-category">
-                    <h3>
-                      <svg class="inline-icon"><use href="#medical-certification"></use></svg>
-                      Medical Certification Process
-                    </h3>
-                    <ul>
-                        <li>Aviation medical examiner selection and consultation</li>
-                        <li>Medical evaluation preparation and documentation</li>
-                        <li>Certification appeal procedures and requirements</li>
-                        <li>Ongoing monitoring and compliance protocols</li>
-                    </ul>
-                </div>
-                <div class="guidance-category">
-                    <h3>
-                      <svg class="inline-icon"><use href="#treatment-resources"></use></svg>
-                      Treatment Program Navigation
-                    </h3>
-                    <ul>
-                        <li>FAA-approved treatment facility evaluation</li>
-                        <li>Program selection criteria and considerations</li>
-                        <li>Treatment completion requirements and timelines</li>
-                        <li>Continuing care planning and implementation</li>
-                    </ul>
-                </div>
-                <div class="guidance-category">
-                    <h3>
-                      <svg class="inline-icon"><use href="#aviation-professional"></use></svg>
-                      Professional Considerations
-                    </h3>
-                    <ul>
-                        <li>Employment protection strategies during program participation</li>
-                        <li>Professional disclosure requirements and timing</li>
-                        <li>Career transition planning and reintegration</li>
-                        <li>Long-term professional development and compliance</li>
-                    </ul>
-                </div>
-                <div class="guidance-category">
-                    <h3>
-                      <svg class="inline-icon"><use href="#legal-compliance"></use></svg>
-                      Legal and Regulatory Compliance
-                    </h3>
-                    <ul>
-                        <li>FAA regulatory requirement interpretation</li>
-                        <li>Documentation and record-keeping protocols</li>
-                        <li>Appeals process navigation and representation</li>
-                        <li>Professional advocacy and rights protection</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -682,16 +445,6 @@
                     <h4>Resource Documentation</h4>
                     <p>Comprehensive resource library including treatment facility evaluations, AME recommendations, legal guidance, and procedural documentation maintained by community contributors.</p>
                 </div>
-                <div class="benefit-item">
-                    <svg class="benefit-icon"><use href="#professional-guidance"></use></svg>
-                    <h4>Professional Development Support</h4>
-                    <p>Career guidance and professional development resources specifically designed for aviation professionals navigating HIMS program requirements and long-term career planning.</p>
-                </div>
-                <div class="benefit-item">
-                    <svg class="benefit-icon"><use href="#confidential-support"></use></svg>
-                    <h4>Confidential Discussion Forums</h4>
-                    <p>Private discussion areas for sensitive topics including personal experiences, professional challenges, and confidential guidance from qualified professionals and experienced participants.</p>
-                </div>
             </div>
         </div>
     </div>
@@ -701,7 +454,7 @@
         <div class="cta-section">
             <h2>Access Professional Aviation Medical Community</h2>
             <p style="font-size: 1.2em; margin-bottom: 30px; color: #4a5568;">Connect with aviation medical professionals and experienced program participants</p>
-            <a href="https://hims-victims.freeforums.net//register" class="cta-button">Join Professional Community</a>
+            <a href="https://hims-victims.freeforums.net/register" class="cta-button">Join Professional Community</a>
             <p style="margin-top: 20px; color: #718096; font-size: 0.9em;">Professional registration • Evidence-based guidance • Confidential support</p>
         </div>
     </div>
@@ -716,9 +469,6 @@
             </p>
             <p style="opacity: 0.9; margin-bottom: 10px;">
                 Professional guidance • Medical certification support • Evidence-based resources • Updated every 6 hours
-            </p>
-            <p style="opacity: 0.8; font-size: 0.9em; max-width: 600px; margin: 0 auto;">
-                Educational resource for aviation professionals navigating FAA HIMS program requirements. Not affiliated with the FAA. Always consult qualified aviation medical professionals for medical certification decisions.
             </p>
         </div>
     </footer>
