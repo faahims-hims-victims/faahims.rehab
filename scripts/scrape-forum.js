@@ -318,7 +318,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
   const professionalPreview = createProfessionalForumPreview();
   
   // Fixed registration URL
-  const registrationUrl = 'https://hims-victims.freeforums.net/register';
+  const registrationUrl = 'https://login.proboards.com/register/7088425';
   
   // Build professional topic listings
   const topicsHTML = content.topics.length > 0 ? 
@@ -407,7 +407,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
             // Create simple notification
             var notification = document.createElement('div');
             notification.style.cssText = 'position:fixed;top:20px;right:20px;background:#1a365d;color:white;padding:20px;border-radius:8px;font-family:sans-serif;z-index:10000;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
-            notification.innerHTML = 'Connecting to HIMS forum in ' + countdown + ' seconds<br><small>Click to join now</small>';
+            notification.innerHTML = 'Connecting to the HIMS-Victims forum in ' + countdown + ' seconds<br><small>Click to join now...</small>';
             
             // Add click handler
             notification.onclick = function() {
@@ -419,7 +419,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
             // Countdown timer
             var timer = setInterval(function() {
                 countdown--;
-                notification.innerHTML = 'Connecting to HIMS forum in ' + countdown + ' seconds<br><small>Click to join now</small>';
+                notification.innerHTML = 'Connecting to the HIMS-Victims forum in ' + countdown + ' seconds<br><small>Click to join now...</small>';
                 
                 if (countdown <= 0) {
                     clearInterval(timer);
@@ -638,7 +638,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
         <div class="cta-section">
             <h2>Access Professional Aviation Medical Community</h2>
             <p style="font-size: 1.2em; margin-bottom: 30px; color: #4a5568;">Connect with aviation medical professionals and experienced program participants</p>
-            <a href="${registrationUrl}" class="cta-button">Join Professional Community</a>
+            <a href="${registrationUrl}" class="cta-button">Join the Forum</a>
             <p style="margin-top: 20px; color: #718096; font-size: 0.9em;">Professional registration • Evidence-based guidance • Confidential support</p>
         </div>
     </div>
@@ -646,7 +646,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
     <footer style="background: linear-gradient(135deg, #1a365d, #2c5282); color: white; padding: 50px 0; text-align: center;">
         <div class="container">
             <p style="font-size: 1.1em; margin-bottom: 15px;">
-                <strong>Professional FAA HIMS Community</strong>
+                <strong>HIMS-Victims Community</strong>
             </p>
             <p style="font-size: 1em; margin-bottom: 20px;">
                 <a href="${originalUrl}" style="color: #88c999; font-weight: 600; text-decoration: none;">hims-victims.freeforums.net</a>
@@ -663,7 +663,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
 function getPageSEOInfo(pageType) {
   if (pageType.includes('join') || pageType.includes('register')) {
     return {
-      title: 'Join FAA HIMS Program Professional Community | Aviation Medical Certification',
+      title: 'Join the HIMS-Victims Community | Aviation Medical Certification',
       description: 'Access professional community of aviation medical practitioners and certified pilots discussing FAA HIMS program requirements, medical certification procedures, and evidence-based guidance.',
       slug: 'join'
     };
