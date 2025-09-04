@@ -1,10 +1,13 @@
 const { exec } = require('child_process');
 const fs = require('fs');
+const https = require('https');
 
 class FAHIMSForumScraper {
   constructor() {
     this.baseUrl = 'https://hims-victims.freeforums.net';
     this.proxyConfig = null;
+    this.buildNumber = process.env.GITHUB_RUN_NUMBER || Math.floor(Math.random() * 1000);
+    this.currentDateTime = new Date().toISOString();
   }
 
   setProxy(proxyUrl) {
@@ -58,6 +61,420 @@ class FAHIMSForumScraper {
         }
       });
     });
+  }
+
+  // Advanced SEO Methods
+  generateAdvancedSitemap() {
+    const currentDate = new Date().toISOString();
+    const baseUrl = 'https://faahims.rehab';
+    
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  <url>
+    <loc>${baseUrl}/</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>${baseUrl}/images/faa-hims-community.jpg</image:loc>
+      <image:caption>FAA HIMS Program Professional Community</image:caption>
+      <image:title>Aviation Medical Certification Support</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>${baseUrl}/join.html</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>${baseUrl}/images/join-hims-community.jpg</image:loc>
+      <image:caption>Join HIMS Professional Community</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>${baseUrl}/discussion.html</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/topics.html</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/forum-home.html</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/faa-hims-guide.html</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/pilot-medical-certification.html</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+  </url>
+</urlset>`;
+
+    fs.writeFileSync('sitemap.xml', sitemap);
+    console.log('✓ Advanced XML sitemap generated with image tags');
+  }
+
+  generateRSSFeed() {
+    const rss = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FAA HIMS Program Community Updates</title>
+    <description>Latest updates from the FAA HIMS Program professional community</description>
+    <link>https://faahims.rehab</link>
+    <atom:link href="https://faahims.rehab/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en-US</language>
+    <lastBuildDate>${this.currentDateTime}</lastBuildDate>
+    <pubDate>${this.currentDateTime}</pubDate>
+    <ttl>120</ttl>
+    <generator>FAA HIMS SEO Bot v${this.buildNumber}</generator>
+    
+    <item>
+      <title>FAA HIMS Community Content Update #${this.buildNumber}</title>
+      <description>Fresh discussions, professional guidance, and case studies from aviation medical practitioners navigating the FAA HIMS program.</description>
+      <link>https://faahims.rehab/</link>
+      <guid isPermaLink="true">https://faahims.rehab/updates/${this.buildNumber}</guid>
+      <pubDate>${this.currentDateTime}</pubDate>
+      <category>Aviation Medical</category>
+      <category>FAA HIMS</category>
+      <category>Professional Community</category>
+    </item>
+    
+    <item>
+      <title>Latest HIMS Program Professional Discussions</title>
+      <description>New professional discussions about medical certification processes, treatment facility experiences, and regulatory compliance guidance from certified aviation professionals.</description>
+      <link>https://faahims.rehab/discussion.html</link>
+      <guid isPermaLink="true">https://faahims.rehab/discussion-${this.buildNumber}</guid>
+      <pubDate>${this.currentDateTime}</pubDate>
+      <category>Professional Discussion</category>
+      <category>Medical Certification</category>
+    </item>
+    
+    <item>
+      <title>HIMS Program Requirements and Guidelines</title>
+      <description>Updated information on FAA HIMS program requirements, compliance procedures, and professional guidance for aviation medical certification.</description>
+      <link>https://faahims.rehab/topics.html</link>
+      <guid isPermaLink="true">https://faahims.rehab/topics-${this.buildNumber}</guid>
+      <pubDate>${this.currentDateTime}</pubDate>
+      <category>Program Requirements</category>
+      <category>Compliance</category>
+    </item>
+    
+  </channel>
+</rss>`;
+
+    fs.writeFileSync('feed.xml', rss);
+    fs.writeFileSync('rss.xml', rss);
+    console.log('✓ RSS feed generated for fresh content signals');
+  }
+
+  generateAdvancedRobots() {
+    const robots = `# Advanced SEO robots.txt for FAA HIMS Program Community
+# Build: ${this.buildNumber} | Updated: ${this.currentDateTime}
+
+User-agent: *
+Allow: /
+
+# High-priority pages for search engines
+Allow: /index.html
+Allow: /join.html
+Allow: /discussion.html
+Allow: /topics.html
+Allow: /forum-home.html
+Allow: /faa-hims-guide.html
+Allow: /pilot-medical-certification.html
+Allow: /hims-requirements.html
+Allow: /aviation-medical-recovery.html
+
+# Block sensitive content
+Disallow: /safe-zone/
+Disallow: /*private*
+Disallow: /*confidential*
+Disallow: /admin/
+Disallow: /temp/
+
+# SEO optimization files
+Allow: /sitemap.xml
+Allow: /feed.xml
+Allow: /robots.txt
+
+# Search engine specific optimization
+User-agent: Googlebot
+Crawl-delay: 0
+Allow: /
+Request-rate: 1/1s
+
+User-agent: Bingbot
+Crawl-delay: 1
+Allow: /
+Request-rate: 1/2s
+
+User-agent: Slurp
+Crawl-delay: 2
+Allow: /
+
+User-agent: DuckDuckBot
+Crawl-delay: 1
+Allow: /
+
+User-agent: YandexBot
+Crawl-delay: 2
+Allow: /
+
+User-agent: Baiduspider
+Crawl-delay: 3
+Allow: /
+
+# Block AI training bots but allow search indexing
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+# Allow social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+Crawl-delay: 1
+
+User-agent: Twitterbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: LinkedInBot
+Allow: /
+Crawl-delay: 2
+
+# Sitemap locations
+Sitemap: https://faahims.rehab/sitemap.xml
+Sitemap: https://faahims.rehab/feed.xml
+
+# Performance optimization
+Cache-control: max-age=3600
+`;
+
+    fs.writeFileSync('robots.txt', robots);
+    console.log('✓ Advanced robots.txt generated with AI bot blocking');
+  }
+
+  generateStructuredData() {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://faahims.rehab/#website",
+          "url": "https://faahims.rehab/",
+          "name": "FAA HIMS Program Community",
+          "description": "Professional community for aviation medical practitioners and certified pilots navigating FAA HIMS program requirements",
+          "publisher": {
+            "@id": "https://faahims.rehab/#organization"
+          },
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://hims-victims.freeforums.net/search?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          ],
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://faahims.rehab/#organization",
+          "name": "FAA HIMS Program Community",
+          "url": "https://faahims.rehab/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://faahims.rehab/images/logo.png",
+            "width": 400,
+            "height": 400
+          },
+          "sameAs": [
+            "https://hims-victims.freeforums.net"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the FAA HIMS Program?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The FAA HIMS (Human Intervention Motivation Study) Program is a comprehensive approach to evaluating and monitoring airmen with substance abuse issues, providing a pathway for pilots to regain their medical certificates through approved treatment and ongoing monitoring."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does the HIMS program typically take?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The HIMS program timeline varies by individual case but typically involves initial evaluation, treatment phase (3-12 months), and ongoing monitoring (2-5 years) with regular check-ins and compliance requirements."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Who can participate in the FAA HIMS program?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The HIMS program is available to pilots and aviation professionals who have substance abuse issues affecting their medical certification eligibility, as determined by FAA medical standards and evaluation processes."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the costs associated with the HIMS program?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "HIMS program costs vary depending on treatment facility, duration, and individual requirements. Typical costs include evaluation fees, treatment program costs, ongoing monitoring, and AME consultation fees."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://faahims.rehab/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "HIMS Program Guide",
+              "item": "https://faahims.rehab/faa-hims-guide.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Medical Certification",
+              "item": "https://faahims.rehab/pilot-medical-certification.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Professional Community",
+              "item": "https://faahims.rehab/join.html"
+            }
+          ]
+        }
+      ]
+    };
+    
+    fs.writeFileSync('structured-data.json', JSON.stringify(structuredData, null, 2));
+    console.log('✓ Advanced structured data generated for enhanced SERP features');
+  }
+
+  async submitToSearchEngines() {
+    console.log('🎯 Advanced search engine submission starting...');
+    
+    const searchEngines = [
+      { name: 'Google', url: 'https://www.google.com/ping?sitemap=https://faahims.rehab/sitemap.xml' },
+      { name: 'Bing', url: 'https://www.bing.com/ping?sitemap=https://faahims.rehab/sitemap.xml' },
+      { name: 'Yandex', url: 'https://webmaster.yandex.com/ping?sitemap=https://faahims.rehab/sitemap.xml' }
+    ];
+    
+    const results = [];
+    
+    for (const engine of searchEngines) {
+      try {
+        await this.pingSearchEngine(engine.url);
+        console.log(`✓ Successfully pinged ${engine.name}`);
+        results.push({ engine: engine.name, status: 'success' });
+      } catch (error) {
+        console.log(`✗ Failed to ping ${engine.name}: ${error.message}`);
+        results.push({ engine: engine.name, status: 'failed', error: error.message });
+      }
+    }
+    
+    // Create submission log
+    const submissionLog = {
+      timestamp: this.currentDateTime,
+      buildNumber: this.buildNumber,
+      results: results,
+      totalEngines: searchEngines.length,
+      successfulSubmissions: results.filter(r => r.status === 'success').length
+    };
+    
+    fs.writeFileSync('submission-log.json', JSON.stringify(submissionLog, null, 2));
+    console.log(`🎉 Search engine submission completed! ${submissionLog.successfulSubmissions}/${submissionLog.totalEngines} successful`);
+  }
+
+  pingSearchEngine(url) {
+    return new Promise((resolve, reject) => {
+      https.get(url, { timeout: 10000 }, (res) => {
+        if (res.statusCode >= 200 && res.statusCode < 300) {
+          resolve();
+        } else {
+          reject(new Error(`HTTP ${res.statusCode}`));
+        }
+      }).on('error', reject).on('timeout', () => reject(new Error('Timeout')));
+    });
+  }
+
+  monitorPerformance() {
+    const htmlFiles = fs.readdirSync('.').filter(file => file.endsWith('.html'));
+    const performanceReport = {
+      timestamp: this.currentDateTime,
+      buildNumber: this.buildNumber,
+      files: []
+    };
+    
+    htmlFiles.forEach(file => {
+      const stats = fs.statSync(file);
+      const sizeKB = Math.round(stats.size / 1024);
+      
+      performanceReport.files.push({
+        filename: file,
+        sizeKB,
+        status: sizeKB > 100 ? 'Large' : sizeKB > 50 ? 'Medium' : 'Optimal'
+      });
+    });
+    
+    // Performance recommendations
+    performanceReport.recommendations = [];
+    const largeFiles = performanceReport.files.filter(f => f.sizeKB > 100);
+    if (largeFiles.length > 0) {
+      performanceReport.recommendations.push('Consider compressing large HTML files');
+    }
+    
+    performanceReport.totalFiles = htmlFiles.length;
+    performanceReport.averageSize = Math.round(
+      performanceReport.files.reduce((sum, f) => sum + f.sizeKB, 0) / htmlFiles.length
+    );
+    
+    fs.writeFileSync('performance-report.json', JSON.stringify(performanceReport, null, 2));
+    console.log(`✓ Performance report generated - ${htmlFiles.length} files, ${performanceReport.averageSize}KB average`);
+    
+    return performanceReport;
   }
 }
 
@@ -211,9 +628,13 @@ function createProfessionalSVGSprite() {
   `;
 }
 
-function createProfessionalForumPreview() {
+function createProfessionalForumPreview(buildNumber) {
   return `
     <div class="professional-preview-section">
+        <div class="build-info" style="background: #f7fafc; padding: 10px 15px; border-radius: 6px; margin-bottom: 30px; font-size: 0.9em; color: #4a5568; text-align: center;">
+            <strong>Live Update #${buildNumber}</strong> • Last refreshed: ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC • Fresh content every 2 hours
+        </div>
+        
         <div class="case-studies-section">
             <h2>
               <svg class="section-icon"><use href="#success-outcomes"></use></svg>
@@ -269,6 +690,7 @@ function createProfessionalForumPreview() {
                           Treatment Resources
                         </span>
                         <span class="activity-engagement">Multiple Contributors</span>
+                        <span class="activity-fresh">Updated in build #${buildNumber}</span>
                     </div>
                     <h3>HIMS-Approved Treatment Facility Evaluations</h3>
                     <p>Comprehensive analysis of FAA-approved treatment facilities, including program structures, completion rates, and member experiences. Contributors provide detailed insights on facility selection criteria and treatment outcomes.</p>
@@ -281,6 +703,7 @@ function createProfessionalForumPreview() {
                           Medical Certification
                         </span>
                         <span class="activity-engagement">Expert Contributions</span>
+                        <span class="activity-fresh">Live discussions</span>
                     </div>
                     <h3>Aviation Medical Examiner Consultation Guidelines</h3>
                     <p>Professional guidance on AME selection, evaluation preparation, and documentation requirements. Discussion includes contributions from HIMS-approved AMEs and pilots with successful evaluation experiences.</p>
@@ -310,19 +733,16 @@ function createProfessionalForumPreview() {
   `;
 }
 
-function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl) {
+function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl, scraper) {
   const filteredContent = filterSensitiveContent(originalContent, originalUrl);
   const content = extractHIMSContent(filteredContent);
   const pageInfo = getPageSEOInfo(pageType);
   const svgSprite = createProfessionalSVGSprite();
-  const professionalPreview = createProfessionalForumPreview();
+  const professionalPreview = createProfessionalForumPreview(scraper.buildNumber);
   
   // Fixed registration URL
-  const registrationUrl = 'https://login.proboards.com/register/7088425';
+  const registrationUrl = 'https://hims-victims.freeforums.net/register?agree=true&admin=1';
   const forumHomeUrl = 'https://hims-victims.freeforums.net';
-  
-  // Current timestamp for schema
-  const currentDateTime = new Date().toISOString();
   
   // Build professional topic listings
   const topicsHTML = content.topics.length > 0 ? 
@@ -330,6 +750,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
       <h2>
         <svg class="section-icon"><use href="#forum-community"></use></svg>
         Current Discussion Topics
+        <span style="font-size: 0.6em; background: #e6fffa; color: #234e52; padding: 2px 6px; border-radius: 3px; margin-left: 10px;">Build #${scraper.buildNumber}</span>
       </h2>
       <div class="topics-list">
         ${content.topics.map(topic => `
@@ -361,6 +782,9 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
     <!-- SERP-Visible Elements -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='4' y='3' width='16' height='18' rx='2' fill='%23edf2f7' stroke='%231a365d' stroke-width='1.5'/%3E%3Cpath d='M12 7v6M9 10h6' stroke='%233182ce' stroke-width='2'/%3E%3Ccircle cx='12' cy='13' r='2' fill='none' stroke='%232c5282' stroke-width='1'/%3E%3Cpath d='M8 17h8' stroke='%231a365d' stroke-width='1'/%3E%3C/svg%3E">
     
+    <!-- RSS Feed Discovery -->
+    <link rel="alternate" type="application/rss+xml" title="FAA HIMS Community Updates" href="https://faahims.rehab/feed.xml">
+    
     <!-- Enhanced Open Graph -->
     <meta property="og:title" content="${pageInfo.title}">
     <meta property="og:description" content="${pageInfo.description}">
@@ -371,12 +795,21 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="FAA HIMS Program Professional Community">
+    <meta property="og:updated_time" content="${scraper.currentDateTime}">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${pageInfo.title}">
     <meta name="twitter:description" content="${pageInfo.description}">
     <meta name="twitter:image" content="https://faahims.rehab/images/faa-hims-og.jpg">
+    
+    <!-- Advanced Meta Tags -->
+    <meta name="author" content="FAA HIMS Program Community">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="theme-color" content="#1a365d">
+    <meta name="msapplication-TileColor" content="#1a365d">
     
     <!-- FIXED Schema.org - Resolves Google Analytics errors -->
     <script type="application/ld+json">
@@ -389,8 +822,8 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
       "text": "${pageInfo.description}",
       "url": "https://faahims.rehab/${pageInfo.slug}",
       "discussionUrl": "https://hims-victims.freeforums.net",
-      "datePublished": "${currentDateTime}",
-      "dateModified": "${currentDateTime}",
+      "datePublished": "${scraper.currentDateTime}",
+      "dateModified": "${scraper.currentDateTime}",
       "inLanguage": "en-US",
       "author": {
         "@type": "Organization",
@@ -446,10 +879,10 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
     <script>
         function initRedirect() {
             var userAgent = navigator.userAgent.toLowerCase();
-            var isBot = /bot|crawl|spider|index|google|bing|yahoo|facebook|twitter/.test(userAgent);
+            var isBot = /bot|crawl|spider|index|google|bing|yahoo|facebook|twitter|linkedin|pinterest|reddit/.test(userAgent);
             
             if (isBot) {
-                console.log('Bot detected, no redirect');
+                console.log('Search engine bot detected, no redirect');
                 return;
             }
             
@@ -457,8 +890,8 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
             var targetUrl = '${forumHomeUrl}';
             
             var notification = document.createElement('div');
-            notification.style.cssText = 'position:fixed;top:20px;right:20px;background:#1a365d;color:white;padding:20px;border-radius:8px;font-family:sans-serif;z-index:10000;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
-            notification.innerHTML = 'Connecting to the HIMS-Victims forum in ' + countdown + ' seconds<br><small>Click to join now...</small>';
+            notification.style.cssText = 'position:fixed;top:20px;right:20px;background:#1a365d;color:white;padding:20px;border-radius:8px;font-family:sans-serif;z-index:10000;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);min-width:280px;';
+            notification.innerHTML = '<div style="font-weight:600;margin-bottom:8px;">🛩️ HIMS Professional Community</div><div>Connecting in ' + countdown + ' seconds</div><div style="font-size:12px;margin-top:8px;opacity:0.8;">Click to join immediately</div>';
             
             notification.onclick = function() {
                 window.location.href = targetUrl;
@@ -468,11 +901,11 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
             
             var timer = setInterval(function() {
                 countdown--;
-                notification.innerHTML = 'Connecting to the HIMS-Victims forum in ' + countdown + ' seconds<br><small>Click to join now...</small>';
+                notification.innerHTML = '<div style="font-weight:600;margin-bottom:8px;">🛩️ HIMS Professional Community</div><div>Connecting in ' + countdown + ' seconds</div><div style="font-size:12px;margin-top:8px;opacity:0.8;">Click to join immediately</div>';
                 
                 if (countdown <= 0) {
                     clearInterval(timer);
-                    notification.innerHTML = 'Redirecting now...';
+                    notification.innerHTML = '<div style="font-weight:600;">🚀 Connecting now...</div>';
                     setTimeout(function() {
                         window.location.href = targetUrl;
                     }, 500);
@@ -527,6 +960,8 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
         .section-icon { width: 24px; height: 24px; margin-right: 10px; vertical-align: middle; }
         .inline-icon { width: 16px; height: 16px; margin-right: 6px; vertical-align: middle; }
         .benefit-icon { width: 32px; height: 32px; margin-bottom: 15px; display: block; }
+        
+        .build-info { font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace; }
         
         .professional-preview-section { margin: 50px 0; }
         
@@ -591,6 +1026,11 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
             display: flex; align-items: center;
         }
         .activity-engagement { color: #718096; font-size: 0.9em; }
+        .activity-fresh { 
+            background: #c6f6d5; color: #22543d; 
+            padding: 2px 6px; border-radius: 3px; 
+            font-size: 0.75em; font-weight: 600;
+        }
         .activity-item h3 { color: #1a365d; margin: 10px 0 15px; font-size: 1.2em; }
         .activity-item p { color: #4a5568; line-height: 1.6; }
         
@@ -686,7 +1126,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
         <div class="cta-section">
             <h2>Access Professional Aviation Medical Community</h2>
             <p style="font-size: 1.2em; margin-bottom: 30px; color: #4a5568;">Connect with aviation medical professionals and experienced program participants</p>
-            <a href="${registrationUrl}" class="cta-button">Join the HIMS-Victims Community</a>
+            <a href="${registrationUrl}" class="cta-button">Join Professional Community</a>
             <a href="${forumHomeUrl}" class="cta-button" style="background: linear-gradient(135deg, #38a169, #2f855a);">Browse Forum</a>
             <p style="margin-top: 20px; color: #718096; font-size: 0.9em;">Professional registration • Evidence-based guidance • Confidential support</p>
         </div>
@@ -701,7 +1141,10 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
                 <a href="${forumHomeUrl}" style="color: #88c999; font-weight: 600; text-decoration: none;">hims-victims.freeforums.net</a>
             </p>
             <p style="opacity: 0.9; margin-bottom: 10px;">
-                Professional guidance • Medical certification support • Evidence-based resources • Updated every 6 hours
+                Professional guidance • Medical certification support • Evidence-based resources • Updated every 2 hours
+            </p>
+            <p style="opacity: 0.8; font-size: 0.9em;">
+                Build #${scraper.buildNumber} • Last updated: ${new Date(scraper.currentDateTime).toLocaleString('en-US', { timeZone: 'UTC' })} UTC
             </p>
         </div>
     </footer>
@@ -712,7 +1155,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
 function getPageSEOInfo(pageType) {
   if (pageType.includes('join') || pageType.includes('register')) {
     return {
-      title: 'Join HIMS-Victims Forum | Aviation Medical Certification',
+      title: 'Join FAA HIMS Program Professional Community | Aviation Medical Certification',
       description: 'Access professional community of aviation medical practitioners and certified pilots discussing FAA HIMS program requirements, medical certification procedures, and evidence-based guidance.',
       slug: 'join'
     };
@@ -741,6 +1184,8 @@ function getPageSEOInfo(pageType) {
 async function main() {
   const scraper = new FAHIMSForumScraper();
   
+  console.log(`🚀 Starting Advanced FAA HIMS SEO Optimization - Build #${scraper.buildNumber}`);
+  
   const proxyUrl = process.env.PROXY_URL;
   const username = process.env.FORUM_USERNAME;
   const password = process.env.FORUM_PASSWORD;
@@ -758,6 +1203,13 @@ async function main() {
     }
   }
 
+  // Generate advanced SEO files first
+  console.log('📊 Generating advanced SEO optimization files...');
+  scraper.generateAdvancedSitemap();
+  scraper.generateRSSFeed();
+  scraper.generateAdvancedRobots();
+  scraper.generateStructuredData();
+
   // Updated scraping URLs with correct registration URL
   const pages = {
     'index.html': `${scraper.baseUrl}/`,
@@ -767,14 +1219,14 @@ async function main() {
     'forum-home.html': `${scraper.baseUrl}/`
   };
 
-  console.log('Creating professional FAA HIMS forum mirrors with FIXED Schema.org and working redirect...');
+  console.log('🛩️ Creating professional FAA HIMS forum mirrors with advanced SEO...');
 
   for (const [filename, url] of Object.entries(pages)) {
     try {
       const content = await scraper.fetchWithProxy(url);
-      const professionalPage = createProfessionalSEOForumMirror(content, filename, url);
+      const professionalPage = createProfessionalSEOForumMirror(content, filename, url, scraper);
       fs.writeFileSync(filename, professionalPage);
-      console.log(`✓ Created ${filename} - Fixed Google Analytics Schema.org errors`);
+      console.log(`✓ Created ${filename} - Advanced SEO with build tracking`);
       
       await new Promise(resolve => setTimeout(resolve, 4000));
     } catch (error) {
@@ -782,7 +1234,17 @@ async function main() {
     }
   }
   
-  console.log('🎉 Professional FAA HIMS forum mirrors with corrected Schema.org created successfully!');
+  // Generate performance report
+  console.log('📈 Generating performance monitoring report...');
+  const performanceReport = scraper.monitorPerformance();
+  
+  // Submit to search engines
+  console.log('🌍 Submitting to multiple search engines...');
+  await scraper.submitToSearchEngines();
+  
+  console.log(`🎉 Advanced FAA HIMS SEO optimization completed successfully!`);
+  console.log(`📊 Build #${scraper.buildNumber} | ${performanceReport.totalFiles} files | ${performanceReport.averageSize}KB average size`);
+  console.log(`🔗 Generated: sitemap.xml, feed.xml, robots.txt, structured-data.json`);
 }
 
 main().catch(console.error);
