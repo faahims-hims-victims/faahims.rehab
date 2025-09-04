@@ -90,7 +90,7 @@ class FAHIMSForumScraper {
     <priority>0.95</priority>
     <image:image>
       <image:loc>${baseUrl}/images/join-hims-community.jpg</image:loc>
-      <image:caption>Join HIMS Professional Community</image:caption>
+      <image:caption>Join the HIMS-Victims Community</image:caption>
     </image:image>
   </url>
   <url>
@@ -741,7 +741,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
   const professionalPreview = createProfessionalForumPreview(scraper.buildNumber);
   
   // Fixed registration URL
-  const registrationUrl = 'https://hims-victims.freeforums.net/register?agree=true&admin=1';
+  const registrationUrl = 'https://login.proboards.com/register/7088425';
   const forumHomeUrl = 'https://hims-victims.freeforums.net';
   
   // Build professional topic listings
@@ -891,7 +891,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
             
             var notification = document.createElement('div');
             notification.style.cssText = 'position:fixed;top:20px;right:20px;background:#1a365d;color:white;padding:20px;border-radius:8px;font-family:sans-serif;z-index:10000;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);min-width:280px;';
-            notification.innerHTML = '<div style="font-weight:600;margin-bottom:8px;">🛩️ HIMS Professional Community</div><div>Connecting in ' + countdown + ' seconds</div><div style="font-size:12px;margin-top:8px;opacity:0.8;">Click to join immediately</div>';
+            notification.innerHTML = '<div style="font-weight:600;margin-bottom:8px;">🛩️ HIMS Professional Community</div><div>Connecting in ' + countdown + ' seconds</div><div style="font-size:12px;margin-top:8px;opacity:0.8;">Click to join immediately...</div>';
             
             notification.onclick = function() {
                 window.location.href = targetUrl;
@@ -901,7 +901,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
             
             var timer = setInterval(function() {
                 countdown--;
-                notification.innerHTML = '<div style="font-weight:600;margin-bottom:8px;">🛩️ HIMS Professional Community</div><div>Connecting in ' + countdown + ' seconds</div><div style="font-size:12px;margin-top:8px;opacity:0.8;">Click to join immediately</div>';
+                notification.innerHTML = '<div style="font-weight:600;margin-bottom:8px;">🛩️ HIMS Professional Community</div><div>Connecting in ' + countdown + ' seconds</div><div style="font-size:12px;margin-top:8px;opacity:0.8;">Click to join immediately...</div>';
                 
                 if (countdown <= 0) {
                     clearInterval(timer);
@@ -1126,7 +1126,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
         <div class="cta-section">
             <h2>Access Professional Aviation Medical Community</h2>
             <p style="font-size: 1.2em; margin-bottom: 30px; color: #4a5568;">Connect with aviation medical professionals and experienced program participants</p>
-            <a href="${registrationUrl}" class="cta-button">Join Professional Community</a>
+            <a href="${registrationUrl}" class="cta-button">Join the HIMS-Victims Community</a>
             <a href="${forumHomeUrl}" class="cta-button" style="background: linear-gradient(135deg, #38a169, #2f855a);">Browse Forum</a>
             <p style="margin-top: 20px; color: #718096; font-size: 0.9em;">Professional registration • Evidence-based guidance • Confidential support</p>
         </div>
@@ -1155,7 +1155,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
 function getPageSEOInfo(pageType) {
   if (pageType.includes('join') || pageType.includes('register')) {
     return {
-      title: 'Join FAA HIMS Program Professional Community | Aviation Medical Certification',
+      title: 'Join the HIMS-Victims Community | Aviation Medical Certification',
       description: 'Access professional community of aviation medical practitioners and certified pilots discussing FAA HIMS program requirements, medical certification procedures, and evidence-based guidance.',
       slug: 'join'
     };
