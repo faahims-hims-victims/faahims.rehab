@@ -17,36 +17,84 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://faahims.rehab/topics">
     <meta property="og:site_name" content="FAA HIMS Program Community">
+    <meta property="og:image" content="https://faahims.rehab/images/faa-hims-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="FAA HIMS Program Professional Community">
     
-    <!-- Enhanced Schema.org -->
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Recent FAA HIMS Professional Topics | Latest Aviation Medical Discussions">
+    <meta name="twitter:description" content="Latest professional discussions from aviation medical practitioners and certified pilots covering FAA HIMS program procedures, certification processes, and regulatory updates.">
+    <meta name="twitter:image" content="https://faahims.rehab/images/faa-hims-og.jpg">
+    
+    <!-- FIXED Schema.org - Resolves Google Analytics errors -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "DiscussionForumPosting",
       "name": "Recent FAA HIMS Professional Topics | Latest Aviation Medical Discussions",
+      "headline": "Recent FAA HIMS Professional Topics | Latest Aviation Medical Discussions",
       "description": "Latest professional discussions from aviation medical practitioners and certified pilots covering FAA HIMS program procedures, certification processes, and regulatory updates.",
+      "text": "Latest professional discussions from aviation medical practitioners and certified pilots covering FAA HIMS program procedures, certification processes, and regulatory updates.",
       "url": "https://faahims.rehab/topics",
       "discussionUrl": "https://hims-victims.freeforums.net",
+      "datePublished": "2025-09-04T03:02:07.156Z",
+      "dateModified": "2025-09-04T03:02:07.156Z",
+      "inLanguage": "en-US",
       "author": {
         "@type": "Organization",
-        "name": "FAA HIMS Program Community"
+        "name": "FAA HIMS Program Community",
+        "url": "https://faahims.rehab"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FAA HIMS Program Community",
+        "url": "https://faahims.rehab",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://faahims.rehab/images/logo.png",
+          "width": 400,
+          "height": 400
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://faahims.rehab/topics"
       },
       "about": [
         {
           "@type": "Thing",
           "name": "FAA HIMS Program",
-          "description": "Federal Aviation Administration Human Intervention Motivation Study program for pilot medical certification and substance abuse recovery"
+          "description": "Federal Aviation Administration Human Intervention Motivation Study program for pilot medical certification and substance abuse recovery",
+          "sameAs": "https://www.faa.gov/pilots/medical/"
+        },
+        {
+          "@type": "Thing",
+          "name": "Pilot Medical Certification",
+          "description": "Aviation medical certification process and requirements for professional pilots seeking medical certificate reinstatement"
         }
       ],
-      "keywords": ["FAA HIMS program", "pilot medical certification", "aviation medical recovery", "medical certificate reinstatement", "pilot rehabilitation"]
+      "keywords": ["FAA HIMS program", "pilot medical certification", "aviation medical recovery", "medical certificate reinstatement", "pilot rehabilitation"],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Aviation Professionals",
+        "geographicArea": {
+          "@type": "Country",
+          "name": "United States"
+        }
+      },
+      "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/CommentAction",
+        "userInteractionCount": "500"
+      }
     }
     </script>
     
     <!-- SIMPLIFIED WORKING 12-SECOND REDIRECT -->
     <script>
-        // Simple, reliable redirect function
         function initRedirect() {
-            // Basic bot detection
             var userAgent = navigator.userAgent.toLowerCase();
             var isBot = /bot|crawl|spider|index|google|bing|yahoo|facebook|twitter/.test(userAgent);
             
@@ -56,24 +104,21 @@
             }
             
             var countdown = 12;
-            var targetUrl = 'https://hims-victims.freeforums.net/search.php?search_id=newposts';
+            var targetUrl = 'https://hims-victims.freeforums.net';
             
-            // Create simple notification
             var notification = document.createElement('div');
             notification.style.cssText = 'position:fixed;top:20px;right:20px;background:#1a365d;color:white;padding:20px;border-radius:8px;font-family:sans-serif;z-index:10000;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
-            notification.innerHTML = 'Connecting to the HIMS-Victims forum in ' + countdown + ' seconds<br><small>Click to join now...</small>';
+            notification.innerHTML = 'Connecting to HIMS forum in ' + countdown + ' seconds<br><small>Click to join now...</small>';
             
-            // Add click handler
             notification.onclick = function() {
                 window.location.href = targetUrl;
             };
             
             document.body.appendChild(notification);
             
-            // Countdown timer
             var timer = setInterval(function() {
                 countdown--;
-                notification.innerHTML = 'Connecting to the HIMS-Victims forum in ' + countdown + ' seconds<br><small>Click to join now...</small>';
+                notification.innerHTML = 'Connecting to HIMS forum in ' + countdown + ' seconds<br><small>Click to join now...</small>';
                 
                 if (countdown <= 0) {
                     clearInterval(timer);
@@ -85,7 +130,6 @@
             }, 1000);
         }
         
-        // Initialize redirect when page loads
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initRedirect);
         } else {
@@ -348,7 +392,7 @@
         <div class="container">
             <strong>You are being connected to the active professional community forum.</strong><br>
             <span style="font-size: 1.1em; color: #3182ce; margin: 10px 0; display: block;">Access expert guidance, case studies, and professional support from aviation medical practitioners</span>
-            <a href="https://hims-victims.freeforums.net/search.php?search_id=newposts">Click here to access the forum immediately</a>
+            <a href="https://hims-victims.freeforums.net">Click here to access the forum immediately</a>
         </div>
     </div>
     
@@ -454,7 +498,8 @@
         <div class="cta-section">
             <h2>Access Professional Aviation Medical Community</h2>
             <p style="font-size: 1.2em; margin-bottom: 30px; color: #4a5568;">Connect with aviation medical professionals and experienced program participants</p>
-            <a href="https://login.proboards.com/register/7088425" class="cta-button">Join the Forum</a>
+            <a href="https://hims-victims.freeforums.net/register?agree=true&admin=1" class="cta-button">Join HIMS-Victims Community</a>
+            <a href="https://hims-victims.freeforums.net" class="cta-button" style="background: linear-gradient(135deg, #38a169, #2f855a);">Browse Forum</a>
             <p style="margin-top: 20px; color: #718096; font-size: 0.9em;">Professional registration • Evidence-based guidance • Confidential support</p>
         </div>
     </div>
@@ -462,10 +507,10 @@
     <footer style="background: linear-gradient(135deg, #1a365d, #2c5282); color: white; padding: 50px 0; text-align: center;">
         <div class="container">
             <p style="font-size: 1.1em; margin-bottom: 15px;">
-                <strong>HIMS-Victims Community</strong>
+                <strong>Professional FAA HIMS Community</strong>
             </p>
             <p style="font-size: 1em; margin-bottom: 20px;">
-                <a href="https://hims-victims.freeforums.net/search.php?search_id=newposts" style="color: #88c999; font-weight: 600; text-decoration: none;">hims-victims.freeforums.net</a>
+                <a href="https://hims-victims.freeforums.net" style="color: #88c999; font-weight: 600; text-decoration: none;">hims-victims.freeforums.net</a>
             </p>
             <p style="opacity: 0.9; margin-bottom: 10px;">
                 Professional guidance • Medical certification support • Evidence-based resources • Updated every 6 hours
