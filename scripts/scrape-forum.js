@@ -875,7 +875,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
             
             var notification = document.createElement('div');
             notification.style.cssText = 'position:fixed;top:20px;right:20px;background:#1a365d;color:white;padding:20px;border-radius:6px;font-family:-apple-system,BlinkMacSystemFont,sans-serif;z-index:10000;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.2);min-width:300px;border:1px solid rgba(255,255,255,0.1);';
-            notification.innerHTML = '<div style="font-weight:600;margin-bottom:10px;font-size:14px;">HIMS Professional Community</div><div style="font-size:13px;">Connecting in ' + countdown + ' seconds</div><div style="font-size:11px;margin-top:10px;opacity:0.8;border-top:1px solid rgba(255,255,255,0.1);padding-top:8px;">Click to join immediately...</div>';
+            notification.innerHTML = '<div style="font-weight:600;margin-bottom:10px;font-size:14px;">Join the HIMS-Victims Forum</div><div style="font-size:13px;">Connecting in ' + countdown + ' seconds</div><div style="font-size:11px;margin-top:10px;opacity:0.8;border-top:1px solid rgba(255,255,255,0.1);padding-top:8px;">Click to join immediately...</div>';
             
             notification.onclick = function() {
                 window.location.href = targetUrl;
@@ -885,7 +885,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
             
             var timer = setInterval(function() {
                 countdown--;
-                notification.innerHTML = '<div style="font-weight:600;margin-bottom:10px;font-size:14px;">HIMS Professional Community</div><div style="font-size:13px;">Connecting in ' + countdown + ' seconds</div><div style="font-size:11px;margin-top:10px;opacity:0.8;border-top:1px solid rgba(255,255,255,0.1);padding-top:8px;">Click to join immediately...</div>';
+                notification.innerHTML = '<div style="font-weight:600;margin-bottom:10px;font-size:14px;">Join the HIMS-Victims Forum</div><div style="font-size:13px;">Connecting in ' + countdown + ' seconds</div><div style="font-size:11px;margin-top:10px;opacity:0.8;border-top:1px solid rgba(255,255,255,0.1);padding-top:8px;">Click to join immediately...</div>';
                 
                 if (countdown <= 0) {
                     clearInterval(timer);
