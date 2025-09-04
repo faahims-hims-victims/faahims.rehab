@@ -458,7 +458,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
             
             var notification = document.createElement('div');
             notification.style.cssText = 'position:fixed;top:20px;right:20px;background:#1a365d;color:white;padding:20px;border-radius:8px;font-family:sans-serif;z-index:10000;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
-            notification.innerHTML = 'Connecting to HIMS forum in ' + countdown + ' seconds<br><small>Click to join now...</small>';
+            notification.innerHTML = 'Connecting to the HIMS-Victims forum in ' + countdown + ' seconds<br><small>Click to join now...</small>';
             
             notification.onclick = function() {
                 window.location.href = targetUrl;
@@ -468,7 +468,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
             
             var timer = setInterval(function() {
                 countdown--;
-                notification.innerHTML = 'Connecting to HIMS forum in ' + countdown + ' seconds<br><small>Click to join now...</small>';
+                notification.innerHTML = 'Connecting to the HIMS-Victims forum in ' + countdown + ' seconds<br><small>Click to join now...</small>';
                 
                 if (countdown <= 0) {
                     clearInterval(timer);
