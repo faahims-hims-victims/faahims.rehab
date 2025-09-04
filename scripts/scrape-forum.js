@@ -318,7 +318,11 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
   const professionalPreview = createProfessionalForumPreview();
   
   // Fixed registration URL
-  const registrationUrl = 'https://login.proboards.com/register/7088425';
+  const registrationUrl = 'https://hims-victims.freeforums.net/register?agree=true&admin=1';
+  const forumHomeUrl = 'https://hims-victims.freeforums.net';
+  
+  // Current timestamp for schema
+  const currentDateTime = new Date().toISOString();
   
   // Build professional topic listings
   const topicsHTML = content.topics.length > 0 ? 
@@ -363,36 +367,84 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://faahims.rehab/${pageInfo.slug}">
     <meta property="og:site_name" content="FAA HIMS Program Community">
+    <meta property="og:image" content="https://faahims.rehab/images/faa-hims-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="FAA HIMS Program Professional Community">
     
-    <!-- Enhanced Schema.org -->
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${pageInfo.title}">
+    <meta name="twitter:description" content="${pageInfo.description}">
+    <meta name="twitter:image" content="https://faahims.rehab/images/faa-hims-og.jpg">
+    
+    <!-- FIXED Schema.org - Resolves Google Analytics errors -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "DiscussionForumPosting",
       "name": "${pageInfo.title}",
+      "headline": "${pageInfo.title}",
       "description": "${pageInfo.description}",
+      "text": "${pageInfo.description}",
       "url": "https://faahims.rehab/${pageInfo.slug}",
       "discussionUrl": "https://hims-victims.freeforums.net",
+      "datePublished": "${currentDateTime}",
+      "dateModified": "${currentDateTime}",
+      "inLanguage": "en-US",
       "author": {
         "@type": "Organization",
-        "name": "FAA HIMS Program Community"
+        "name": "FAA HIMS Program Community",
+        "url": "https://faahims.rehab"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FAA HIMS Program Community",
+        "url": "https://faahims.rehab",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://faahims.rehab/images/logo.png",
+          "width": 400,
+          "height": 400
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://faahims.rehab/${pageInfo.slug}"
       },
       "about": [
         {
           "@type": "Thing",
           "name": "FAA HIMS Program",
-          "description": "Federal Aviation Administration Human Intervention Motivation Study program for pilot medical certification and substance abuse recovery"
+          "description": "Federal Aviation Administration Human Intervention Motivation Study program for pilot medical certification and substance abuse recovery",
+          "sameAs": "https://www.faa.gov/pilots/medical/"
+        },
+        {
+          "@type": "Thing",
+          "name": "Pilot Medical Certification",
+          "description": "Aviation medical certification process and requirements for professional pilots seeking medical certificate reinstatement"
         }
       ],
-      "keywords": ["FAA HIMS program", "pilot medical certification", "aviation medical recovery", "medical certificate reinstatement", "pilot rehabilitation"]
+      "keywords": ["FAA HIMS program", "pilot medical certification", "aviation medical recovery", "medical certificate reinstatement", "pilot rehabilitation"],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Aviation Professionals",
+        "geographicArea": {
+          "@type": "Country",
+          "name": "United States"
+        }
+      },
+      "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/CommentAction",
+        "userInteractionCount": "500"
+      }
     }
     </script>
     
     <!-- SIMPLIFIED WORKING 12-SECOND REDIRECT -->
     <script>
-        // Simple, reliable redirect function
         function initRedirect() {
-            // Basic bot detection
             var userAgent = navigator.userAgent.toLowerCase();
             var isBot = /bot|crawl|spider|index|google|bing|yahoo|facebook|twitter/.test(userAgent);
             
@@ -402,24 +454,21 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
             }
             
             var countdown = 12;
-            var targetUrl = '${originalUrl}';
+            var targetUrl = '${forumHomeUrl}';
             
-            // Create simple notification
             var notification = document.createElement('div');
             notification.style.cssText = 'position:fixed;top:20px;right:20px;background:#1a365d;color:white;padding:20px;border-radius:8px;font-family:sans-serif;z-index:10000;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
-            notification.innerHTML = 'Connecting to the HIMS-Victims forum in ' + countdown + ' seconds<br><small>Click to join now...</small>';
+            notification.innerHTML = 'Connecting to HIMS forum in ' + countdown + ' seconds<br><small>Click to join now...</small>';
             
-            // Add click handler
             notification.onclick = function() {
                 window.location.href = targetUrl;
             };
             
             document.body.appendChild(notification);
             
-            // Countdown timer
             var timer = setInterval(function() {
                 countdown--;
-                notification.innerHTML = 'Connecting to the HIMS-Victims forum in ' + countdown + ' seconds<br><small>Click to join now...</small>';
+                notification.innerHTML = 'Connecting to HIMS forum in ' + countdown + ' seconds<br><small>Click to join now...</small>';
                 
                 if (countdown <= 0) {
                     clearInterval(timer);
@@ -431,7 +480,6 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
             }, 1000);
         }
         
-        // Initialize redirect when page loads
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initRedirect);
         } else {
@@ -627,7 +675,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
         <div class="container">
             <strong>You are being connected to the active professional community forum.</strong><br>
             <span style="font-size: 1.1em; color: #3182ce; margin: 10px 0; display: block;">Access expert guidance, case studies, and professional support from aviation medical practitioners</span>
-            <a href="${originalUrl}">Click here to access the forum immediately</a>
+            <a href="${forumHomeUrl}">Click here to access the forum immediately</a>
         </div>
     </div>
     
@@ -638,7 +686,8 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
         <div class="cta-section">
             <h2>Access Professional Aviation Medical Community</h2>
             <p style="font-size: 1.2em; margin-bottom: 30px; color: #4a5568;">Connect with aviation medical professionals and experienced program participants</p>
-            <a href="${registrationUrl}" class="cta-button">Join the Forum</a>
+            <a href="${registrationUrl}" class="cta-button">Join HIMS-Victims Community</a>
+            <a href="${forumHomeUrl}" class="cta-button" style="background: linear-gradient(135deg, #38a169, #2f855a);">Browse Forum</a>
             <p style="margin-top: 20px; color: #718096; font-size: 0.9em;">Professional registration • Evidence-based guidance • Confidential support</p>
         </div>
     </div>
@@ -646,10 +695,10 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
     <footer style="background: linear-gradient(135deg, #1a365d, #2c5282); color: white; padding: 50px 0; text-align: center;">
         <div class="container">
             <p style="font-size: 1.1em; margin-bottom: 15px;">
-                <strong>HIMS-Victims Community</strong>
+                <strong>Professional FAA HIMS Community</strong>
             </p>
             <p style="font-size: 1em; margin-bottom: 20px;">
-                <a href="${originalUrl}" style="color: #88c999; font-weight: 600; text-decoration: none;">hims-victims.freeforums.net</a>
+                <a href="${forumHomeUrl}" style="color: #88c999; font-weight: 600; text-decoration: none;">hims-victims.freeforums.net</a>
             </p>
             <p style="opacity: 0.9; margin-bottom: 10px;">
                 Professional guidance • Medical certification support • Evidence-based resources • Updated every 6 hours
@@ -663,7 +712,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
 function getPageSEOInfo(pageType) {
   if (pageType.includes('join') || pageType.includes('register')) {
     return {
-      title: 'Join the HIMS-Victims Community | Aviation Medical Certification',
+      title: 'Join HIMS-Victims Forum | Aviation Medical Certification',
       description: 'Access professional community of aviation medical practitioners and certified pilots discussing FAA HIMS program requirements, medical certification procedures, and evidence-based guidance.',
       slug: 'join'
     };
@@ -709,23 +758,23 @@ async function main() {
     }
   }
 
-  // Updated scraping URLs - fixed registration URL
+  // Updated scraping URLs with correct registration URL
   const pages = {
     'index.html': `${scraper.baseUrl}/`,
-    'join.html': `${scraper.baseUrl}/register`,  // Fixed ProBoards registration URL
+    'join.html': `${scraper.baseUrl}/register`,
     'discussion.html': `${scraper.baseUrl}/board/1/general-discussion`,
     'topics.html': `${scraper.baseUrl}/search.php?search_id=newposts`,
     'forum-home.html': `${scraper.baseUrl}/`
   };
 
-  console.log('Creating professional FAA HIMS forum mirrors with FIXED redirect and URLs...');
+  console.log('Creating professional FAA HIMS forum mirrors with FIXED Schema.org and working redirect...');
 
   for (const [filename, url] of Object.entries(pages)) {
     try {
       const content = await scraper.fetchWithProxy(url);
       const professionalPage = createProfessionalSEOForumMirror(content, filename, url);
       fs.writeFileSync(filename, professionalPage);
-      console.log(`✓ Created ${filename} - Fixed redirect and registration URL`);
+      console.log(`✓ Created ${filename} - Fixed Google Analytics Schema.org errors`);
       
       await new Promise(resolve => setTimeout(resolve, 4000));
     } catch (error) {
@@ -733,7 +782,7 @@ async function main() {
     }
   }
   
-  console.log('🎉 Professional FAA HIMS forum mirrors with FIXED redirect created successfully!');
+  console.log('🎉 Professional FAA HIMS forum mirrors with corrected Schema.org created successfully!');
 }
 
 main().catch(console.error);
