@@ -318,7 +318,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
   const professionalPreview = createProfessionalForumPreview();
   
   // Fixed registration URL
-  const registrationUrl = 'https://hims-victims.freeforums.net/register?agree=true&admin=1';
+  const registrationUrl = 'https://login.proboards.com/register/7088425';
   const forumHomeUrl = 'https://hims-victims.freeforums.net';
   
   // Current timestamp for schema
@@ -686,7 +686,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
         <div class="cta-section">
             <h2>Access Professional Aviation Medical Community</h2>
             <p style="font-size: 1.2em; margin-bottom: 30px; color: #4a5568;">Connect with aviation medical professionals and experienced program participants</p>
-            <a href="${registrationUrl}" class="cta-button">Join HIMS-Victims Community</a>
+            <a href="${registrationUrl}" class="cta-button">Join the HIMS-Victims Community</a>
             <a href="${forumHomeUrl}" class="cta-button" style="background: linear-gradient(135deg, #38a169, #2f855a);">Browse Forum</a>
             <p style="margin-top: 20px; color: #718096; font-size: 0.9em;">Professional registration • Evidence-based guidance • Confidential support</p>
         </div>
