@@ -6,17 +6,17 @@
     <link>https://faahims.rehab</link>
     <atom:link href="https://faahims.rehab/feed.xml" rel="self" type="application/rss+xml"/>
     <language>en-US</language>
-    <lastBuildDate>2025-09-08T03:17:48.245Z</lastBuildDate>
-    <pubDate>2025-09-08T03:17:48.245Z</pubDate>
+    <lastBuildDate>2025-09-08T06:52:56.306Z</lastBuildDate>
+    <pubDate>2025-09-08T06:52:56.306Z</pubDate>
     <ttl>120</ttl>
-    <generator>FAA HIMS Professional System v48</generator>
+    <generator>FAA HIMS Professional System v49</generator>
     
     <item>
-      <title>FAA HIMS Community Professional Update #48</title>
+      <title>FAA HIMS Community Professional Update #49</title>
       <description>Current discussions, professional guidance, and case studies from aviation medical practitioners navigating the FAA HIMS program.</description>
       <link>https://faahims.rehab/</link>
-      <guid isPermaLink="true">https://faahims.rehab/updates/48</guid>
-      <pubDate>2025-09-08T03:17:48.245Z</pubDate>
+      <guid isPermaLink="true">https://faahims.rehab/updates/49</guid>
+      <pubDate>2025-09-08T06:52:56.306Z</pubDate>
       <category>Aviation Medical</category>
       <category>FAA HIMS</category>
       <category>Professional Community</category>
@@ -26,8 +26,8 @@
       <title>Current HIMS Program Professional Discussions</title>
       <description>Professional discussions regarding medical certification processes, treatment facility experiences, and regulatory compliance guidance from certified aviation professionals.</description>
       <link>https://faahims.rehab/discussion.html</link>
-      <guid isPermaLink="true">https://faahims.rehab/discussion-48</guid>
-      <pubDate>2025-09-08T03:17:48.245Z</pubDate>
+      <guid isPermaLink="true">https://faahims.rehab/discussion-49</guid>
+      <pubDate>2025-09-08T06:52:56.306Z</pubDate>
       <category>Professional Discussion</category>
       <category>Medical Certification</category>
     </item>
@@ -36,8 +36,8 @@
       <title>HIMS Program Requirements and Professional Guidelines</title>
       <description>Current information on FAA HIMS program requirements, compliance procedures, and professional guidance for aviation medical certification.</description>
       <link>https://faahims.rehab/topics.html</link>
-      <guid isPermaLink="true">https://faahims.rehab/topics-48</guid>
-      <pubDate>2025-09-08T03:17:48.245Z</pubDate>
+      <guid isPermaLink="true">https://faahims.rehab/topics-49</guid>
+      <pubDate>2025-09-08T06:52:56.306Z</pubDate>
       <category>Program Requirements</category>
       <category>Compliance</category>
     </item>
