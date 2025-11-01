@@ -31,30 +31,63 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'
+    
+    - name: Clean old generated files
+      run: |
+        echo "Removing old HTML/XML files to force regeneration..."
+        rm -f *.html *.xml *.json
+        echo "Cleanup complete"
         
     - name: Run authenticated forum scraper
       env:
         FORUM_USERNAME: ${{ secrets.FORUM_USERNAME }}
         FORUM_PASSWORD: ${{ secrets.FORUM_PASSWORD }}
         PROXY_URL: ${{ secrets.PROXY_URL }}
-      run: node scripts/scrape-forum.js
+        GITHUB_RUN_NUMBER: ${{ github.run_number }}
+      run: |
+        echo "Starting forum scraper - Build #${{ github.run_number }} at $(date -u)"
+        node scripts/scrape-forum.js
+        echo "Forum scraper completed"
+        ls -lh discussion.html topics.html join.html forum-home.html 2>/dev/null || true
       
     - name: Create optimized SEO landing pages
-      run: node scripts/create-seo-pages.js
+      env:
+        GITHUB_RUN_NUMBER: ${{ github.run_number }}
+      run: |
+        echo "Creating SEO landing pages - Build #${{ github.run_number }}"
+        node scripts/create-seo-pages.js
+        echo "SEO pages completed"
+        ls -lh faa-hims-guide.html pilot-medical-certification.html 2>/dev/null || true
       
     - name: Generate enhanced sitemap
-      run: node scripts/generate-sitemap.js
+      run: |
+        echo "Generating sitemap"
+        node scripts/generate-sitemap.js
+        echo "Sitemap completed"
+      
+    - name: Verify generated files
+      run: |
+        echo "=== Generated Files Summary ==="
+        echo "HTML files:"
+        ls -lh *.html 2>/dev/null | wc -l
+        echo "XML files:"
+        ls -lh *.xml 2>/dev/null | wc -l
+        echo ""
+        echo "Checking dates in key files:"
+        grep -h "Last refreshed\|Last updated\|Build #" discussion.html faa-hims-guide.html 2>/dev/null | head -3 || echo "Could not verify dates"
       
     - name: Commit all SEO content
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action Bot"
-        git add *.html *.xml
+        git add -f *.html *.xml *.json *.txt
+        git status --short
         if git diff --staged --quiet; then
           echo "No new FAA HIMS content to commit"
         else
-          git commit -m "🎯 Update FAA HIMS SEO content & forum mirror - $(date '+%Y-%m-%d %H:%M UTC')"
+          git commit -m "Professional update: Build #${{ github.run_number }} - $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
+          echo "Changes committed and pushed"
         fi
         
     - name: Setup GitHub Pages
@@ -70,4 +103,17 @@ jobs:
       uses: actions/deploy-pages@v4
       
     - name: Submit to search engines
-      run: node scripts/submit-to-search-engines.js
+      run: |
+        if [ -f "scripts/submit-to-search-engines.js" ]; then
+          node scripts/submit-to-search-engines.js
+        else
+          echo "Submit script not found, skipping"
+        fi
+        
+    - name: Build completion summary
+      run: |
+        echo "==================================="
+        echo "Build #${{ github.run_number }} Complete"
+        echo "Timestamp: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+        echo "Deployment: https://faahims.rehab/"
+        echo "==================================="v
