@@ -25,6 +25,9 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
     <meta name="keywords" content="${keywords}">
     <link rel="canonical" href="https://faahims.rehab/${filename}">
     
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
+    
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
     <meta property="og:type" content="website">
@@ -46,10 +49,15 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
     
     <script>
         (function() {
-            const isBot = /bot|crawl|spider|slurp|index|google|bing|yahoo|facebook|twitter|linkedin/i.test(navigator.userAgent);
+            const isBot = /bot|crawl|spider|slurp|index|google|bing|yahoo|facebook|twitter|linkedin|facebookexternalhit|whatsapp|telegram|yandex|baidu|duckduckbot|baiduspider|archive/i.test(navigator.userAgent);
+            const isHeadless = navigator.webdriver || window.navigator.webdriver;
             
-            if (isBot) {
-                console.log('Search engine detected');
+            if (isBot || isHeadless) {
+                console.log('Search engine detected - indexing mode');
+                const countdownDisplay = document.getElementById('countdown-display');
+                if (countdownDisplay) {
+                    countdownDisplay.innerHTML = '<a href="https://hims-victims.freeforums.net" style="color:#3182ce;font-weight:bold;text-decoration:none">Visit HIMS Community Forum →</a>';
+                }
                 return;
             }
             
@@ -82,8 +90,6 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
                 } else {
                     clearInterval(timer);
                     notification.innerHTML = '<div style="font-weight:600;font-size:14px">🔄 Connecting...</div>';
-                    const display = document.getElementById('countdown-display');
-                    if (display) display.innerHTML = '<strong style="color:#38a169">🔄 Redirecting now...</strong>';
                     setTimeout(() => window.location.href = targetUrl, 500);
                 }
             }, 1000);
@@ -202,11 +208,11 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
             <p>Professional guidance • Real pilot experiences • Medical certification support</p>
             
             <div class="redirect-notice">
-                <strong>Connecting to active FAA HIMS professional community...</strong><br>
+                <strong>Professional FAA HIMS Community Forum</strong><br>
                 <div id="countdown-display" style="font-size:1.3em;color:#2c5282;margin:15px 0;font-weight:700">
-                    Redirecting in <span id="countdown-seconds">12</span> seconds...
+                    <span id="countdown-seconds">12</span> seconds...
                 </div>
-                <a href="https://hims-victims.freeforums.net" style="color:#2c5282;font-weight:bold;font-size:1.2em">Click to access forum immediately →</a>
+                <p style="margin-top:15px;color:#4a5568">Connect with aviation medical practitioners, HIMS-approved AMEs, and experienced program participants.</p>
             </div>
         </div>
     </section>
@@ -416,6 +422,90 @@ createSEOLandingPage(
   ['aviation medical recovery', 'pilot rehabilitation', 'HIMS recovery support', 'aviation career recovery']
 );
 
+// CREATE FAQ PAGE
+createSEOLandingPage(
+  'faq.html',
+  'FAA HIMS Program FAQ | Frequently Asked Questions',
+  'Frequently asked questions about the FAA HIMS program, medical certification requirements, treatment process, costs, and timeline.',
+  'FAA HIMS FAQ, HIMS questions, pilot medical certification FAQ, aviation medical questions',
+  `
+    <div style="max-width:900px;margin:0 auto">
+        <div style="background:#e6f7ff;border-left:5px solid #1890ff;padding:30px;margin:40px 0;border-radius:8px">
+            <h2 style="color:#0050b3;margin-bottom:20px">Frequently Asked Questions</h2>
+            <p style="color:#0050b3;font-size:1.1em">Get answers to common questions about the FAA HIMS program, medical certification, treatment requirements, and the recovery process.</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>What is the FAA HIMS Program?</h3>
+                <p>The FAA HIMS (Human Intervention Motivation Study) Program is a comprehensive approach to evaluating and monitoring airmen with substance abuse issues. It provides a structured pathway for pilots to regain their medical certificates through approved treatment, ongoing monitoring, and demonstrated sustained recovery.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>How long does the HIMS program take?</h3>
+                <p>The HIMS program timeline varies by individual case but typically spans 2-5 years. This includes initial evaluation by a HIMS-approved AME, completion of an FAA-approved treatment program (3-12 months), ongoing monitoring with regular testing, periodic evaluations, and gradual return to flight duties with progressive reduction in monitoring requirements.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>Who can participate in the HIMS program?</h3>
+                <p>The HIMS program is available to pilots and aviation professionals who have substance abuse issues affecting their medical certification eligibility. Participation is determined by FAA medical standards, evaluation by HIMS-approved Aviation Medical Examiners, and willingness to comply with all program requirements including complete abstinence and ongoing monitoring.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>What are the costs of the HIMS program?</h3>
+                <p>HIMS program costs vary significantly based on individual circumstances. Typical expenses include: initial HIMS AME evaluation ($500-2,000), FAA-approved treatment program ($5,000-50,000+), ongoing monitoring ($200-500/month), periodic AME consultations ($300-800 each), regular drug and alcohol testing ($50-200 per test), and related travel expenses. Many pilots invest $20,000-75,000 total over the full program duration.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>What is a HIMS AME?</h3>
+                <p>A HIMS AME (Aviation Medical Examiner) is an FAA-designated physician with specialized training and certification to evaluate and monitor pilots in the HIMS program. These medical professionals have expertise in substance abuse disorders, aviation medicine, and the specific requirements of the FAA medical certification process. They conduct initial evaluations, ongoing monitoring, and provide essential reports to the FAA throughout a pilot's program participation.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>Can I continue flying during the HIMS program?</h3>
+                <p>Flight status during HIMS participation depends on individual circumstances and program phase. Initially, pilots typically cannot exercise flight privileges until completing treatment and demonstrating sustained recovery. As pilots progress through the program and meet specific milestones, they may be eligible for special issuance medical certificates with monitoring requirements, allowing gradual return to flight operations under continued oversight.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>What treatment is required?</h3>
+                <p>HIMS participants must complete treatment at an FAA-approved facility. Treatment typically includes comprehensive substance abuse assessment, evidence-based therapy programs, individual and group counseling, education about addiction and recovery, development of relapse prevention strategies, family involvement when appropriate, and detailed aftercare planning. Treatment duration varies from 3-12 months depending on individual needs and program requirements.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>What is the testing requirement?</h3>
+                <p>HIMS participants undergo regular random drug and alcohol testing throughout the program. Testing is conducted through approved laboratories with strict chain-of-custody procedures. Participants must respond immediately to testing notifications, typically within 24 hours. Testing frequency varies by program phase but often includes multiple tests per month initially, gradually reducing as participants demonstrate sustained compliance and recovery.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>Will my employer find out?</h3>
+                <p>FAA medical certification records are confidential medical information protected by privacy regulations. However, pilots have obligations to report certain medical conditions to employers under company policies and union agreements. Each pilot should carefully review their employment contract and consult with aviation employment attorneys to understand their specific reporting obligations and rights while navigating medical certification issues.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>What is the success rate?</h3>
+                <p>Pilots who complete the HIMS program and maintain compliance with all requirements have high success rates for medical certificate reinstatement and return to flight operations. Studies and program data suggest success rates above 85-90% for pilots who remain engaged throughout the full program duration. Success depends heavily on complete compliance with monitoring, sustained abstinence, active participation in support programs, and maintaining open communication with HIMS AME and program coordinators.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>Can I self-report to the HIMS program?</h3>
+                <p>Yes, pilots can self-report substance abuse issues to initiate HIMS program participation. Self-reporting often provides better outcomes than reporting prompted by incidents or positive tests. Pilots considering self-reporting should consult with a HIMS-approved AME and possibly an aviation attorney to understand the process, timeline, and implications before taking action. Early intervention typically results in more favorable outcomes and potentially shorter program timelines.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>What support is available during the program?</h3>
+                <p>HIMS participants have access to multiple support resources including HIMS-approved AMEs for medical guidance, certified substance abuse professionals for treatment and counseling, peer support groups specifically for aviation professionals, experienced HIMS graduates who serve as mentors, aviation-focused recovery meetings, and professional online communities where pilots share experiences and provide mutual support throughout the program journey.</p>
+            </div>
+        </div>
+        
+        <div style="background:#fff3cd;border-left:5px solid #ffc107;padding:30px;margin:50px 0;border-radius:8px">
+            <h3 style="color:#856404;margin-bottom:15px">Have More Questions?</h3>
+            <p style="color:#856404;line-height:1.8;font-size:1.1em">Connect with experienced aviation professionals, HIMS-approved AMEs, and pilots who have successfully navigated the program. Our professional community provides detailed answers, real-world insights, and ongoing support for every stage of your HIMS journey.</p>
+        </div>
+    </div>
+  `,
+  ['FAA HIMS FAQ', 'HIMS program questions', 'pilot medical certification FAQ', 'aviation medical questions', 'HIMS program answers']
+);
+
 console.log('All SEO landing pages created successfully');
-console.log(`Total pages created: 4`);
+console.log(`Total pages created: 5 (including FAQ)`);
 console.log(`Build #${buildNumber} completed at ${displayDate} UTC`);
