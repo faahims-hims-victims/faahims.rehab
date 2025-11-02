@@ -1,22 +1,5 @@
 {
-  "timestamp": "2025-11-02T01:50:06.926Z",
-  "buildNumber": "278",
-  "results": [
-    {
-      "engine": "Google",
-      "status": "failed",
-      "error": "HTTP 404"
-    },
-    {
-      "engine": "Bing",
-      "status": "failed",
-      "error": "HTTP 410"
-    },
-    {
-      "engine": "Yandex",
-      "status": "success"
-    }
-  ],
-  "totalEngines": 3,
-  "successfulSubmissions": 1
+  "timestamp": "2025-11-02T01:52:07.018Z",
+  "buildNumber": "279",
+  "results": []
 }

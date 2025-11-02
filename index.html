@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAA HIMS Program Professional Community</title>
+    <meta name="description" content="Professional community for aviation medical practitioners and pilots navigating FAA HIMS program requirements.">
+    <link rel="canonical" href="https://faahims.rehab/">
+    
+    <script>
+        (function() {
+            const isBot = /bot|crawl|spider|slurp|index|google|bing|yahoo|facebook|twitter|linkedin/i.test(navigator.userAgent);
+            
+            if (isBot) {
+                console.log('Search engine detected');
+                return;
+            }
+            
+            let countdown = 12;
+            const targetUrl = 'https://hims-victims.freeforums.net';
+            
+            function updateCountdown() {
+                const el = document.getElementById('countdown-seconds');
+                if (el) el.textContent = countdown;
+            }
+            
+            const notification = document.createElement('div');
+            notification.style.cssText = 'position:fixed;top:25px;right:25px;background:linear-gradient(135deg,#1a365d,#2c5282);color:white;padding:20px;border-radius:8px;font-weight:600;z-index:10000;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,0.3);font-family:-apple-system,sans-serif;text-align:center;min-width:280px;border:2px solid rgba(255,255,255,0.1)';
+            notification.innerHTML = '<div style="font-weight:600;margin-bottom:8px;font-size:14px">🚀 HIMS Community</div><div style="font-size:13px">Connecting in <strong>' + countdown + '</strong> seconds</div><div style="font-size:11px;margin-top:8px;opacity:0.8">Click to join now</div>';
+            
+            notification.onclick = () => window.location.href = targetUrl;
+            
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => document.body.appendChild(notification));
+            } else {
+                document.body.appendChild(notification);
+            }
+            
+            const timer = setInterval(() => {
+                countdown--;
+                updateCountdown();
+                
+                if (countdown > 0) {
+                    notification.innerHTML = '<div style="font-weight:600;margin-bottom:8px;font-size:14px">🚀 HIMS Community</div><div style="font-size:13px">Connecting in <strong>' + countdown + '</strong> seconds</div><div style="font-size:11px;margin-top:8px;opacity:0.8">Click to join now</div>';
+                } else {
+                    clearInterval(timer);
+                    notification.innerHTML = '<div style="font-weight:600;font-size:14px">🔄 Connecting...</div>';
+                    setTimeout(() => window.location.href = targetUrl, 500);
+                }
+            }, 1000);
+        })();
+    </script>
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            line-height: 1.6; color: #2d3748; background: #fff;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        .header { 
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white; padding: 80px 0; text-align: center;
+        }
+        .header h1 { 
+            font-size: 3em; margin-bottom: 20px; font-weight: 700;
+        }
+        .header p { font-size: 1.3em; opacity: 0.95; }
+        
+        .build-info {
+            background: #f7fafc; padding: 15px; text-align: center;
+            font-size: 0.9em; color: #4a5568; font-family: monospace;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .redirect-notice { 
+            background: #f7fafc; border: 3px solid #3182ce; 
+            padding: 40px; margin: 40px auto; border-radius: 8px; 
+            text-align: center; max-width: 800px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .redirect-notice h2 { color: #1a365d; margin-bottom: 20px; }
+        .redirect-notice .countdown {
+            font-size: 1.5em; color: #2c5282; margin: 20px 0;
+            font-weight: 700;
+        }
+        .redirect-notice a {
+            color: #3182ce; font-weight: 600; text-decoration: none;
+            font-size: 1.1em;
+        }
+        .redirect-notice a:hover { text-decoration: underline; }
+        
+        .content { padding: 60px 0; }
+        
+        .features { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px; margin: 40px 0;
+        }
+        .feature { 
+            padding: 30px; background: white;
+            border: 1px solid #e2e8f0; border-radius: 8px;
+            border-left: 4px solid #3182ce;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .feature h3 { color: #1a365d; margin-bottom: 15px; font-size: 1.3em; }
+        .feature p { color: #4a5568; line-height: 1.7; }
+        
+        .stats { 
+            background: #f8f9fa; padding: 60px 0; text-align: center;
+            margin: 50px 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px; max-width: 1000px; margin: 40px auto;
+        }
+        .stat {
+            background: white; padding: 30px; border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .stat-number {
+            font-size: 3em; font-weight: bold; color: #3182ce;
+            margin-bottom: 10px;
+        }
+        .stat-label { font-weight: 600; color: #555; }
+        
+        .cta {
+            text-align: center; padding: 60px 0;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+        .cta h2 { color: #1a365d; margin-bottom: 20px; }
+        .cta-button {
+            display: inline-block; margin: 20px 10px;
+            padding: 18px 40px; background: linear-gradient(135deg, #3182ce, #2c5282);
+            color: white; text-decoration: none; border-radius: 8px;
+            font-weight: 600; font-size: 1.1em;
+            transition: transform 0.3s ease;
+        }
+        .cta-button:hover { transform: translateY(-3px); }
+        
+        footer {
+            background: linear-gradient(135deg, #1a365d, #2c5282);
+            color: white; padding: 50px 0; text-align: center;
+        }
+        footer a { color: #a0aec0; text-decoration: none; font-weight: 600; }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2em; }
+            .features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="build-info">
+        <strong>System Update #279</strong> • Last updated: 11/02/2025, 01:52 UTC • Updated every 6 hours
+    </div>
+    
+    <div class="header">
+        <div class="container">
+            <h1>FAA HIMS Program Professional Community</h1>
+            <p>Expert guidance • Real pilot experiences • Medical certification support</p>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="container">
+            <div class="redirect-notice">
+                <h2>Connecting to Active Community</h2>
+                <p>You're being connected to the professional FAA HIMS community forum...</p>
+                <div class="countdown">
+                    Redirecting in <span id="countdown-seconds">12</span> seconds
+                </div>
+                <p><a href="https://hims-victims.freeforums.net">Click here to access the forum immediately →</a></p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>Professional Community</h3>
+                    <p>Connect with 600+ aviation medical practitioners, HIMS participants, and certified pilots navigating FAA medical certification requirements.</p>
+                </div>
+                <div class="feature">
+                    <h3>Expert Guidance</h3>
+                    <p>Access insights from HIMS-approved AMEs, certified professionals, aviation psychologists, and successful program graduates.</p>
+                </div>
+                <div class="feature">
+                    <h3>Comprehensive Resources</h3>
+                    <p>Program requirements, treatment facility guidance, medical certification procedures, testing protocols, and success strategies.</p>
+                </div>
+                <div class="feature">
+                    <h3>Active Discussions</h3>
+                    <p>Engage in discussions about treatment experiences, AME consultations, monitoring requirements, career considerations, and recovery strategies.</p>
+                </div>
+                <div class="feature">
+                    <h3>Confidential Support</h3>
+                    <p>Share concerns and receive support in a confidential environment from those who understand aviation medical certification challenges.</p>
+                </div>
+                <div class="feature">
+                    <h3>Return to Flight</h3>
+                    <p>Learn from pilots who successfully navigated HIMS and returned to commercial, corporate, and general aviation careers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="stats">
+        <div class="container">
+            <h2>Professional FAA HIMS Network</h2>
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">600+</div>
+                    <div class="stat-label">Aviation Professionals</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Expert Support</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">95%+</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">Daily</div>
+                    <div class="stat-label">New Discussions</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cta">
+        <div class="container">
+            <h2>Connect with FAA HIMS Professionals</h2>
+            <p style="font-size:1.2em;margin:20px 0;color:#555">Professional community for aviation medical practitioners and pilots</p>
+            <a href="https://hims-victims.freeforums.net/register" class="cta-button">Join Professional Community</a>
+            <a href="https://hims-victims.freeforums.net" class="cta-button" style="background:linear-gradient(135deg,#38a169,#2f855a)">Browse Forum</a>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p style="font-size:1.2em;margin-bottom:15px"><strong>Professional FAA HIMS Community</strong></p>
+            <p style="font-size:1.1em;margin-bottom:20px">
+                <a href="https://hims-victims.freeforums.net">hims-victims.freeforums.net</a>
+            </p>
+            <p style="opacity:0.8;margin-bottom:10px">
+                Professional guidance • Medical certification support • Evidence-based resources
+            </p>
+            <p style="opacity:0.7;font-size:0.9em;font-family:monospace">
+                Build #279 • 11/02/2025, 01:52 UTC
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
