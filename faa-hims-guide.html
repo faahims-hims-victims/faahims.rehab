@@ -8,11 +8,14 @@
     <meta name="keywords" content="FAA HIMS program guide, HIMS requirements, pilot medical certification process">
     <link rel="canonical" href="https://faahims.rehab/faa-hims-guide.html">
     
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
+    
     <meta property="og:title" content="Complete FAA HIMS Program Guide 2025 | Requirements & Procedures">
     <meta property="og:description" content="Comprehensive guide to the FAA HIMS program including requirements, procedures, timeline, costs, and success strategies.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://faahims.rehab/faa-hims-guide.html">
-    <meta property="og:updated_time" content="2025-11-02T02:06:15.602Z">
+    <meta property="og:updated_time" content="2025-11-02T02:32:05.202Z">
     
     <script type="application/ld+json">
     {
@@ -21,18 +24,23 @@
       "name": "Complete FAA HIMS Program Guide 2025 | Requirements & Procedures",
       "description": "Comprehensive guide to the FAA HIMS program including requirements, procedures, timeline, costs, and success strategies.",
       "url": "https://faahims.rehab/faa-hims-guide.html",
-      "datePublished": "2025-11-02T02:06:15.602Z",
-      "dateModified": "2025-11-02T02:06:15.602Z",
+      "datePublished": "2025-11-02T02:32:05.202Z",
+      "dateModified": "2025-11-02T02:32:05.202Z",
       "keywords": ["FAA HIMS program", "pilot medical certification", "HIMS requirements", "aviation medical evaluation"]
     }
     </script>
     
     <script>
         (function() {
-            const isBot = /bot|crawl|spider|slurp|index|google|bing|yahoo|facebook|twitter|linkedin/i.test(navigator.userAgent);
+            const isBot = /bot|crawl|spider|slurp|index|google|bing|yahoo|facebook|twitter|linkedin|facebookexternalhit|whatsapp|telegram|yandex|baidu|duckduckbot|baiduspider|archive/i.test(navigator.userAgent);
+            const isHeadless = navigator.webdriver || window.navigator.webdriver;
             
-            if (isBot) {
-                console.log('Search engine detected');
+            if (isBot || isHeadless) {
+                console.log('Search engine detected - indexing mode');
+                const countdownDisplay = document.getElementById('countdown-display');
+                if (countdownDisplay) {
+                    countdownDisplay.innerHTML = '<a href="https://hims-victims.freeforums.net" style="color:#3182ce;font-weight:bold;text-decoration:none">Visit HIMS Community Forum →</a>';
+                }
                 return;
             }
             
@@ -65,8 +73,6 @@
                 } else {
                     clearInterval(timer);
                     notification.innerHTML = '<div style="font-weight:600;font-size:14px">🔄 Connecting...</div>';
-                    const display = document.getElementById('countdown-display');
-                    if (display) display.innerHTML = '<strong style="color:#38a169">🔄 Redirecting now...</strong>';
                     setTimeout(() => window.location.href = targetUrl, 500);
                 }
             }, 1000);
@@ -176,7 +182,7 @@
 </head>
 <body>
     <div class="build-info-banner">
-        <strong>System Update #281</strong> • Last updated: November 2, 2025 at 02:06 UTC • Updated every 6 hours
+        <strong>System Update #282</strong> • Last updated: November 2, 2025 at 02:32 UTC • Updated every 6 hours
     </div>
     
     <section class="hero">
@@ -185,11 +191,11 @@
             <p>Professional guidance • Real pilot experiences • Medical certification support</p>
             
             <div class="redirect-notice">
-                <strong>Connecting to active FAA HIMS professional community...</strong><br>
+                <strong>Professional FAA HIMS Community Forum</strong><br>
                 <div id="countdown-display" style="font-size:1.3em;color:#2c5282;margin:15px 0;font-weight:700">
-                    Redirecting in <span id="countdown-seconds">12</span> seconds...
+                    <span id="countdown-seconds">12</span> seconds...
                 </div>
-                <a href="https://hims-victims.freeforums.net" style="color:#2c5282;font-weight:bold;font-size:1.2em">Click to access forum immediately →</a>
+                <p style="margin-top:15px;color:#4a5568">Connect with aviation medical practitioners, HIMS-approved AMEs, and experienced program participants.</p>
             </div>
         </div>
     </section>
@@ -267,7 +273,7 @@
                 <a href="https://hims-victims.freeforums.net" style="color:#a0aec0;font-weight:bold;text-decoration:none">hims-victims.freeforums.net</a>
             </p>
             <p style="opacity:0.75;font-size:0.9em;font-family:monospace">
-                Build #281 • Last updated: November 2, 2025 at 02:06 UTC
+                Build #282 • Last updated: November 2, 2025 at 02:32 UTC
             </p>
         </div>
     </footer>
