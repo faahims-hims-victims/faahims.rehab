@@ -23,6 +23,9 @@
 # Keyword-optimized aliases
 /hims-program /faa-hims-guide.html 200
 /medical-certification /pilot-medical-certification.html 200
-/hims-ame /pilot-medical-certification.html 200
+/hims-ame /hims-ame-directory.html 200
+/ame-directory /hims-ame-directory.html 200
+/treatment /hims-treatment-facilities.html 200
+/success /hims-success-stories.html 200
 /special-issuance /pilot-medical-certification.html 200
 /program-requirements /hims-requirements.html 200

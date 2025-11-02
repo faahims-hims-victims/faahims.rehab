@@ -1,6 +1,6 @@
 {
-  "buildNumber": "287",
-  "timestamp": "2025-11-02T03:42:32.244Z",
+  "buildNumber": "288",
+  "timestamp": "2025-11-02T03:56:20.502Z",
   "targetKeywords": {
     "primary": [
       "FAA HIMS program",
@@ -35,7 +35,7 @@
     ]
   },
   "seoOptimizations": {
-    "sitemap": "✓ Generated with keyword-based priorities",
+    "sitemap": "✓ Generated with keyword-based priorities - 11 pages",
     "rss": "✓ Keyword-rich titles and descriptions",
     "structuredData": "✓ Medical schema with keyword focus",
     "meta": "✓ All pages optimized for target keywords",
@@ -44,7 +44,8 @@
     "headers": "✓ H1/H2/H3 keyword optimization",
     "altText": "✓ Image alt text with keywords",
     "canonicals": "✓ Proper canonical tags",
-    "robots": "✓ Bot-friendly with selective blocking"
+    "robots": "✓ Bot-friendly with selective blocking",
+    "browserConfig": "✓ Windows tiles optimization"
   },
   "competitorAnalysis": {
     "targetRankings": [
@@ -54,5 +55,6 @@
       "pilot medical certificate - Position goal: Top 10",
       "HIMS AME - Position goal: Top 5"
     ]
-  }
+  },
+  "totalPages": 11
 }
