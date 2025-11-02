@@ -1,6 +1,6 @@
 {
-  "buildNumber": "293",
-  "timestamp": "2025-11-02T04:40:42.323Z",
+  "buildNumber": "294",
+  "timestamp": "2025-11-02T04:53:11.489Z",
   "targetKeywords": {
     "primary": [
       "FAA HIMS program",
@@ -46,6 +46,7 @@
     "canonicals": "✓ Proper canonical tags",
     "robots": "✓ Bot-friendly with selective blocking",
     "browserConfig": "✓ Windows tiles optimization",
+    "bingSiteAuth": "✓ Bing Webmaster Tools verification",
     "navigation": "✓ Keyword-rich navigation on all pages"
   },
   "competitorAnalysis": {

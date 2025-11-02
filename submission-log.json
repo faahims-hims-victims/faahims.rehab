@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-11-02T04:40:42.323Z",
-  "buildNumber": "293",
+  "timestamp": "2025-11-02T04:53:11.489Z",
+  "buildNumber": "294",
   "targetKeywords": [
     "FAA HIMS program",
     "HIMS program requirements",
@@ -10,5 +10,6 @@
   ],
   "results": [],
   "sitemapUrl": "https://faahims.rehab/sitemap.xml",
+  "bingVerification": "BingSiteAuth.xml included for Bing Webmaster Tools",
   "note": "Submit sitemap manually to Google Search Console and Bing Webmaster Tools"
 }

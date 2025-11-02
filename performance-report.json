@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-11-02T04:40:42.323Z",
-  "buildNumber": "293",
+  "timestamp": "2025-11-02T04:53:11.489Z",
+  "buildNumber": "294",
   "files": [
     {
       "filename": "index.html",
@@ -16,6 +16,7 @@
     "metaDescription": "150-160 characters (optimal for SERP)",
     "h1Tags": "One per page with primary keyword",
     "internalLinks": "10+ per page with keyword anchors from homepage",
-    "imageOptimization": "Alt text with relevant keywords"
+    "imageOptimization": "Alt text with relevant keywords",
+    "bingVerification": "BingSiteAuth.xml included"
   }
 }
