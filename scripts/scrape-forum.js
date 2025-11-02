@@ -8,6 +8,12 @@ class FAHIMSForumScraper {
     this.proxyConfig = null;
     this.buildNumber = process.env.GITHUB_RUN_NUMBER || Math.floor(Math.random() * 1000);
     this.currentDateTime = new Date().toISOString();
+    
+    // Log to verify timestamps
+    console.log(`=== SCRAPER INITIALIZATION ===`);
+    console.log(`Build Number: ${this.buildNumber}`);
+    console.log(`Current DateTime: ${this.currentDateTime}`);
+    console.log(`Display Date: ${new Date(this.currentDateTime).toLocaleString('en-US', { timeZone: 'UTC' })}`);
   }
 
   setProxy(proxyUrl) {
@@ -89,7 +95,7 @@ class FAHIMSForumScraper {
     <priority>0.95</priority>
     <image:image>
       <image:loc>${baseUrl}/images/join-hims-community.jpg</image:loc>
-      <image:caption>Join the HIMS-Victims Community</image:caption>
+      <image:caption>Join HIMS Professional Community</image:caption>
     </image:image>
   </url>
   <url>
@@ -621,11 +627,23 @@ function createProfessionalSVGSprite() {
   `;
 }
 
-function createProfessionalForumPreview(buildNumber) {
+// CRITICAL FIX: Accept currentDateTime parameter
+function createProfessionalForumPreview(buildNumber, currentDateTime) {
+  // Create display date from the scraper's timestamp
+  const displayDate = new Date(currentDateTime).toLocaleString('en-US', { 
+    timeZone: 'UTC',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  });
+  
   return `
     <div class="professional-preview-section">
         <div class="build-info">
-            <strong>System Update #${buildNumber}</strong> • Last refreshed: ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC • Updated every 2 hours
+            <strong>System Update #${buildNumber}</strong> • Last refreshed: ${displayDate} UTC • Updated every 2 hours
         </div>
         
         <div class="case-studies-section">
@@ -731,7 +749,8 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
   const content = extractHIMSContent(filteredContent);
   const pageInfo = getPageSEOInfo(pageType);
   const svgSprite = createProfessionalSVGSprite();
-  const professionalPreview = createProfessionalForumPreview(scraper.buildNumber);
+  // CRITICAL FIX: Pass both buildNumber AND currentDateTime
+  const professionalPreview = createProfessionalForumPreview(scraper.buildNumber, scraper.currentDateTime);
   
   const registrationUrl = 'https://login.proboards.com/register/7088425';
   const forumHomeUrl = 'https://hims-victims.freeforums.net';
@@ -1120,7 +1139,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
         <div class="cta-section">
             <h2>Access Professional Aviation Medical Community</h2>
             <p style="font-size: 1.2em; margin-bottom: 30px; color: #4a5568;">Connect with aviation medical professionals and experienced program participants</p>
-            <a href="${registrationUrl}" class="cta-button">Join the HIMS-Victims Community</a>
+            <a href="${registrationUrl}" class="cta-button">Join Professional Community</a>
             <a href="${forumHomeUrl}" class="cta-button" style="background: linear-gradient(135deg, #38a169, #2f855a);">Browse Forum</a>
             <p style="margin-top: 20px; color: #718096; font-size: 0.9em;">Professional registration • Evidence-based guidance • Confidential support</p>
         </div>
@@ -1149,7 +1168,7 @@ function createProfessionalSEOForumMirror(originalContent, pageType, originalUrl
 function getPageSEOInfo(pageType) {
   if (pageType.includes('join') || pageType.includes('register')) {
     return {
-      title: 'Join the HIMS-Victims Community | Aviation Medical Certification',
+      title: 'Join FAA HIMS Program Professional Community | Aviation Medical Certification',
       description: 'Access professional community of aviation medical practitioners and certified pilots discussing FAA HIMS program requirements, medical certification procedures, and evidence-based guidance.',
       slug: 'join'
     };
