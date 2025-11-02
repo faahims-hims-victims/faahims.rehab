@@ -7,12 +7,20 @@
     <meta name="description" content="Professional community for aviation medical practitioners and pilots navigating FAA HIMS program requirements.">
     <link rel="canonical" href="https://faahims.rehab/">
     
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
+    
     <script>
         (function() {
-            const isBot = /bot|crawl|spider|slurp|index|google|bing|yahoo|facebook|twitter|linkedin/i.test(navigator.userAgent);
+            const isBot = /bot|crawl|spider|slurp|index|google|bing|yahoo|facebook|twitter|linkedin|facebookexternalhit|whatsapp|telegram|yandex|baidu|duckduckbot|baiduspider|archive/i.test(navigator.userAgent);
+            const isHeadless = navigator.webdriver || window.navigator.webdriver;
             
-            if (isBot) {
-                console.log('Search engine detected');
+            if (isBot || isHeadless) {
+                console.log('Search engine detected - indexing mode');
+                const countdownDisplay = document.getElementById('countdown-display');
+                if (countdownDisplay) {
+                    countdownDisplay.innerHTML = '<a href="https://hims-victims.freeforums.net" style="color:#3182ce;font-weight:bold;text-decoration:none">Visit HIMS Community Forum →</a>';
+                }
                 return;
             }
             
@@ -157,7 +165,7 @@
 </head>
 <body>
     <div class="build-info">
-        <strong>System Update #282</strong> • Last updated: 11/02/2025, 02:32 UTC • Updated every 6 hours
+        <strong>System Update #283</strong> • Last updated: 11/02/2025, 02:33 UTC • Updated every 6 hours
     </div>
     
     <div class="header">
@@ -171,11 +179,11 @@
         <div class="container">
             <div class="redirect-notice">
                 <h2>Connecting to Active Community</h2>
-                <p>You're being connected to the professional FAA HIMS community forum...</p>
-                <div class="countdown">
-                    Redirecting in <span id="countdown-seconds">12</span> seconds
+                <p>Professional FAA HIMS community forum...</p>
+                <div class="countdown" id="countdown-display">
+                    <span id="countdown-seconds">12</span> seconds
                 </div>
-                <p><a href="https://hims-victims.freeforums.net">Click here to access the forum immediately →</a></p>
+                <p style="margin-top:15px;color:#4a5568">Connect with aviation medical practitioners, HIMS-approved AMEs, and experienced program participants.</p>
             </div>
             
             <div class="features">
@@ -250,7 +258,7 @@
                 Professional guidance • Medical certification support • Evidence-based resources
             </p>
             <p style="opacity:0.7;font-size:0.9em;font-family:monospace">
-                Build #282 • 11/02/2025, 02:32 UTC
+                Build #283 • 11/02/2025, 02:33 UTC
             </p>
         </div>
     </footer>
