@@ -621,7 +621,7 @@ Optimization: Core Web Vitals, Mobile-First, Accessibility`;
   generateBingSiteAuth() {
     const bingSiteAuth = `<?xml version="1.0"?>
 <users>
-	<user>711C0FBADB80A8DC8B96B8EA2E66BD50</user>
+	<user>A714CE8F721D91B99C79366FCD696D2C</user>
 </users>`;
 
     fs.writeFileSync('BingSiteAuth.xml', bingSiteAuth);
