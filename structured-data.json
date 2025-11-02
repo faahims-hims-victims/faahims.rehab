@@ -1,6 +1,112 @@
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "url": "https://faahims.rehab/",
-  "name": "FAA HIMS Program Community"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://faahims.rehab/#website",
+      "url": "https://faahims.rehab/",
+      "name": "FAA HIMS Program Professional Community",
+      "description": "Professional community for pilots navigating FAA HIMS program requirements, medical certification, and aviation substance abuse recovery",
+      "keywords": "FAA HIMS program, HIMS program requirements, FAA medical certification, pilot medical certificate, HIMS AME",
+      "publisher": {
+        "@id": "https://faahims.rehab/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://faahims.rehab/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://faahims.rehab/#organization",
+      "name": "FAA HIMS Professional Community",
+      "url": "https://faahims.rehab/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://faahims.rehab/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "Professional aviation medical community supporting pilots through FAA HIMS program requirements and medical certification",
+      "sameAs": [
+        "https://hims-victims.freeforums.net"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Community Support",
+        "url": "https://hims-victims.freeforums.net"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://faahims.rehab/#webpage",
+      "url": "https://faahims.rehab/",
+      "name": "FAA HIMS Program Community - Pilot Medical Certification Support",
+      "description": "Expert guidance on FAA HIMS program requirements, pilot medical certification, HIMS AME consultations, and aviation career recovery",
+      "isPartOf": {
+        "@id": "https://faahims.rehab/#website"
+      },
+      "about": {
+        "@id": "https://faahims.rehab/#organization"
+      },
+      "datePublished": "2025-11-02T03:22:15.216Z",
+      "dateModified": "2025-11-02T03:22:15.216Z",
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "FAA HIMS Program Home",
+          "item": "https://faahims.rehab/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "HIMS Program FAQ",
+          "item": "https://faahims.rehab/faq.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "FAA HIMS Guide",
+          "item": "https://faahims.rehab/faa-hims-guide.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Pilot Medical Certification",
+          "item": "https://faahims.rehab/pilot-medical-certification.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "HIMS Requirements",
+          "item": "https://faahims.rehab/hims-requirements.html"
+        }
+      ]
+    },
+    {
+      "@type": "MedicalWebPage",
+      "name": "FAA HIMS Program Medical Guidance",
+      "description": "Professional medical guidance for aviation professionals navigating FAA HIMS program and medical certification requirements",
+      "medicalAudience": [
+        {
+          "@type": "MedicalAudience",
+          "name": "Aviation Medical Examiners"
+        },
+        {
+          "@type": "MedicalAudience",
+          "name": "Commercial Pilots"
+        },
+        {
+          "@type": "MedicalAudience",
+          "name": "Private Pilots"
+        }
+      ]
+    }
+  ]
 }

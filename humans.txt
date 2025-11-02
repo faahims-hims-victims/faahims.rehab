@@ -1,0 +1,28 @@
+/* TEAM */
+Site: FAA HIMS Program Professional Community
+Purpose: Aviation Medical Certification Support
+Focus: FAA HIMS Program, Pilot Medical Certification
+Location: United States
+Contact: https://hims-victims.freeforums.net
+
+/* THANKS */
+HIMS-Approved Aviation Medical Examiners
+FAA Aerospace Medical Certification Division
+Commercial & Private Pilot Community
+Aviation Medical Practitioners
+HIMS Program Participants & Mentors
+Substance Abuse Professionals (SAP)
+
+/* KEYWORDS */
+FAA HIMS program, pilot medical certification, HIMS AME
+aviation medical examiner, FAA special issuance
+substance abuse recovery, medical certificate reinstatement
+HIMS requirements, pilot rehabilitation program
+
+/* SITE */
+Last update: 2025-11-02T03:22:15.216Z
+Build: #286
+Standards: HTML5, CSS3, Schema.org, OpenGraph
+Components: Node.js, JavaScript, RSS 2.0
+Software: GitHub Actions, Cloudflare Pages
+Optimization: Core Web Vitals, Mobile-First, Accessibility

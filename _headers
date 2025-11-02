@@ -1,0 +1,46 @@
+# Security and Performance Headers for SEO - FAA HIMS Program
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Content-Security-Policy: upgrade-insecure-requests
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  
+  # Cache Control
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+# HTML Pages - Optimized for FAA HIMS keywords
+/*.html
+  Cache-Control: public, max-age=1800, stale-while-revalidate=3600
+  Content-Type: text/html; charset=utf-8
+
+# RSS Feed - Fresh Content Signal
+/feed.xml
+  Cache-Control: public, max-age=1800, must-revalidate
+  Content-Type: application/rss+xml; charset=utf-8
+
+/rss.xml
+  Cache-Control: public, max-age=1800, must-revalidate
+  Content-Type: application/rss+xml; charset=utf-8
+
+# Sitemaps - SEO Critical
+/sitemap*.xml
+  Cache-Control: public, max-age=3600, must-revalidate
+  Content-Type: application/xml; charset=utf-8
+
+# Robots - Crawl Optimization
+/robots.txt
+  Cache-Control: public, max-age=86400, must-revalidate
+  Content-Type: text/plain; charset=utf-8
+
+# Manifest - PWA
+/manifest.json
+  Cache-Control: public, max-age=86400
+  Content-Type: application/json; charset=utf-8
+
+# Humans - Trust Signal
+/humans.txt
+  Cache-Control: public, max-age=86400
+  Content-Type: text/plain; charset=utf-8

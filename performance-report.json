@@ -1,11 +1,21 @@
 {
-  "timestamp": "2025-11-02T02:47:48.681Z",
-  "buildNumber": "285",
+  "timestamp": "2025-11-02T03:22:15.216Z",
+  "buildNumber": "286",
   "files": [
     {
       "filename": "index.html",
-      "sizeKB": 13
+      "sizeKB": 21,
+      "coreWebVitals": "Optimized for LCP, FID, CLS"
     }
   ],
-  "totalFiles": 1
+  "totalFiles": 1,
+  "averageSize": 21,
+  "seoMetrics": {
+    "keywordDensity": "Optimized for 2-3% primary keyword density",
+    "titleLength": "50-60 characters (optimal for SERP)",
+    "metaDescription": "150-160 characters (optimal for SERP)",
+    "h1Tags": "One per page with primary keyword",
+    "internalLinks": "5-10 per page with keyword anchors",
+    "imageOptimization": "Alt text with relevant keywords"
+  }
 }

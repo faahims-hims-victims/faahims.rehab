@@ -1,0 +1,28 @@
+# Redirect Rules for SEO - FAA HIMS Program Keywords
+# Clean URLs and legacy redirects
+
+# Legacy URL patterns
+/home /
+/index /
+/index.html /
+
+# Forum redirects
+/forum https://hims-victims.freeforums.net 301
+/community https://hims-victims.freeforums.net 301
+/register https://login.proboards.com/register/7088425 301
+/signup https://login.proboards.com/register/7088425 301
+
+# Clean URL handling (remove .html for better UX)
+/faq /faq.html 200
+/guide /faa-hims-guide.html 200
+/certification /pilot-medical-certification.html 200
+/requirements /hims-requirements.html 200
+/recovery /aviation-medical-recovery.html 200
+/join /join.html 200
+
+# Keyword-optimized aliases
+/hims-program /faa-hims-guide.html 200
+/medical-certification /pilot-medical-certification.html 200
+/hims-ame /pilot-medical-certification.html 200
+/special-issuance /pilot-medical-certification.html 200
+/program-requirements /hims-requirements.html 200
