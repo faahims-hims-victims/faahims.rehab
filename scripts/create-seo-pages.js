@@ -48,7 +48,21 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
     </script>
     
     <script>
+        // ===== REDIRECT TIMER CONTROL =====
+        const REDIRECT_ENABLED = false;  // Set to true to enable 12-second timer
+        // ==================================
+        
         (function() {
+            if (!REDIRECT_ENABLED) {
+                console.log('Redirect timer is disabled - manual navigation only');
+                // Update display to show static link for everyone
+                const countdownDisplay = document.getElementById('countdown-display');
+                if (countdownDisplay) {
+                    countdownDisplay.innerHTML = '<a href="https://hims-victims.freeforums.net" style="color:#3182ce;font-weight:bold;text-decoration:none;font-size:1.2em">Visit HIMS Community Forum →</a>';
+                }
+                return;
+            }
+            
             const isBot = /bot|crawl|spider|slurp|index|google|bing|yahoo|facebook|twitter|linkedin|facebookexternalhit|whatsapp|telegram|yandex|baidu|duckduckbot|baiduspider|archive/i.test(navigator.userAgent);
             const isHeadless = navigator.webdriver || window.navigator.webdriver;
             
