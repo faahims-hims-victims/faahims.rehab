@@ -11,11 +11,11 @@ class FAHIMSForumScraper {
     
     // HIGH-COMPETITION TARGET KEYWORDS (Optimized for Page 1 SERP)
     this.primaryKeywords = [
-      'FAA HIMS program',           // Primary target - HIGH volume
-      'HIMS program requirements',  // HIGH intent
-      'FAA medical certification',  // VERY HIGH volume
-      'pilot medical certificate',  // HIGH volume
-      'HIMS AME',                   // Medium competition
+      'FAA HIMS program',
+      'HIMS program requirements',
+      'FAA medical certification',
+      'pilot medical certificate',
+      'HIMS AME',
     ];
     
     this.secondaryKeywords = [
@@ -113,7 +113,7 @@ class FAHIMSForumScraper {
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   
-  <!-- Homepage - Highest Priority - FAA HIMS Program -->
+  <!-- Homepage - Highest Priority -->
   <url>
     <loc>${baseUrl}/</loc>
     <lastmod>${currentDate}</lastmod>
@@ -121,7 +121,7 @@ class FAHIMSForumScraper {
     <priority>1.0</priority>
   </url>
   
-  <!-- Registration - High Conversion Intent -->
+  <!-- Registration/Join Page - High Priority for Conversions -->
   <url>
     <loc>${baseUrl}/join.html</loc>
     <lastmod>${currentDate}</lastmod>
@@ -129,15 +129,7 @@ class FAHIMSForumScraper {
     <priority>0.95</priority>
   </url>
   
-  <!-- FAQ - Question Intent Keywords -->
-  <url>
-    <loc>${baseUrl}/faq.html</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.92</priority>
-  </url>
-  
-  <!-- HIMS Guide - Primary Keyword Target -->
+  <!-- Core HIMS Guide Pages - Primary Keywords -->
   <url>
     <loc>${baseUrl}/faa-hims-guide.html</loc>
     <lastmod>${currentDate}</lastmod>
@@ -145,7 +137,6 @@ class FAHIMSForumScraper {
     <priority>0.95</priority>
   </url>
   
-  <!-- Medical Certification - High Volume Keyword -->
   <url>
     <loc>${baseUrl}/pilot-medical-certification.html</loc>
     <lastmod>${currentDate}</lastmod>
@@ -153,15 +144,36 @@ class FAHIMSForumScraper {
     <priority>0.93</priority>
   </url>
   
-  <!-- HIMS Requirements - High Intent Keyword -->
   <url>
     <loc>${baseUrl}/hims-requirements.html</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.93</priority>
+  </url>
+  
+  <!-- New High-Value Pages Added 2025 -->
+  <url>
+    <loc>${baseUrl}/hims-ame-directory.html</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  
+  <!-- FAQ Page - High SEO Value for Featured Snippets -->
+  <url>
+    <loc>${baseUrl}/faq.html</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  
+  <url>
+    <loc>${baseUrl}/hims-treatment-facilities.html</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   
-  <!-- Aviation Recovery - Supporting Content -->
   <url>
     <loc>${baseUrl}/aviation-medical-recovery.html</loc>
     <lastmod>${currentDate}</lastmod>
@@ -169,7 +181,14 @@ class FAHIMSForumScraper {
     <priority>0.88</priority>
   </url>
   
-  <!-- Discussion - Fresh Content Signal -->
+  <url>
+    <loc>${baseUrl}/hims-success-stories.html</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  
+  <!-- Discussion/Forum Pages - Dynamic Content -->
   <url>
     <loc>${baseUrl}/discussion.html</loc>
     <lastmod>${currentDate}</lastmod>
@@ -177,7 +196,6 @@ class FAHIMSForumScraper {
     <priority>0.85</priority>
   </url>
   
-  <!-- Topics - Dynamic Content -->
   <url>
     <loc>${baseUrl}/topics.html</loc>
     <lastmod>${currentDate}</lastmod>
@@ -185,7 +203,7 @@ class FAHIMSForumScraper {
     <priority>0.85</priority>
   </url>
   
-  <!-- RSS Feed -->
+  <!-- RSS Feeds -->
   <url>
     <loc>${baseUrl}/feed.xml</loc>
     <lastmod>${currentDate}</lastmod>
@@ -196,7 +214,7 @@ class FAHIMSForumScraper {
 </urlset>`;
 
     fs.writeFileSync('sitemap.xml', sitemap);
-    console.log('✓ Enhanced sitemap.xml generated with keyword-optimized priorities');
+    console.log('✓ Enhanced sitemap.xml generated with 11 pages including new high-value content');
   }
 
   generateSitemapIndex() {
@@ -582,6 +600,24 @@ Optimization: Core Web Vitals, Mobile-First, Accessibility`;
     console.log('✓ PWA manifest.json generated');
   }
 
+  generateBrowserConfig() {
+    const browserConfig = `<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square70x70logo src="/mstile-70x70.png"/>
+            <square150x150logo src="/mstile-150x150.png"/>
+            <square310x310logo src="/mstile-310x310.png"/>
+            <wide310x150logo src="/mstile-310x150.png"/>
+            <TileColor>#1a365d</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>`;
+
+    fs.writeFileSync('browserconfig.xml', browserConfig);
+    console.log('✓ browserconfig.xml generated for Windows tiles');
+  }
+
   generateAdsTxt() {
     const adsTxt = `# ads.txt for faahims.rehab
 # FAA HIMS Program Professional Community
@@ -675,7 +711,10 @@ Optimization: Core Web Vitals, Mobile-First, Accessibility`;
 # Keyword-optimized aliases
 /hims-program /faa-hims-guide.html 200
 /medical-certification /pilot-medical-certification.html 200
-/hims-ame /pilot-medical-certification.html 200
+/hims-ame /hims-ame-directory.html 200
+/ame-directory /hims-ame-directory.html 200
+/treatment /hims-treatment-facilities.html 200
+/success /hims-success-stories.html 200
 /special-issuance /pilot-medical-certification.html 200
 /program-requirements /hims-requirements.html 200
 `;
@@ -694,7 +733,7 @@ Optimization: Core Web Vitals, Mobile-First, Accessibility`;
         longTail: this.longTailKeywords
       },
       seoOptimizations: {
-        sitemap: "✓ Generated with keyword-based priorities",
+        sitemap: "✓ Generated with keyword-based priorities - 11 pages",
         rss: "✓ Keyword-rich titles and descriptions",
         structuredData: "✓ Medical schema with keyword focus",
         meta: "✓ All pages optimized for target keywords",
@@ -703,7 +742,8 @@ Optimization: Core Web Vitals, Mobile-First, Accessibility`;
         headers: "✓ H1/H2/H3 keyword optimization",
         altText: "✓ Image alt text with keywords",
         canonicals: "✓ Proper canonical tags",
-        robots: "✓ Bot-friendly with selective blocking"
+        robots: "✓ Bot-friendly with selective blocking",
+        browserConfig: "✓ Windows tiles optimization"
       },
       competitorAnalysis: {
         targetRankings: [
@@ -713,7 +753,8 @@ Optimization: Core Web Vitals, Mobile-First, Accessibility`;
           "pilot medical certificate - Position goal: Top 10",
           "HIMS AME - Position goal: Top 5"
         ]
-      }
+      },
+      totalPages: 11
     };
 
     fs.writeFileSync('keyword-optimization-report.json', JSON.stringify(report, null, 2));
@@ -793,14 +834,12 @@ function createProfessionalIndex(scraper) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Primary Meta Tags - Optimized for "FAA HIMS Program" -->
     <title>FAA HIMS Program Community | Pilot Medical Certification Support 2025</title>
     <meta name="title" content="FAA HIMS Program Community | Pilot Medical Certification Support 2025">
     <meta name="description" content="Professional FAA HIMS program community for pilots seeking medical certification. Expert guidance on HIMS requirements, AME consultations, treatment, and returning to flight status.">
     <meta name="keywords" content="FAA HIMS program, pilot medical certification, HIMS AME, FAA special issuance, aviation medical examiner, pilot substance abuse recovery, medical certificate reinstatement, HIMS requirements, aviation medical certificate">
     <link rel="canonical" href="https://faahims.rehab/">
     
-    <!-- Enhanced SEO -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
     <meta name="author" content="FAA HIMS Professional Community">
@@ -808,7 +847,6 @@ function createProfessionalIndex(scraper) {
     <meta name="revisit-after" content="3 days">
     <meta name="distribution" content="global">
     
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://faahims.rehab/">
     <meta property="og:title" content="FAA HIMS Program Community - Pilot Medical Certification">
@@ -819,28 +857,23 @@ function createProfessionalIndex(scraper) {
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="FAA HIMS Program Community">
     
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://faahims.rehab/">
     <meta name="twitter:title" content="FAA HIMS Program - Pilot Medical Certification Community">
     <meta name="twitter:description" content="Expert support for pilots navigating FAA HIMS program requirements and medical certification.">
     <meta name="twitter:image" content="https://faahims.rehab/twitter-card.jpg">
     
-    <!-- Favicons & Manifest -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#1a365d">
     
-    <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://hims-victims.freeforums.net">
     <link rel="dns-prefetch" href="https://hims-victims.freeforums.net">
     
-    <!-- Alternate Links -->
     <link rel="alternate" type="application/rss+xml" title="FAA HIMS Program Updates" href="https://faahims.rehab/feed.xml">
     
-    <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -869,9 +902,7 @@ function createProfessionalIndex(scraper) {
     </script>
     
     <script>
-        // ===== REDIRECT TIMER CONTROL =====
-        const REDIRECT_ENABLED = false;  // Set to true to enable 12-second timer
-        // ==================================
+        const REDIRECT_ENABLED = false;
         
         (function() {
             if (!REDIRECT_ENABLED) {
@@ -933,7 +964,7 @@ function createProfessionalIndex(scraper) {
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
             line-height: 1.6; color: #2d3748; background: #fff;
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
@@ -944,30 +975,13 @@ function createProfessionalIndex(scraper) {
         }
         .header h1 { 
             font-size: 3em; margin-bottom: 20px; font-weight: 700;
-            line-height: 1.2;
         }
-        .header p { font-size: 1.3em; opacity: 0.95; margin-bottom: 10px; }
+        .header p { font-size: 1.3em; opacity: 0.95; }
         
         .build-info {
             background: #f7fafc; padding: 15px; text-align: center;
             font-size: 0.9em; color: #4a5568; font-family: monospace;
             border-bottom: 1px solid #e2e8f0;
-        }
-        
-        /* Internal Navigation for SEO */
-        .nav {
-            background: #f8f9fa; padding: 20px 0; border-bottom: 1px solid #e2e8f0;
-        }
-        .nav-links {
-            display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;
-        }
-        .nav-link {
-            color: #1a365d; text-decoration: none; font-weight: 600;
-            padding: 8px 16px; border-radius: 4px; transition: background 0.3s;
-        }
-        .nav-link:hover { background: #e2e8f0; }
-        .nav-link.primary {
-            background: #e6f7ff; color: #3182ce;
         }
         
         .redirect-notice { 
@@ -976,7 +990,7 @@ function createProfessionalIndex(scraper) {
             text-align: center; max-width: 800px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
-        .redirect-notice h2 { color: #1a365d; margin-bottom: 20px; font-size: 1.8em; }
+        .redirect-notice h2 { color: #1a365d; margin-bottom: 20px; }
         .redirect-notice .countdown {
             font-size: 1.5em; color: #2c5282; margin: 20px 0;
             font-weight: 700;
@@ -999,24 +1013,13 @@ function createProfessionalIndex(scraper) {
             border: 1px solid #e2e8f0; border-radius: 8px;
             border-left: 4px solid #3182ce;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .feature:hover { 
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        .feature h3 { 
-            color: #1a365d; margin-bottom: 15px; font-size: 1.3em;
-            font-weight: 600;
-        }
+        .feature h3 { color: #1a365d; margin-bottom: 15px; font-size: 1.3em; }
         .feature p { color: #4a5568; line-height: 1.7; }
         
         .stats { 
             background: #f8f9fa; padding: 60px 0; text-align: center;
             margin: 50px 0;
-        }
-        .stats h2 {
-            font-size: 2.2em; color: #1a365d; margin-bottom: 15px;
         }
         .stats-grid {
             display: grid;
@@ -1026,54 +1029,39 @@ function createProfessionalIndex(scraper) {
         .stat {
             background: white; padding: 30px; border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
         }
-        .stat:hover { transform: translateY(-5px); }
         .stat-number {
             font-size: 3em; font-weight: bold; color: #3182ce;
             margin-bottom: 10px;
         }
-        .stat-label { font-weight: 600; color: #555; font-size: 1.1em; }
+        .stat-label { font-weight: 600; color: #555; }
         
         .cta {
             text-align: center; padding: 60px 0;
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
         }
-        .cta h2 { color: #1a365d; margin-bottom: 20px; font-size: 2em; }
-        .cta p { font-size: 1.2em; margin: 20px 0; color: #555; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .cta h2 { color: #1a365d; margin-bottom: 20px; }
         .cta-button {
             display: inline-block; margin: 20px 10px;
             padding: 18px 40px; background: linear-gradient(135deg, #3182ce, #2c5282);
             color: white; text-decoration: none; border-radius: 8px;
             font-weight: 600; font-size: 1.1em;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(49, 130, 206, 0.3);
+            transition: transform 0.3s ease;
         }
-        .cta-button:hover { 
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(49, 130, 206, 0.4);
-        }
+        .cta-button:hover { transform: translateY(-3px); }
         .cta-button.secondary {
             background: linear-gradient(135deg, #38a169, #2f855a);
-            box-shadow: 0 4px 15px rgba(56, 161, 105, 0.3);
-        }
-        .cta-button.secondary:hover {
-            box-shadow: 0 6px 20px rgba(56, 161, 105, 0.4);
         }
         
         footer {
             background: linear-gradient(135deg, #1a365d, #2c5282);
             color: white; padding: 50px 0; text-align: center;
         }
-        footer h3 { font-size: 1.5em; margin-bottom: 15px; }
-        footer p { opacity: 0.9; margin: 10px 0; }
-        footer a { color: #a0aec0; text-decoration: none; font-weight: 600; transition: color 0.3s; }
-        footer a:hover { color: #ffffff; }
+        footer a { color: #a0aec0; text-decoration: none; font-weight: 600; }
         
         @media (max-width: 768px) {
             .header h1 { font-size: 2em; }
             .features { grid-template-columns: 1fr; }
-            .nav-links { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -1082,76 +1070,56 @@ function createProfessionalIndex(scraper) {
         <strong>System Update #${scraper.buildNumber}</strong> • Last updated: ${displayDate} UTC • Updated every 6 hours
     </div>
     
-    <!-- SEO Navigation -->
-    <nav class="nav" role="navigation" aria-label="Main navigation">
-        <div class="container">
-            <div class="nav-links">
-                <a href="/" class="nav-link" title="FAA HIMS Program Home">Home</a>
-                <a href="/faq.html" class="nav-link" title="HIMS Program FAQ">FAQ</a>
-                <a href="/faa-hims-guide.html" class="nav-link" title="Complete HIMS Guide">HIMS Guide</a>
-                <a href="/pilot-medical-certification.html" class="nav-link" title="Pilot Medical Certification">Certification</a>
-                <a href="/hims-requirements.html" class="nav-link" title="HIMS Requirements">Requirements</a>
-                <a href="/aviation-medical-recovery.html" class="nav-link" title="Aviation Recovery">Recovery</a>
-                <a href="https://hims-victims.freeforums.net" class="nav-link primary" title="Join HIMS Community Forum">Forum →</a>
-            </div>
-        </div>
-    </nav>
-    
-    <header class="header" role="banner">
+    <div class="header">
         <div class="container">
             <h1>FAA HIMS Program Professional Community</h1>
-            <p>Expert Guidance on Pilot Medical Certification & Aviation Career Recovery</p>
-            <p style="font-size:1.1em;margin-top:10px;opacity:0.9">Supporting Pilots Through HIMS Requirements Since 2024</p>
+            <p>Expert guidance • Real pilot experiences • Medical certification support</p>
         </div>
-    </header>
+    </div>
     
-    <main class="content" role="main">
+    <div class="content">
         <div class="container">
             <div class="redirect-notice">
-                <h2>Connect with FAA HIMS Professionals</h2>
-                <p style="font-size:1.1em;color:#4a5568;margin:15px 0">Join our active community forum for real-time support and guidance</p>
+                <h2>Connecting to Active Community</h2>
+                <p>Professional FAA HIMS community forum...</p>
                 <div class="countdown" id="countdown-display">
                     <span id="countdown-seconds">12</span> seconds
                 </div>
-                <p style="margin-top:15px;color:#4a5568">Aviation medical practitioners, HIMS-approved AMEs, and experienced pilots sharing knowledge about medical certification and program requirements</p>
+                <p style="margin-top:15px;color:#4a5568">Connect with aviation medical practitioners, HIMS-approved AMEs, and experienced program participants.</p>
             </div>
             
-            <section aria-labelledby="features-heading">
-                <h2 id="features-heading" style="text-align:center;font-size:2.2em;color:#1a365d;margin-bottom:40px">Why Join the FAA HIMS Community?</h2>
-                <div class="features">
-                    <article class="feature">
-                        <h3>Professional HIMS Network</h3>
-                        <p>Connect with 600+ aviation medical practitioners, HIMS participants, and certified pilots navigating FAA HIMS program requirements and medical certification procedures.</p>
-                    </article>
-                    <article class="feature">
-                        <h3>Expert HIMS AME Guidance</h3>
-                        <p>Access insights from HIMS-approved Aviation Medical Examiners, certified substance abuse professionals, aviation psychologists, and successful HIMS program graduates.</p>
-                    </article>
-                    <article class="feature">
-                        <h3>Comprehensive HIMS Resources</h3>
-                        <p>FAA HIMS program requirements, treatment facility recommendations, medical certification procedures, testing protocols, monitoring requirements, and proven success strategies.</p>
-                    </article>
-                    <article class="feature">
-                        <h3>Active HIMS Discussions</h3>
-                        <p>Engage in daily discussions about treatment experiences, HIMS AME consultations, monitoring requirements, career considerations, and evidence-based recovery strategies for pilots.</p>
-                    </article>
-                    <article class="feature">
-                        <h3>Confidential Support System</h3>
-                        <p>Share concerns and receive professional support in a confidential environment from aviation professionals who understand the unique challenges of FAA medical certification.</p>
-                    </article>
-                    <article class="feature">
-                        <h3>Return to Flight Success</h3>
-                        <p>Learn from pilots who successfully navigated the HIMS program and returned to commercial aviation, corporate flying, and general aviation careers with reinstated medical certificates.</p>
-                    </article>
+            <div class="features">
+                <div class="feature">
+                    <h3>Professional Community</h3>
+                    <p>Connect with 600+ aviation medical practitioners, HIMS participants, and certified pilots navigating FAA medical certification requirements.</p>
                 </div>
-            </section>
+                <div class="feature">
+                    <h3>Expert Guidance</h3>
+                    <p>Access insights from HIMS-approved AMEs, certified professionals, aviation psychologists, and successful program graduates.</p>
+                </div>
+                <div class="feature">
+                    <h3>Comprehensive Resources</h3>
+                    <p>Program requirements, treatment facility guidance, medical certification procedures, testing protocols, and success strategies.</p>
+                </div>
+                <div class="feature">
+                    <h3>Active Discussions</h3>
+                    <p>Engage in discussions about treatment experiences, AME consultations, monitoring requirements, career considerations, and recovery strategies.</p>
+                </div>
+                <div class="feature">
+                    <h3>Confidential Support</h3>
+                    <p>Share concerns and receive support in a confidential environment from those who understand aviation medical certification challenges.</p>
+                </div>
+                <div class="feature">
+                    <h3>Return to Flight</h3>
+                    <p>Learn from pilots who successfully navigated HIMS and returned to commercial, corporate, and general aviation careers.</p>
+                </div>
+            </div>
         </div>
-    </main>
+    </div>
     
-    <section class="stats" aria-labelledby="stats-heading">
+    <div class="stats">
         <div class="container">
-            <h2 id="stats-heading">Professional FAA HIMS Network Statistics</h2>
-            <p style="font-size:1.2em;color:#555;margin:15px 0">Trusted by aviation professionals nationwide</p>
+            <h2>Professional FAA HIMS Network</h2>
             <div class="stats-grid">
                 <div class="stat">
                     <div class="stat-number">600+</div>
@@ -1159,45 +1127,39 @@ function createProfessionalIndex(scraper) {
                 </div>
                 <div class="stat">
                     <div class="stat-number">24/7</div>
-                    <div class="stat-label">Expert Support Available</div>
+                    <div class="stat-label">Expert Support</div>
                 </div>
                 <div class="stat">
                     <div class="stat-number">95%+</div>
-                    <div class="stat-label">Program Success Rate</div>
+                    <div class="stat-label">Success Rate</div>
                 </div>
                 <div class="stat">
                     <div class="stat-number">Daily</div>
-                    <div class="stat-label">New HIMS Discussions</div>
+                    <div class="stat-label">New Discussions</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     
-    <section class="cta" aria-labelledby="cta-heading">
+    <div class="cta">
         <div class="container">
-            <h2 id="cta-heading">Join the FAA HIMS Professional Community Today</h2>
-            <p>Get expert guidance on pilot medical certification, HIMS program requirements, AME consultations, treatment options, and returning to flight status</p>
-            <a href="https://login.proboards.com/register/7088425" class="cta-button" title="Register for FAA HIMS Community">Join Professional Community</a>
-            <a href="https://hims-victims.freeforums.net" class="cta-button secondary" title="Browse HIMS Forum">Browse HIMS Forum</a>
+            <h2>Connect with FAA HIMS Professionals</h2>
+            <p style="font-size:1.2em;margin:20px 0;color:#555">Professional community for aviation medical practitioners and pilots</p>
+            <a href="https://login.proboards.com/register/7088425" class="cta-button">Join Professional Community</a>
+            <a href="https://hims-victims.freeforums.net" class="cta-button secondary">Browse Forum</a>
         </div>
-    </section>
+    </div>
     
-    <footer role="contentinfo">
+    <footer>
         <div class="container">
-            <h3>FAA HIMS Program Professional Community</h3>
-            <p style="font-size:1.1em;margin:15px 0">
-                <a href="https://hims-victims.freeforums.net" title="Visit HIMS Community Forum">hims-victims.freeforums.net</a>
+            <p style="font-size:1.2em;margin-bottom:15px"><strong>Professional FAA HIMS Community</strong></p>
+            <p style="font-size:1.1em;margin-bottom:20px">
+                <a href="https://hims-victims.freeforums.net">hims-victims.freeforums.net</a>
             </p>
-            <p style="margin:20px 0">
-                Expert guidance on FAA HIMS program requirements • Pilot medical certification support • HIMS AME consultations • Evidence-based recovery resources
+            <p style="opacity:0.8;margin-bottom:10px">
+                Professional guidance • Medical certification support • Evidence-based resources
             </p>
-            <p style="margin:15px 0">
-                <a href="/faq.html" title="HIMS Program FAQ">FAQ</a> • 
-                <a href="/faa-hims-guide.html" title="HIMS Program Guide">HIMS Guide</a> • 
-                <a href="/pilot-medical-certification.html" title="Medical Certification">Certification</a> • 
-                <a href="/hims-requirements.html" title="HIMS Requirements">Requirements</a>
-            </p>
-            <p style="opacity:0.7;font-size:0.9em;font-family:monospace;margin-top:25px">
+            <p style="opacity:0.7;font-size:0.9em;font-family:monospace">
                 Build #${scraper.buildNumber} • ${displayDate} UTC
             </p>
         </div>
@@ -1206,7 +1168,7 @@ function createProfessionalIndex(scraper) {
 </html>`;
 
   fs.writeFileSync('index.html', html);
-  console.log('✓ Keyword-optimized professional index.html created');
+  console.log('✓ Professional index.html created');
 }
 
 async function main() {
@@ -1238,6 +1200,7 @@ async function main() {
   scraper.generateSecurityTxt();
   scraper.generateHumansTxt();
   scraper.generateManifest();
+  scraper.generateBrowserConfig();
   scraper.generateAdsTxt();
   scraper.generateHeadersFile();
   scraper.generateRedirectsFile();
@@ -1271,13 +1234,14 @@ async function main() {
   console.log(`Total files: ${performanceReport.totalFiles}`);
   console.log(`Average size: ${performanceReport.averageSize}KB`);
   console.log(`\n✅ SEO OPTIMIZATIONS FOR "FAA HIMS PROGRAM" KEYWORDS:`);
-  console.log(`   ✓ Keyword-optimized sitemap with strategic priorities`);
+  console.log(`   ✓ Keyword-optimized sitemap with 11 pages`);
   console.log(`   ✓ Primary keywords in titles, H1s, meta descriptions`);
   console.log(`   ✓ Long-tail keyword targeting in content`);
   console.log(`   ✓ Internal linking with keyword-rich anchors`);
   console.log(`   ✓ Schema.org medical markup`);
   console.log(`   ✓ RSS feed with keyword-rich descriptions`);
   console.log(`   ✓ Clean URLs with keyword inclusion`);
+  console.log(`   ✓ browserconfig.xml for Windows tiles`);
   console.log(`   ✓ Mobile-first responsive design`);
   console.log(`   ✓ Core Web Vitals optimized`);
   console.log(`   ✓ Security headers for trust signals`);
