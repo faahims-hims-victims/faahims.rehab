@@ -406,10 +406,7 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
                 Professional guidance • Medical certification support • Evidence-based resources • Updated every 6 hours
             </p>
             <p style="opacity: 0.75; font-size: 0.9em; font-family: monospace;">
-                Build #${buildNumber} • ${displayDate} UTC
-            </p>
-            <p style="opacity: 0.8; font-size: 0.95em; max-width: 600px; margin: 15px auto 0;">
-                Professional peer support resource for aviation practitioners navigating FAA HIMS program requirements. Not affiliated with the FAA. Always follow official FAA guidance and consult qualified aviation medical professionals.
+                Build #${buildNumber} • Last updated: ${displayDate} UTC
             </p>
         </div>
     </footer>
@@ -417,7 +414,203 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
 </html>`;
 
   fs.writeFileSync(filename, html);
-  console.log(`Created SEO landing page: ${filename} - Build #${buildNumber}`);
+  console.log(`Created ${filename} - SEO landing page with dynamic timestamps`);
 }
 
-// Rest of the file stays the same...
+// Create comprehensive FAA HIMS Guide page
+createSEOLandingPage(
+  'faa-hims-guide.html',
+  'Complete FAA HIMS Program Guide 2025 | Requirements & Procedures',
+  'Comprehensive guide to the FAA HIMS program including requirements, procedures, timeline, costs, and success strategies. Expert guidance from aviation medical practitioners and HIMS participants.',
+  'FAA HIMS program guide, HIMS requirements, pilot medical certification process, aviation medical evaluation, HIMS program timeline, treatment requirements, AME consultation, medical certificate reinstatement',
+  `
+    <div class="features">
+        <div class="feature">
+            <h3 data-icon="📋">Program Overview</h3>
+            <p>The FAA HIMS (Human Intervention Motivation Study) Program provides a structured pathway for pilots and aviation professionals to regain their medical certificates following substance abuse issues. Established by the Federal Aviation Administration, this program combines medical evaluation, approved treatment, and ongoing monitoring to ensure aviation safety while supporting professional recovery.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="⏱️">Timeline & Process</h3>
+            <p>The HIMS program typically spans 2-5 years and includes: Initial evaluation by HIMS-approved Aviation Medical Examiner (AME), completion of FAA-approved treatment program (3-12 months), ongoing monitoring with regular testing, periodic evaluations, and gradual return to flight duties. Individual timelines vary based on specific circumstances and compliance.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="✅">Requirements</h3>
+            <p>Key requirements include: Complete abstinence from prohibited substances, attendance at FAA-approved treatment facility, regular drug and alcohol testing, ongoing participation in support programs, periodic evaluations by HIMS AME, compliance with all monitoring requirements, and demonstration of sustained recovery over extended period.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="💰">Cost Considerations</h3>
+            <p>Program costs vary significantly based on individual circumstances: Initial evaluation ($500-2,000), treatment program ($5,000-50,000+), ongoing monitoring ($200-500/month), periodic AME consultations ($300-800 each), testing requirements ($50-200 per test), and related travel expenses. Many pilots invest $20,000-75,000 total over the program duration.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="🎯">Success Strategies</h3>
+            <p>Maximize success through: Early engagement with HIMS AME, complete transparency with FAA and medical professionals, diligent compliance with all requirements, active participation in recovery support, maintaining detailed documentation, seeking guidance from experienced HIMS participants, and staying informed about program updates and requirements.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="🤝">Professional Support</h3>
+            <p>Access professional guidance from: HIMS-approved Aviation Medical Examiners, experienced aviation medical practitioners, certified substance abuse professionals, aviation attorney specialists, peer support from program graduates, and active HIMS community forums providing real-world insights and experiences.</p>
+        </div>
+    </div>
+  `,
+  [
+    'FAA HIMS program',
+    'pilot medical certification',
+    'aviation medical evaluation',
+    'HIMS requirements',
+    'medical certificate reinstatement',
+    'aviation substance abuse program',
+    'HIMS AME consultation',
+    'pilot rehabilitation',
+    'FAA medical certification process'
+  ]
+);
+
+// Create Pilot Medical Certification page
+createSEOLandingPage(
+  'pilot-medical-certification.html',
+  'Pilot Medical Certification & FAA HIMS Program | Aviation Medical Support',
+  'Expert guidance on pilot medical certification, FAA HIMS program participation, medical certificate reinstatement, and aviation medical evaluation procedures. Professional support from experienced AMEs and program participants.',
+  'pilot medical certification, FAA medical certificate, aviation medical examination, HIMS medical evaluation, medical certificate reinstatement, aviation medical requirements, AME consultation, pilot medical standards',
+  `
+    <div class="features">
+        <div class="feature">
+            <h3 data-icon="🏥">Medical Certification Process</h3>
+            <p>Understanding the aviation medical certification process is essential for all pilots. The FAA requires regular medical examinations conducted by Aviation Medical Examiners (AMEs) to ensure pilots meet medical standards. For pilots in the HIMS program, this process involves additional evaluation steps, specialized assessments, and ongoing monitoring to demonstrate fitness for flight duties while maintaining recovery.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="📊">Evaluation Requirements</h3>
+            <p>HIMS medical evaluations include comprehensive assessments: Complete medical history review, physical examination by HIMS AME, psychological evaluation, substance abuse assessment, laboratory testing, detailed documentation of treatment and recovery, evaluation of support systems, and assessment of professional commitment to sustained recovery and aviation safety.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="🔄">Reinstatement Path</h3>
+            <p>The medical certificate reinstatement process requires: Completion of approved treatment program, demonstrated sustained abstinence, regular monitoring compliance, positive evaluations from HIMS AME, documentation of recovery progress, evidence of lifestyle changes, participation in ongoing support, and clearance from FAA medical certification division based on comprehensive evaluation.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="👨‍⚕️">HIMS AME Selection</h3>
+            <p>Selecting a HIMS-approved Aviation Medical Examiner is crucial. Look for: FAA HIMS certification, experience with aviation professionals, understanding of pilot career concerns, accessibility for regular evaluations, reputation among HIMS participants, communication with FAA medical certification, and commitment to supporting pilot recovery while maintaining safety standards.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="📝">Documentation Standards</h3>
+            <p>Maintaining comprehensive documentation is essential: Complete medical records, treatment program documentation, testing results and compliance records, AME evaluation reports, support group participation logs, employment status updates, and any relevant correspondence with FAA. Organized documentation facilitates smoother evaluation processes and demonstrates program compliance.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="💼">Career Considerations</h3>
+            <p>Navigate career implications through: Understanding airline and operator policies, maintaining communication with employers when appropriate, exploring temporary alternative aviation roles, planning financial considerations during process, building support within aviation community, staying current with professional requirements, and preparing for successful return to flight operations.</p>
+        </div>
+    </div>
+  `,
+  [
+    'pilot medical certification',
+    'FAA medical certificate',
+    'aviation medical exam',
+    'HIMS AME',
+    'medical certificate reinstatement',
+    'aviation medical evaluation',
+    'pilot medical standards',
+    'FAA medical requirements',
+    'aviation medical examiner'
+  ]
+);
+
+// Create HIMS Requirements page
+createSEOLandingPage(
+  'hims-requirements.html',
+  'FAA HIMS Program Requirements 2025 | Comprehensive Compliance Guide',
+  'Detailed information on FAA HIMS program requirements including treatment standards, monitoring protocols, testing procedures, and compliance guidelines. Professional guidance from aviation medical experts and program participants.',
+  'HIMS program requirements, FAA HIMS compliance, aviation medical standards, HIMS monitoring requirements, substance abuse testing, treatment program requirements, HIMS evaluation standards',
+  `
+    <div class="features">
+        <div class="feature">
+            <h3 data-icon="📋">Core Program Requirements</h3>
+            <p>The FAA HIMS program establishes specific requirements for all participants: Complete abstinence from alcohol and prohibited substances, participation in FAA-approved treatment program, compliance with all monitoring and testing protocols, regular evaluations by HIMS AME, active engagement in aftercare and support programs, maintenance of detailed recovery documentation, and ongoing demonstration of commitment to recovery and aviation safety.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="🔬">Testing Protocols</h3>
+            <p>HIMS participants must comply with rigorous testing requirements: Random drug and alcohol testing conducted through approved laboratories, specific testing frequencies based on program phase, immediate notification systems for testing requests, strict adherence to collection procedures, understanding of detection windows and testing methodologies, proper documentation of all test results, and rapid response to any testing discrepancies or concerns.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="🏥">Treatment Standards</h3>
+            <p>FAA-approved treatment programs must meet specific criteria: Accreditation by recognized addiction treatment organizations, specialized understanding of aviation professionals, evidence-based treatment methodologies, comprehensive assessment and individualized treatment plans, family involvement components when appropriate, aftercare planning, and regular progress reporting to HIMS AME and FAA medical certification.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="📊">Monitoring Requirements</h3>
+            <p>Ongoing monitoring is central to HIMS program: Regular check-ins with HIMS AME, participation in monitoring contracts, compliance with testing schedules, attendance at support group meetings, documentation of recovery activities, reporting any relevant life changes or stressors, maintaining contact with program coordinators, and demonstration of sustained engagement with recovery support systems.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="⚖️">Compliance Standards</h3>
+            <p>Maintaining program compliance requires: Perfect attendance at scheduled appointments and evaluations, immediate response to testing notifications, complete abstinence from all prohibited substances, honest and transparent communication with HIMS team, timely submission of required documentation, adherence to all program guidelines and restrictions, and proactive problem-solving when challenges arise.</p>
+        </div>
+        <div class="feature">
+            ">
+            <h3 data-icon="📈">Progress Milestones</h3>
+            <p>The HIMS program includes key milestones: Initial stabilization and treatment completion (3-6 months), demonstrated sustained abstinence (6-12 months), return to flight duties with restrictions (12-18 months), gradual reduction in monitoring intensity (18-36 months), and eventual transition to standard medical certification requirements (typically 2-5 years based on individual progress and FAA determination).</p>
+        </div>
+    </div>
+  `,
+  [
+    'HIMS program requirements',
+    'FAA HIMS compliance',
+    'aviation medical monitoring',
+    'substance abuse testing pilots',
+    'HIMS treatment standards',
+    'FAA medical requirements',
+    'aviation testing protocols',
+    'HIMS program compliance',
+    'pilot monitoring requirements'
+  ]
+);
+
+// Create Aviation Medical Recovery page
+createSEOLandingPage(
+  'aviation-medical-recovery.html',
+  'Aviation Medical Recovery & Rehabilitation | FAA HIMS Support',
+  'Professional guidance for aviation medical recovery and rehabilitation through the FAA HIMS program. Expert support from medical practitioners, peer mentors, and experienced program graduates for successful return to flight operations.',
+  'aviation medical recovery, pilot rehabilitation, substance abuse recovery pilots, aviation professional support, HIMS recovery program, medical certificate restoration, aviation career recovery',
+  `
+    <div class="features">
+        <div class="feature">
+            <h3 data-icon="🌟">Recovery Journey</h3>
+            <p>The aviation medical recovery journey through HIMS is comprehensive and transformative: Initial acknowledgment and assessment of substance abuse issues, engagement with FAA-approved treatment programs, development of sustainable recovery strategies, rebuilding trust with FAA and aviation community, gradual return to flight operations, and long-term maintenance of recovery and professional success in aviation career.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="🧠">Psychological Support</h3>
+            <p>Mental health is integral to aviation recovery: Access to aviation-specialized therapists and counselors, cognitive-behavioral therapy for substance abuse, stress management and coping skills development, addressing underlying psychological factors, building emotional resilience, maintaining mental wellness during recovery, and ongoing psychological support throughout HIMS program participation and beyond.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="👥">Peer Support Networks</h3>
+            <p>Connection with peers provides invaluable support: Participation in aviation-specific support groups, mentorship from successful HIMS graduates, shared experiences with fellow aviators in recovery, understanding of unique aviation industry stressors, professional networking during recovery journey, accountability partnerships, and long-term recovery community involvement for sustained success.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="💼">Career Transition</h3>
+            <p>Managing career during recovery requires planning: Understanding employment implications during HIMS participation, exploring alternative aviation roles during treatment, maintaining professional certifications and currency, financial planning for program duration, communication strategies with employers when appropriate, preparing for return to flight operations, and long-term career development post-recovery.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="🏠">Family & Relationships</h3>
+            <p>Recovery impacts personal relationships significantly: Family education about HIMS program and recovery process, rebuilding trust with loved ones, involving family in treatment when appropriate, addressing relationship issues affecting recovery, developing healthy communication patterns, balancing recovery priorities with family needs, and building sustainable support systems beyond aviation community.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="🎯">Long-term Success</h3>
+            <p>Sustained recovery requires ongoing commitment: Maintaining abstinence through life challenges and stressors, continued participation in recovery support activities, regular self-assessment and reflection, building fulfilling life beyond aviation identity, developing healthy stress management strategies, staying connected with recovery community, and serving as mentor for others entering HIMS program.</p>
+        </div>
+    </div>
+    
+    <div style="background: #fff3cd; border-left: 5px solid #ffc107; padding: 25px; margin: 40px 0; border-radius: 8px;">
+        <h3 style="color: #856404; margin-bottom: 15px;">🤝 Join Our Recovery Community</h3>
+        <p style="color: #856404; line-height: 1.7;">Connect with hundreds of aviation professionals who have successfully navigated the HIMS program. Share experiences, get answers to your questions, and receive support from those who understand the unique challenges of aviation recovery. Our community provides professional guidance, peer mentorship, and evidence-based resources for every stage of your HIMS journey.</p>
+    </div>
+  `,
+  [
+    'aviation medical recovery',
+    'pilot rehabilitation program',
+    'substance abuse recovery aviation',
+    'HIMS recovery support',
+    'aviation career recovery',
+    'pilot mental health',
+    'aviation professional support',
+    'medical certificate restoration',
+    'aviation recovery community'
+  ]
+);
+
+console.log('All SEO landing pages created successfully with dynamic timestamps');
+console.log(`Total pages created: 4`);
+console.log(`Build #${buildNumber} completed at ${displayDate} UTC`);
