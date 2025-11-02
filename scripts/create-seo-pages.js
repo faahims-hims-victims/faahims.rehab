@@ -417,6 +417,88 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
   console.log(`Created ${filename} - SEO landing page with dynamic timestamps`);
 }
 
+// CREATE INDEX.HTML - Homepage
+createSEOLandingPage(
+  'index.html',
+  'FAA HIMS Program Professional Community | Aviation Medical Certification Support',
+  'Professional community for aviation medical practitioners and certified pilots navigating FAA HIMS program requirements. Expert guidance, case studies, and evidence-based resources for medical certification and recovery support.',
+  'FAA HIMS program, pilot medical certification, aviation medical forum, HIMS discussion, medical certificate reinstatement, pilot rehabilitation, aviation psychology, HIMS AME, substance abuse recovery pilots, aviation professional support',
+  `
+    <div class="features">
+        <div class="feature">
+            <h3 data-icon="🏆">Professional Community</h3>
+            <p>Welcome to the leading professional community for aviation medical practitioners, HIMS program participants, and certified pilots navigating FAA medical certification requirements. Our community of 600+ aviation professionals provides evidence-based guidance, peer support, and real-world insights from those who have successfully completed the HIMS program and returned to flight operations.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="📚">Comprehensive Resources</h3>
+            <p>Access comprehensive resources covering every aspect of the FAA HIMS program: detailed program requirements and procedures, treatment facility evaluations and recommendations, Aviation Medical Examiner (AME) selection guidance, medical certification procedures and timelines, testing and monitoring protocols, career management strategies, and long-term recovery support systems.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="👨‍⚕️">Expert Guidance</h3>
+            <p>Connect with experienced aviation medical professionals including HIMS-approved AMEs, certified substance abuse professionals, aviation psychologists, program administrators, and successful HIMS graduates who provide professional mentorship and guidance based on documented experiences navigating the program and returning to successful aviation careers.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="💬">Active Discussions</h3>
+            <p>Engage in professional discussions about treatment facility experiences, medical certification processes, AME consultations, monitoring requirements, career considerations, family support, recovery strategies, regulatory updates, and best practices shared by community members at various stages of the HIMS program journey.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="🔒">Confidential Support</h3>
+            <p>Our professional community maintains strict confidentiality standards while providing open discussion of HIMS program experiences. Share concerns, ask questions, and receive support from those who understand the unique challenges of aviation medical certification and substance abuse recovery in the context of professional aviation careers.</p>
+        </div>
+        <div class="feature">
+            <h3 data-icon="✈️">Return to Flight</h3>
+            <p>Learn from pilots who have successfully navigated the HIMS program and returned to commercial aviation, corporate flight operations, and general aviation careers. Understand realistic timelines, program milestones, certification requirements, and strategies for maintaining long-term recovery while building successful aviation careers.</p>
+        </div>
+    </div>
+    
+    <div style="background: #e6f7ff; border-left: 5px solid #1890ff; padding: 30px; margin: 50px 0; border-radius: 8px;">
+        <h2 style="color: #0050b3; margin-bottom: 20px;">🎯 Why Join Our Community?</h2>
+        <ul style="color: #0050b3; line-height: 2; font-size: 1.1em;">
+            <li><strong>Real Experiences:</strong> Learn from pilots who have completed the HIMS program</li>
+            <li><strong>Professional Guidance:</strong> Access insights from HIMS AMEs and medical practitioners</li>
+            <li><strong>Current Information:</strong> Stay updated on program requirements and FAA policies</li>
+            <li><strong>Peer Support:</strong> Connect with aviation professionals at similar program stages</li>
+            <li><strong>Evidence-Based Resources:</strong> Access documented success strategies and best practices</li>
+            <li><strong>24/7 Access:</strong> Get support and answers whenever you need them</li>
+        </ul>
+    </div>
+    
+    <div style="background: #f0f0f0; padding: 40px; border-radius: 8px; margin: 50px 0;">
+        <h2 style="text-align: center; color: #1a365d; margin-bottom: 30px;">Recent Community Topics</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #3182ce;">
+                <h4 style="color: #1a365d; margin-bottom: 10px;">Treatment Facility Evaluations</h4>
+                <p>Members discuss experiences at various FAA-approved treatment programs, sharing insights on program structures, costs, and outcomes.</p>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #3182ce;">
+                <h4 style="color: #1a365d; margin-bottom: 10px;">AME Selection & Consultation</h4>
+                <p>Guidance on selecting HIMS-approved Aviation Medical Examiners and preparing for evaluations throughout the program.</p>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #3182ce;">
+                <h4 style="color: #1a365d; margin-bottom: 10px;">Career Management Strategies</h4>
+                <p>Professional advice on navigating employment considerations, financial planning, and career transitions during HIMS participation.</p>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #3182ce;">
+                <h4 style="color: #1a365d; margin-bottom: 10px;">Success Stories & Milestones</h4>
+                <p>Celebrating members who achieve program milestones, regain medical certificates, and return to successful aviation careers.</p>
+            </div>
+        </div>
+    </div>
+  `,
+  [
+    'FAA HIMS program',
+    'pilot medical certification',
+    'aviation medical community',
+    'HIMS discussion forum',
+    'medical certificate reinstatement',
+    'pilot rehabilitation support',
+    'aviation substance abuse recovery',
+    'HIMS AME guidance',
+    'aviation professional support',
+    'pilot recovery community'
+  ]
+);
+
 // Create comprehensive FAA HIMS Guide page
 createSEOLandingPage(
   'faa-hims-guide.html',
@@ -540,7 +622,6 @@ createSEOLandingPage(
             <p>Maintaining program compliance requires: Perfect attendance at scheduled appointments and evaluations, immediate response to testing notifications, complete abstinence from all prohibited substances, honest and transparent communication with HIMS team, timely submission of required documentation, adherence to all program guidelines and restrictions, and proactive problem-solving when challenges arise.</p>
         </div>
         <div class="feature">
-            ">
             <h3 data-icon="📈">Progress Milestones</h3>
             <p>The HIMS program includes key milestones: Initial stabilization and treatment completion (3-6 months), demonstrated sustained abstinence (6-12 months), return to flight duties with restrictions (12-18 months), gradual reduction in monitoring intensity (18-36 months), and eventual transition to standard medical certification requirements (typically 2-5 years based on individual progress and FAA determination).</p>
         </div>
@@ -612,5 +693,5 @@ createSEOLandingPage(
 );
 
 console.log('All SEO landing pages created successfully with dynamic timestamps');
-console.log(`Total pages created: 4`);
+console.log(`Total pages created: 5 (including index.html)`);
 console.log(`Build #${buildNumber} completed at ${displayDate} UTC`);
