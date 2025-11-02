@@ -29,7 +29,6 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
     <meta property="og:description" content="${description}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://faahims.rehab/${filename}">
-    <meta property="og:site_name" content="FAA HIMS Program Community">
     <meta property="og:updated_time" content="${currentDateTime}">
     
     <script type="application/ld+json">
@@ -153,6 +152,19 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
             transform: translateY(-4px);
         }
         
+        .cta-secondary {
+            background: linear-gradient(135deg, #38a169, #2f855a); 
+            color: white; padding: 18px 35px; 
+            text-decoration: none; border-radius: 8px; 
+            font-weight: 600; font-size: 1.1em;
+            display: inline-block; margin: 15px 10px;
+            transition: all 0.3s ease;
+        }
+        .cta-secondary:hover {
+            background: linear-gradient(135deg, #2f855a, #276749);
+            transform: translateY(-3px);
+        }
+        
         .stats-showcase { 
             background: #f8f9fa; padding: 60px 0; text-align: center;
             margin: 50px 0;
@@ -173,37 +185,9 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
         }
         .stat-label { font-weight: 600; color: #555; font-size: 1.1em; }
         
-        .internal-navigation { 
-            background: #f7fafc; padding: 35px; border-radius: 8px; 
-            margin: 40px 0; border-left: 5px solid #3182ce;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-        }
-        .internal-navigation h3 { 
-            color: #1a365d; margin-bottom: 25px; font-size: 1.3em;
-        }
-        .nav-grid { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px; margin-top: 20px;
-        }
-        .nav-item { 
-            background: white; padding: 15px 20px; border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease;
-        }
-        .nav-item:hover { transform: translateY(-2px); }
-        .nav-item a { 
-            color: #3182ce; text-decoration: none; font-weight: 600;
-            display: flex; align-items: center;
-        }
-        .nav-item a:hover { color: #2c5282; }
-        .nav-item a::before { 
-            content: '→'; margin-right: 8px; color: #38a169; 
-        }
-        
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5em; }
             .features { grid-template-columns: 1fr; }
-            .nav-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -230,36 +214,6 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
     <section class="content-section">
         <div class="container">
             ${content}
-            
-            <div class="internal-navigation">
-                <h3>Comprehensive FAA HIMS Resources</h3>
-                <div class="nav-grid">
-                    <div class="nav-item">
-                        <a href="/">FAA HIMS Community Home</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="/discussion.html">General Discussion Forum</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="/join.html">Join Professional Community</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="/topics.html">Recent HIMS Topics</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="/faa-hims-guide.html">Complete Program Guide</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="/pilot-medical-certification.html">Medical Certification</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="/hims-requirements.html">Program Requirements</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="/aviation-medical-recovery.html">Medical Recovery</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -291,7 +245,8 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
         <div class="container">
             <h2 style="margin-bottom:25px;color:#1a365d">Connect with FAA HIMS Professionals</h2>
             <p style="font-size:1.3em;margin-bottom:35px;color:#555">Professional community for aviation medical practitioners and pilots</p>
-            <a href="https://hims-victims.freeforums.net/register" class="cta-primary">Join Professional Community</a>
+            <a href="https://login.proboards.com/register/7088425" class="cta-primary">Join Professional Community</a>
+            <a href="https://hims-victims.freeforums.net" class="cta-secondary">Browse Forum</a>
         </div>
     </section>
 
