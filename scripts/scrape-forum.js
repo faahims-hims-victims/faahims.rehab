@@ -1170,21 +1170,21 @@ function getPageSEOInfo(pageType) {
     return {
       title: 'Join FAA HIMS Program Professional Community | Aviation Medical Certification',
       description: 'Access professional community of aviation medical practitioners and certified pilots discussing FAA HIMS program requirements, medical certification procedures, and evidence-based guidance.',
-      slug: 'join'
+      slug: 'join.html'
     };
   }
   if (pageType.includes('discussion')) {
     return {
       title: 'FAA HIMS Program Professional Discussion | Aviation Medical Certification Forum',
       description: 'Professional discussions among aviation medical practitioners and certified pilots regarding FAA HIMS program experiences, medical certification procedures, and regulatory compliance.',
-      slug: 'discussion'
+      slug: 'discussion.html'
     };
   }
   if (pageType.includes('topics')) {
     return {
       title: 'Recent FAA HIMS Professional Topics | Latest Aviation Medical Discussions',
       description: 'Latest professional discussions from aviation medical practitioners and certified pilots covering FAA HIMS program procedures, certification processes, and regulatory updates.',
-      slug: 'topics'
+      slug: 'topics.html'
     };
   }
   return {
