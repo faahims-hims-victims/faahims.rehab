@@ -346,6 +346,9 @@ function createProfessionalIndex(scraper) {
             transition: transform 0.3s ease;
         }
         .cta-button:hover { transform: translateY(-3px); }
+        .cta-button.secondary {
+            background: linear-gradient(135deg, #38a169, #2f855a);
+        }
         
         footer {
             background: linear-gradient(135deg, #1a365d, #2c5282);
@@ -439,8 +442,8 @@ function createProfessionalIndex(scraper) {
         <div class="container">
             <h2>Connect with FAA HIMS Professionals</h2>
             <p style="font-size:1.2em;margin:20px 0;color:#555">Professional community for aviation medical practitioners and pilots</p>
-            <a href="https://hims-victims.freeforums.net/register" class="cta-button">Join Professional Community</a>
-            <a href="https://hims-victims.freeforums.net" class="cta-button" style="background:linear-gradient(135deg,#38a169,#2f855a)">Browse Forum</a>
+            <a href="https://login.proboards.com/register/7088425" class="cta-button">Join Professional Community</a>
+            <a href="https://hims-victims.freeforums.net" class="cta-button secondary">Browse Forum</a>
         </div>
     </div>
     
