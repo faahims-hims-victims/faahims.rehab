@@ -2,7 +2,7 @@ name: FAA HIMS SEO Optimization & Forum Mirror
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Every 6 hours for fresh content
+    - cron: '0 */6 * * *'
   workflow_dispatch:
   push:
     branches: [ main ]
@@ -34,8 +34,7 @@ jobs:
     
     - name: Clean old generated files
       run: |
-        echo "Removing old HTML/XML files to force regeneration..."
-        rm -f *.html *.xml *.json
+        rm -f *.html *.xml *.json 2>/dev/null || true
         echo "Cleanup complete"
         
     - name: Run authenticated forum scraper
@@ -45,49 +44,32 @@ jobs:
         PROXY_URL: ${{ secrets.PROXY_URL }}
         GITHUB_RUN_NUMBER: ${{ github.run_number }}
       run: |
-        echo "Starting forum scraper - Build #${{ github.run_number }} at $(date -u)"
+        echo "Starting forum scraper - Build #${{ github.run_number }}"
         node scripts/scrape-forum.js
-        echo "Forum scraper completed"
-        ls -lh discussion.html topics.html join.html forum-home.html 2>/dev/null || true
       
     - name: Create optimized SEO landing pages
       env:
         GITHUB_RUN_NUMBER: ${{ github.run_number }}
-      run: |
-        echo "Creating SEO landing pages - Build #${{ github.run_number }}"
-        node scripts/create-seo-pages.js
-        echo "SEO pages completed"
-        ls -lh faa-hims-guide.html pilot-medical-certification.html 2>/dev/null || true
+      run: node scripts/create-seo-pages.js
       
     - name: Generate enhanced sitemap
-      run: |
-        echo "Generating sitemap"
-        node scripts/generate-sitemap.js
-        echo "Sitemap completed"
+      run: node scripts/generate-sitemap.js
       
     - name: Verify generated files
       run: |
-        echo "=== Generated Files Summary ==="
-        echo "HTML files:"
-        ls -lh *.html 2>/dev/null | wc -l
-        echo "XML files:"
-        ls -lh *.xml 2>/dev/null | wc -l
-        echo ""
-        echo "Checking dates in key files:"
-        grep -h "Last refreshed\|Last updated\|Build #" discussion.html faa-hims-guide.html 2>/dev/null | head -3 || echo "Could not verify dates"
+        echo "Generated files:"
+        ls -lh *.html *.xml 2>/dev/null || echo "No files generated"
       
     - name: Commit all SEO content
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action Bot"
-        git add -f *.html *.xml *.json *.txt
-        git status --short
-        if git diff --staged --quiet; then
-          echo "No new FAA HIMS content to commit"
-        else
+        git add -A
+        if ! git diff --staged --quiet; then
           git commit -m "Professional update: Build #${{ github.run_number }} - $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
-          echo "Changes committed and pushed"
+        else
+          echo "No changes to commit"
         fi
         
     - name: Setup GitHub Pages
@@ -103,17 +85,4 @@ jobs:
       uses: actions/deploy-pages@v4
       
     - name: Submit to search engines
-      run: |
-        if [ -f "scripts/submit-to-search-engines.js" ]; then
-          node scripts/submit-to-search-engines.js
-        else
-          echo "Submit script not found, skipping"
-        fi
-        
-    - name: Build completion summary
-      run: |
-        echo "==================================="
-        echo "Build #${{ github.run_number }} Complete"
-        echo "Timestamp: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
-        echo "Deployment: https://faahims.rehab/"
-        echo "==================================="v
+      run: node scripts/submit-to-search-engines.js 2>/dev/null || true
