@@ -618,6 +618,16 @@ Optimization: Core Web Vitals, Mobile-First, Accessibility`;
     console.log('✓ browserconfig.xml generated for Windows tiles');
   }
 
+  generateBingSiteAuth() {
+    const bingSiteAuth = `<?xml version="1.0"?>
+<users>
+	<user>711C0FBADB80A8DC8B96B8EA2E66BD50</user>
+</users>`;
+
+    fs.writeFileSync('BingSiteAuth.xml', bingSiteAuth);
+    console.log('✓ BingSiteAuth.xml generated for Bing Webmaster Tools verification');
+  }
+
   generateAdsTxt() {
     const adsTxt = `# ads.txt for faahims.rehab
 # FAA HIMS Program Professional Community
@@ -679,6 +689,11 @@ Optimization: Core Web Vitals, Mobile-First, Accessibility`;
 /humans.txt
   Cache-Control: public, max-age=86400
   Content-Type: text/plain; charset=utf-8
+
+# Bing Verification
+/BingSiteAuth.xml
+  Cache-Control: public, max-age=86400
+  Content-Type: application/xml; charset=utf-8
 `;
 
     fs.writeFileSync('_headers', headers);
@@ -744,6 +759,7 @@ Optimization: Core Web Vitals, Mobile-First, Accessibility`;
         canonicals: "✓ Proper canonical tags",
         robots: "✓ Bot-friendly with selective blocking",
         browserConfig: "✓ Windows tiles optimization",
+        bingSiteAuth: "✓ Bing Webmaster Tools verification",
         navigation: "✓ Keyword-rich navigation on all pages"
       },
       competitorAnalysis: {
@@ -772,6 +788,7 @@ Optimization: Core Web Vitals, Mobile-First, Accessibility`;
       targetKeywords: this.primaryKeywords,
       results: results,
       sitemapUrl: 'https://faahims.rehab/sitemap.xml',
+      bingVerification: 'BingSiteAuth.xml included for Bing Webmaster Tools',
       note: 'Submit sitemap manually to Google Search Console and Bing Webmaster Tools'
     };
     
@@ -793,7 +810,8 @@ Optimization: Core Web Vitals, Mobile-First, Accessibility`;
         metaDescription: "150-160 characters (optimal for SERP)",
         h1Tags: "One per page with primary keyword",
         internalLinks: "10+ per page with keyword anchors from homepage",
-        imageOptimization: "Alt text with relevant keywords"
+        imageOptimization: "Alt text with relevant keywords",
+        bingVerification: "BingSiteAuth.xml included"
       }
     };
     
@@ -849,6 +867,9 @@ function createProfessionalIndex(scraper) {
     <meta name="language" content="English">
     <meta name="revisit-after" content="3 days">
     <meta name="distribution" content="global">
+    
+    <!-- Bing Verification -->
+    <meta name="msvalidate.01" content="711C0FBADB80A8DC8B96B8EA2E66BD50" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -954,7 +975,7 @@ function createProfessionalIndex(scraper) {
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', () => document.body.appendChild(notification));
             } else {
-                document.body.appendChild(notification);
+                document.body.appendChild(notification));
             }
             
             const timer = setInterval(() => {
@@ -1400,6 +1421,7 @@ async function main() {
   scraper.generateHumansTxt();
   scraper.generateManifest();
   scraper.generateBrowserConfig();
+  scraper.generateBingSiteAuth();
   scraper.generateAdsTxt();
   scraper.generateHeadersFile();
   scraper.generateRedirectsFile();
@@ -1444,6 +1466,7 @@ async function main() {
   console.log(`   ✓ RSS feed with keyword-rich descriptions`);
   console.log(`   ✓ Clean URLs with keyword inclusion`);
   console.log(`   ✓ browserconfig.xml for Windows tiles`);
+  console.log(`   ✓ BingSiteAuth.xml for Bing Webmaster verification`);
   console.log(`   ✓ Mobile-first responsive design`);
   console.log(`   ✓ Core Web Vitals optimized`);
   console.log(`   ✓ Security headers for trust signals`);
@@ -1459,6 +1482,9 @@ async function main() {
   console.log(`   ✓ Resource cards with keyword anchors`);
   console.log(`   ✓ Footer links on every page`);
   console.log(`   ✓ Proper link equity distribution`);
+  console.log(`\n🔍 SEARCH ENGINE VERIFICATION:`);
+  console.log(`   ✓ Bing Webmaster Tools: BingSiteAuth.xml generated`);
+  console.log(`   ✓ Bing meta verification tag in homepage`);
 }
 
 main().catch(console.error);
