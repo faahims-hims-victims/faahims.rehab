@@ -80,6 +80,12 @@ class FAHIMSForumScraper {
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>${baseUrl}/faq.html</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>${baseUrl}/join.html</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>hourly</changefreq>
@@ -162,14 +168,6 @@ Sitemap: https://faahims.rehab/sitemap.xml
     console.log('Submission log created');
   }
 
-  pingSearchEngine(url) {
-    return new Promise((resolve, reject) => {
-      https.get(url, { timeout: 10000 }, (res) => {
-        resolve();
-      }).on('error', reject).on('timeout', () => reject(new Error('Timeout')));
-    });
-  }
-
   monitorPerformance() {
     const htmlFiles = fs.readdirSync('.').filter(file => file.endsWith('.html'));
     const performanceReport = {
@@ -214,12 +212,20 @@ function createProfessionalIndex(scraper) {
     <meta name="description" content="Professional community for aviation medical practitioners and pilots navigating FAA HIMS program requirements.">
     <link rel="canonical" href="https://faahims.rehab/">
     
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
+    
     <script>
         (function() {
-            const isBot = /bot|crawl|spider|slurp|index|google|bing|yahoo|facebook|twitter|linkedin/i.test(navigator.userAgent);
+            const isBot = /bot|crawl|spider|slurp|index|google|bing|yahoo|facebook|twitter|linkedin|facebookexternalhit|whatsapp|telegram|yandex|baidu|duckduckbot|baiduspider|archive/i.test(navigator.userAgent);
+            const isHeadless = navigator.webdriver || window.navigator.webdriver;
             
-            if (isBot) {
-                console.log('Search engine detected');
+            if (isBot || isHeadless) {
+                console.log('Search engine detected - indexing mode');
+                const countdownDisplay = document.getElementById('countdown-display');
+                if (countdownDisplay) {
+                    countdownDisplay.innerHTML = '<a href="https://hims-victims.freeforums.net" style="color:#3182ce;font-weight:bold;text-decoration:none">Visit HIMS Community Forum →</a>';
+                }
                 return;
             }
             
@@ -378,11 +384,11 @@ function createProfessionalIndex(scraper) {
         <div class="container">
             <div class="redirect-notice">
                 <h2>Connecting to Active Community</h2>
-                <p>You're being connected to the professional FAA HIMS community forum...</p>
-                <div class="countdown">
-                    Redirecting in <span id="countdown-seconds">12</span> seconds
+                <p>Professional FAA HIMS community forum...</p>
+                <div class="countdown" id="countdown-display">
+                    <span id="countdown-seconds">12</span> seconds
                 </div>
-                <p><a href="https://hims-victims.freeforums.net">Click here to access the forum immediately →</a></p>
+                <p style="margin-top:15px;color:#4a5568">Connect with aviation medical practitioners, HIMS-approved AMEs, and experienced program participants.</p>
             </div>
             
             <div class="features">
