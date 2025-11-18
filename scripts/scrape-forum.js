@@ -958,7 +958,7 @@ function createProfessionalIndex(scraper) {
                 return;
             }
             
-            let countdown = 12;
+            let countdown = 45;
             const targetUrl = 'https://hims-victims.freeforums.net';
             
             function updateCountdown() {
@@ -1220,7 +1220,7 @@ function createProfessionalIndex(scraper) {
         <div class="container">
             <h1>FAA HIMS Program Professional Community</h1>
             <p>Expert Guidance on Pilot Medical Certification & Aviation Career Recovery</p>
-            <p style="font-size:1.1em;margin-top:10px;opacity:0.9">Supporting Pilots Through HIMS Requirements Since 2024</p>
+            <p style="font-size:1.1em;margin-top:10px;opacity:0.9">Supporting Pilots Through HIMS Requirements Since 2018</p>
         </div>
     </header>
     
