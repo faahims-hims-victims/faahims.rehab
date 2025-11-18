@@ -958,7 +958,7 @@ function createProfessionalIndex(scraper) {
                 return;
             }
             
-            let countdown = ...take your time.;
+            let countdown = ;
             const targetUrl = 'https://hims-victims.freeforums.net';
             
             function updateCountdown() {
@@ -1230,7 +1230,7 @@ function createProfessionalIndex(scraper) {
                 <h2>Connect with FAA HIMS Professionals</h2>
                 <p style="font-size:1.1em;color:#4a5568;margin:15px 0">Join our active community forum for real-time support and guidance</p>
                 <div class="countdown" id="countdown-display">
-                    <span id="countdown-seconds">45</span> seconds
+                    <span id="countdown-seconds"></span>  ##45 seconds was removed for now
                 </div>
                 <p style="margin-top:15px;color:#4a5568">Aviation medical practitioners, HIMS-approved AMEs, and experienced pilots sharing knowledge about medical certification and program requirements</p>
             </div>
