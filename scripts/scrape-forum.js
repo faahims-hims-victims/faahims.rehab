@@ -933,7 +933,7 @@ function createProfessionalIndex(scraper) {
     
     <script>
         // ===== REDIRECT TIMER CONTROL =====
-        const REDIRECT_ENABLED = false;  // Set to true to enable 12-second timer
+        const REDIRECT_ENABLED = true;  // Set to true to enable 12-second timer
         // ==================================
         
         (function() {
