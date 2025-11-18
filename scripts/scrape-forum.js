@@ -1339,7 +1339,7 @@ function createProfessionalIndex(scraper) {
                     <div class="stat-label">Expert Support Available</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-number">100%+</div>
+                    <div class="stat-number">100%</div>
                     <div class="stat-label">Realistic HIMS Program Experience</div>
                 </div>
                 <div class="stat">
