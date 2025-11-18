@@ -975,7 +975,7 @@ function createProfessionalIndex(scraper) {
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', () => document.body.appendChild(notification));
             } else {
-                document.body.appendChild(notification));
+                document.body.appendChild(notification);
             }
             
             const timer = setInterval(() => {
