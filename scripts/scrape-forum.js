@@ -202,6 +202,56 @@ class FAHIMSForumScraper {
     <changefreq>hourly</changefreq>
     <priority>0.85</priority>
   </url>
+
+  <!-- GitHub Wiki Pages - Comprehensive HIMS Guide -->
+  <url>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/wiki</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/wiki/What-is-HIMS</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/wiki/Finding-HIMS-AME</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/wiki/HIMS-Costs</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/wiki/HIMS-Timeline</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/wiki/Legal-Rights</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/wiki/Community-Resources</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/wiki/FAQ</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
   
   <!-- RSS Feeds -->
   <url>
