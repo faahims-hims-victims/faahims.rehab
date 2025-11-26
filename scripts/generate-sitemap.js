@@ -4,6 +4,7 @@ function generateEnhancedSitemap() {
   const currentDate = new Date().toISOString().split('T')[0];
   
   const urls = [
+    // faahims.rehab Pages
     {
       loc: 'https://faahims.rehab/',
       lastmod: currentDate,
@@ -45,6 +46,64 @@ function generateEnhancedSitemap() {
       lastmod: currentDate,
       changefreq: 'daily',
       priority: '0.8'
+    },
+    
+    // GitHub Wiki Pages
+    {
+      loc: 'https://github.com/faahims-hims-victims/faahims.rehab/wiki',
+      lastmod: currentDate,
+      changefreq: 'weekly',
+      priority: '0.85'
+    },
+    {
+      loc: 'https://github.com/faahims-hims-victims/faahims.rehab/wiki/What-is-HIMS',
+      lastmod: currentDate,
+      changefreq: 'weekly',
+      priority: '0.85'
+    },
+    {
+      loc: 'https://github.com/faahims-hims-victims/faahims.rehab/wiki/Finding-HIMS-AME',
+      lastmod: currentDate,
+      changefreq: 'weekly',
+      priority: '0.85'
+    },
+    {
+      loc: 'https://github.com/faahims-hims-victims/faahims.rehab/wiki/HIMS-Costs',
+      lastmod: currentDate,
+      changefreq: 'weekly',
+      priority: '0.85'
+    },
+    {
+      loc: 'https://github.com/faahims-hims-victims/faahims.rehab/wiki/HIMS-Timeline',
+      lastmod: currentDate,
+      changefreq: 'weekly',
+      priority: '0.85'
+    },
+    {
+      loc: 'https://github.com/faahims-hims-victims/faahims.rehab/wiki/Legal-Rights',
+      lastmod: currentDate,
+      changefreq: 'weekly',
+      priority: '0.90'
+    },
+    {
+      loc: 'https://github.com/faahims-hims-victims/faahims.rehab/wiki/Community-Resources',
+      lastmod: currentDate,
+      changefreq: 'weekly',
+      priority: '0.85'
+    },
+    {
+      loc: 'https://github.com/faahims-hims-victims/faahims.rehab/wiki/FAQ',
+      lastmod: currentDate,
+      changefreq: 'weekly',
+      priority: '0.85'
+    },
+    
+    // GitHub Discussions
+    {
+      loc: 'https://github.com/faahims-hims-victims/faahims.rehab/discussions',
+      lastmod: currentDate,
+      changefreq: 'daily',
+      priority: '0.85'
     }
   ];
 
@@ -60,7 +119,7 @@ function generateEnhancedSitemap() {
 </urlset>`;
   
   fs.writeFileSync('sitemap.xml', sitemap);
-  console.log('✓ Enhanced sitemap.xml generated with 9 optimized URLs');
+  console.log(`✓ Enhanced sitemap.xml generated with ${urls.length} optimized URLs`);
 }
 
 generateEnhancedSitemap();
