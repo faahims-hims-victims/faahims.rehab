@@ -108,102 +108,53 @@ class FAHIMSForumScraper {
     const baseUrl = 'https://faahims.rehab';
     
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
-  <!-- Homepage - Highest Priority -->
+  <!-- faahims.rehab Pages -->
   <url>
     <loc>${baseUrl}/</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>hourly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Registration/Join Page - High Priority for Conversions -->
   <url>
     <loc>${baseUrl}/join.html</loc>
     <lastmod>${currentDate}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
   </url>
-  
-  <!-- Core HIMS Guide Pages - Primary Keywords -->
+  <url>
+    <loc>${baseUrl}/forum-home.html</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>${baseUrl}/faa-hims-guide.html</loc>
     <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
-  
   <url>
     <loc>${baseUrl}/pilot-medical-certification.html</loc>
     <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.93</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
-  
   <url>
     <loc>${baseUrl}/hims-requirements.html</loc>
     <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.93</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
-  
-  <!-- New High-Value Pages Added 2025 -->
-  <url>
-    <loc>${baseUrl}/hims-ame-directory.html</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.92</priority>
-  </url>
-  
-  <!-- FAQ Page - High SEO Value for Featured Snippets -->
-  <url>
-    <loc>${baseUrl}/faq.html</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.92</priority>
-  </url>
-  
-  <url>
-    <loc>${baseUrl}/hims-treatment-facilities.html</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  
   <url>
     <loc>${baseUrl}/aviation-medical-recovery.html</loc>
     <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.88</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   
-  <url>
-    <loc>${baseUrl}/hims-success-stories.html</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-  </url>
-  
-  <!-- Discussion/Forum Pages - Dynamic Content -->
-  <url>
-    <loc>${baseUrl}/discussion.html</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>${baseUrl}/topics.html</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- GitHub Wiki Pages - Comprehensive HIMS Guide -->
+  <!-- GitHub Wiki Pages -->
   <url>
     <loc>https://github.com/faahims-hims-victims/faahims.rehab/wiki</loc>
     <lastmod>${currentDate}</lastmod>
@@ -253,18 +204,18 @@ class FAHIMSForumScraper {
     <priority>0.85</priority>
   </url>
   
-  <!-- RSS Feeds -->
+  <!-- GitHub Discussions -->
   <url>
-    <loc>${baseUrl}/feed.xml</loc>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/discussions</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.70</priority>
+    <priority>0.85</priority>
   </url>
-  
+
 </urlset>`;
 
     fs.writeFileSync('sitemap.xml', sitemap);
-    console.log('✓ Enhanced sitemap.xml generated with 11 pages including new high-value content');
+    console.log('✓ Enhanced sitemap.xml generated with 16 pages including wiki and discussions');
   }
 
   generateSitemapIndex() {
