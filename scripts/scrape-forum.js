@@ -103,7 +103,7 @@ class FAHIMSForumScraper {
     });
   }
 
-  generateAdvancedSitemap() {
+  // generateAdvancedSitemap() {  // scraper.generateAdvancedSitemap();  // REMOVE - using generate-sitemap.js instead
     const currentDate = new Date().toISOString();
     const baseUrl = 'https://faahims.rehab';
     
@@ -218,7 +218,7 @@ class FAHIMSForumScraper {
     console.log('✓ Enhanced sitemap.xml generated with 16 pages including wiki and discussions');
   }
 
-  generateSitemapIndex() {
+  // generateSitemapIndex() { // scraper.generateSitemapIndex();     // REMOVE - not needed
     const currentDate = new Date().toISOString();
     const baseUrl = 'https://faahims.rehab';
     
