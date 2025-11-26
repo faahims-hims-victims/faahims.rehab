@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
+  <!-- faahims.rehab Pages -->
   <url>
     <loc>https://faahims.rehab/</loc>
     <lastmod>2025-11-26</lastmod>
@@ -43,4 +44,63 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <!-- GitHub Wiki Pages -->
+  <url>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/wiki</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/wiki/What-is-HIMS</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/wiki/Finding-HIMS-AME</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/wiki/HIMS-Costs</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/wiki/HIMS-Timeline</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/wiki/Legal-Rights</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/wiki/Community-Resources</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/wiki/FAQ</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <!-- GitHub Discussions -->
+  <url>
+    <loc>https://github.com/faahims-hims-victims/faahims.rehab/discussions</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+
 </urlset>
