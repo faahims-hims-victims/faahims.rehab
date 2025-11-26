@@ -17,18 +17,6 @@ function generateEnhancedSitemap() {
       priority: '0.9'
     },
     {
-      loc: 'https://faahims.rehab/discussion.html',
-      lastmod: currentDate,
-      changefreq: 'hourly',
-      priority: '0.9'
-    },
-    {
-      loc: 'https://faahims.rehab/topics.html',
-      lastmod: currentDate,
-      changefreq: 'hourly',
-      priority: '0.8'
-    },
-    {
       loc: 'https://faahims.rehab/forum-home.html',
       lastmod: currentDate,
       changefreq: 'hourly',
