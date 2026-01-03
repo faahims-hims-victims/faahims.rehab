@@ -20,8 +20,8 @@ substance abuse recovery, medical certificate reinstatement
 HIMS requirements, pilot rehabilitation program
 
 /* SITE */
-Last update: 2026-01-03T06:30:48.028Z
-Build: #582
+Last update: 2026-01-03T12:39:25.325Z
+Build: #583
 Standards: HTML5, CSS3, Schema.org, OpenGraph
 Components: Node.js, JavaScript, RSS 2.0
 Software: GitHub Actions, Cloudflare Pages
