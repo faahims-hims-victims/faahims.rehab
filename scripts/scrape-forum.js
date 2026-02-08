@@ -197,7 +197,7 @@ class FAHIMSForumScraper {
     <ttl>60</ttl>
     
     <item>
-      <title>FAA HIMS Program Requirements 2025 - Complete Guide Update #${this.buildNumber}</title>
+      <title>FAA HIMS Program Requirements 2026 - Complete Guide Update #${this.buildNumber}</title>
       <description>Latest updates on FAA HIMS program requirements, pilot medical certification procedures, HIMS AME consultations, and substance abuse treatment protocols for aviation professionals seeking medical certificate reinstatement</description>
       <link>https://faahims.rehab/</link>
       <guid isPermaLink="true">https://faahims.rehab/?update=${this.buildNumber}</guid>
@@ -217,7 +217,7 @@ class FAHIMSForumScraper {
     </item>
     
     <item>
-      <title>Complete FAA HIMS Program Guide 2025 - Requirements, Timeline, and Success Strategies</title>
+      <title>Complete FAA HIMS Program Guide 2026 - Requirements, Timeline, and Success Strategies</title>
       <description>In-depth guide covering FAA HIMS program requirements, medical certification procedures, treatment protocols, monitoring requirements, and proven strategies for successful program completion</description>
       <link>https://faahims.rehab/faa-hims-guide.html</link>
       <guid isPermaLink="true">https://faahims.rehab/faa-hims-guide.html</guid>
@@ -797,8 +797,8 @@ function createProfessionalIndex(scraper) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags - Optimized for "FAA HIMS Program" -->
-    <title>FAA HIMS Program Community | Pilot Medical Certification Support 2025</title>
-    <meta name="title" content="FAA HIMS Program Community | Pilot Medical Certification Support 2025">
+    <title>FAA HIMS Program Community | Pilot Medical Certification Support 2026</title>
+    <meta name="title" content="FAA HIMS Program Community | Pilot Medical Certification Support 2026">
     <meta name="description" content="Professional FAA HIMS program community for pilots seeking medical certification. Expert guidance on HIMS requirements, AME consultations, treatment, and returning to flight status.">
     <meta name="keywords" content="FAA HIMS program, pilot medical certification, HIMS AME, FAA special issuance, aviation medical examiner, pilot substance abuse recovery, medical certificate reinstatement, HIMS requirements, aviation medical certificate">
     <link rel="canonical" href="https://faahims.rehab/">
