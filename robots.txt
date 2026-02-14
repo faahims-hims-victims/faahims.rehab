@@ -1,5 +1,5 @@
 # FAA HIMS Program Professional Community - Robots Configuration
-# Build: 756 | Updated: 2026-02-14T06:35:22.635Z
+# Build: 757 | Updated: 2026-02-14T06:43:37.689Z
 # Optimized for maximum search engine visibility - FAA HIMS keywords
 
 # ===========================================
@@ -71,12 +71,6 @@ Disallow: /
 Sitemap: https://faahims.rehab/sitemap.xml
 Sitemap: https://faahims.rehab/sitemap-index.xml
 Sitemap: https://faahims.rehab/feed.xml
-
-# ===========================================
-# PREFERRED HOST
-# ===========================================
-
-Host: https://faahims.rehab
 
 # ===========================================
 # CRAWL OPTIMIZATION
