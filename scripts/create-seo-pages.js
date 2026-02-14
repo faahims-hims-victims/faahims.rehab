@@ -84,16 +84,16 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
-    <!-- Favicons & App Icons - Complete Set -->
+<!-- Favicons & App Icons - Complete Set -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
     <link rel="manifest" href="/manifest.json">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1a365d">
-    <meta name="msapplication-TileColor" content="#1a365d">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#DC2626">
+    <meta name="msapplication-TileColor" content="#DC2626">
     <meta name="msapplication-config" content="/browserconfig.xml">
     
     <!-- Preconnect & DNS Prefetch for Performance -->
