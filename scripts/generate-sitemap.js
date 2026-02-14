@@ -12,12 +12,6 @@ function generateEnhancedSitemap() {
       priority: '1.0'
     },
     {
-      loc: 'https://faahims.rehab/join.html',
-      lastmod: currentDate,
-      changefreq: 'hourly',
-      priority: '0.9'
-    },
-    {
       loc: 'https://faahims.rehab/forum-home.html',
       lastmod: currentDate,
       changefreq: 'hourly',
