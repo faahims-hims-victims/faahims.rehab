@@ -832,12 +832,15 @@ function createProfessionalIndex(scraper) {
     <meta name="twitter:description" content="Expert support for pilots navigating FAA HIMS program requirements and medical certification.">
     <meta name="twitter:image" content="https://faahims.rehab/twitter-card.jpg">
     
-    <!-- Favicons & Manifest -->
+<!-- Favicons & Manifest -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#1a365d">
+    <meta name="theme-color" content="#DC2626">
     
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://hims-victims.freeforums.net">
