@@ -796,6 +796,8 @@ function createProfessionalIndex(scraper) {
     <meta name="description" content="Professional FAA HIMS program community for pilots seeking medical certification. Expert guidance on HIMS requirements, AME consultations, treatment, and returning to flight status.">
     <meta name="keywords" content="FAA HIMS program, pilot medical certification, HIMS AME, FAA special issuance, aviation medical examiner, pilot substance abuse recovery, medical certificate reinstatement, HIMS requirements, aviation medical certificate">
     <link rel="canonical" href="https://faahims.rehab/">
+    <link rel="alternate" hreflang="en" href="https://faahims.rehab/">
+    <link rel="alternate" hreflang="x-default" href="https://faahims.rehab/">
     
     <!-- Enhanced SEO -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -870,6 +872,31 @@ function createProfessionalIndex(scraper) {
       }
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://faahims.rehab/#website",
+      "url": "https://faahims.rehab/",
+      "name": "FAA HIMS Program Community",
+      "alternateName": "HIMS Program",
+      "inLanguage": "en-US",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": { "@type": "EntryPoint", "urlTemplate": "https://faahims.rehab/?q={search_term_string}" },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "FAA HIMS Program Community",
+      "url": "https://faahims.rehab/",
+      "logo": "https://faahims.rehab/android-chrome-512x512.png"
+    }
+    </script>
     
     <script>
         // ===== REDIRECT TIMER CONTROL =====
@@ -898,7 +925,7 @@ function createProfessionalIndex(scraper) {
                 return;
             }
             
-            let countdown = ;
+            let countdown = 12;
             const targetUrl = 'https://hims-victims.freeforums.net';
             
             function updateCountdown() {
