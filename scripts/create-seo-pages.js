@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 const buildNumber = process.env.GITHUB_RUN_NUMBER || Math.floor(Math.random() * 1000);
+const YEAR = new Date().getFullYear();
 const currentDateTime = new Date().toISOString();
 const displayDate = new Date(currentDateTime).toLocaleString('en-US', { 
   timeZone: 'UTC',
@@ -17,8 +18,8 @@ console.log(`Target: Maximum Google SERP rankings for FAA HIMS keywords`);
 
 function createSEOLandingPage(filename, title, description, keywords, content, focusKeywords, isHighPriority = false) {
   const pageUrl = `https://faahims.rehab/${filename}`;
-  const ogImage = 'https://faahims.rehab/og-image-1200x630.jpg';
-  const twitterImage = 'https://faahims.rehab/twitter-card-1200x600.jpg';
+  const ogImage = 'https://faahims.rehab/android-chrome-512x512.png';
+  const twitterImage = 'https://faahims.rehab/android-chrome-512x512.png';
   
   // Enhanced keyword density optimization
   const keywordPhrase = focusKeywords[0];
@@ -133,7 +134,7 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
           "url": "${pageUrl}",
           "name": "${title}",
           "description": "${description}",
-          "datePublished": "${currentDateTime}",
+          "datePublished": "2025-11-01T00:00:00.000Z",
           "dateModified": "${currentDateTime}",
           "inLanguage": "en-US",
           "isPartOf": {
@@ -175,7 +176,7 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
           "name": "${title}",
           "description": "${description}",
           "url": "${pageUrl}",
-          "datePublished": "${currentDateTime}",
+          "datePublished": "2025-11-01T00:00:00.000Z",
           "dateModified": "${currentDateTime}",
           "specialty": "Aviation Medicine",
           "audience": {
@@ -557,6 +558,13 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
                 <a href="/hims-treatment-facilities.html" title="Treatment">Treatment</a> • 
                 <a href="/hims-success-stories.html" title="Success">Success Stories</a>
             </p>
+            <p style="margin:20px 0;padding-top:15px;border-top:1px solid rgba(255,255,255,0.15)">
+                <strong>HIMS Resource Network:</strong><br>
+                <a href="https://himsprogram.info" title="FAA HIMS Program Information">HIMS Program Information</a> • 
+                <a href="https://pilotsforhimsreform.org" title="Pilots for HIMS Reform">FAA HIMS Reform Advocacy</a> • 
+                <a href="https://aeromedicalcompass.org" title="Aeromedical Compass AME Directory">Independent AME Guidance</a> • 
+                <a href="https://hims-victims.freeforums.net" title="HIMS Pilot Community Forum">Pilot Community Forum</a>
+            </p>
             <p style="opacity:0.75;font-size:0.9em;font-family:monospace;margin-top:30px">
                 Build #${buildNumber} • Last updated: ${displayDate} UTC
             </p>
@@ -601,9 +609,9 @@ console.log('\n=== CREATING HIGH-VALUE LANDING PAGES ===');
 // FAA HIMS GUIDE (Primary Target)
 createSEOLandingPage(
   'faa-hims-guide.html',
-  'Complete FAA HIMS Program Guide 2026 | Requirements, Timeline & Success Strategies',
+  'Complete FAA HIMS Program Guide ${YEAR} | Requirements, Timeline & Success Strategies',
   'Comprehensive guide to the FAA HIMS program including requirements, procedures, timeline, costs, treatment facilities, and proven strategies for successful medical certification reinstatement.',
-  'FAA HIMS program guide, HIMS requirements 2026, pilot medical certification process, HIMS program timeline, aviation medical certification',
+  'FAA HIMS program guide, HIMS requirements ${YEAR}, pilot medical certification process, HIMS program timeline, aviation medical certification',
   `
     <h2>Complete FAA HIMS Program Guide for Pilots</h2>
     <div class="features">
@@ -640,7 +648,7 @@ createSEOLandingPage(
 // PILOT MEDICAL CERTIFICATION (High Volume Keyword)
 createSEOLandingPage(
   'pilot-medical-certification.html',
-  'Pilot Medical Certification & FAA HIMS Program | Special Issuance Guide 2026',
+  'Pilot Medical Certification & FAA HIMS Program | Special Issuance Guide ${YEAR}',
   'Expert guidance on pilot medical certification, FAA special issuance requirements, HIMS program participation, and medical certificate reinstatement for commercial and private pilots.',
   'pilot medical certification, FAA medical certificate, aviation medical examination, FAA special issuance, HIMS medical certification',
   `
@@ -687,7 +695,7 @@ createSEOLandingPage(
 // HIMS REQUIREMENTS (High Intent Keyword)
 createSEOLandingPage(
   'hims-requirements.html',
-  'FAA HIMS Program Requirements 2026 | Complete Compliance Guide for Pilots',
+  'FAA HIMS Program Requirements ${YEAR} | Complete Compliance Guide for Pilots',
   'Detailed information on FAA HIMS program requirements including treatment standards, monitoring protocols, testing procedures, documentation needs, and compliance strategies for successful medical certification.',
   'HIMS program requirements, FAA HIMS compliance, aviation medical standards, HIMS monitoring requirements, pilot testing protocols',
   `
@@ -734,7 +742,7 @@ createSEOLandingPage(
 // AVIATION MEDICAL RECOVERY
 createSEOLandingPage(
   'aviation-medical-recovery.html',
-  'Aviation Medical Recovery & Pilot Rehabilitation | FAA HIMS Support 2026',
+  'Aviation Medical Recovery & Pilot Rehabilitation | FAA HIMS Support ${YEAR}',
   'Professional guidance for aviation medical recovery and pilot rehabilitation through the FAA HIMS program. Expert support for substance abuse recovery, career restoration, and returning to flight operations.',
   'aviation medical recovery, pilot rehabilitation, substance abuse recovery pilots, aviation career recovery, pilot substance abuse treatment',
   `
@@ -772,14 +780,14 @@ createSEOLandingPage(
 // FAQ PAGE WITH RICH SCHEMA
 createSEOLandingPage(
   'faq.html',
-  'FAA HIMS Program FAQ 2026 | Frequently Asked Questions for Pilots',
+  'FAA HIMS Program FAQ ${YEAR} | Frequently Asked Questions for Pilots',
   'Comprehensive FAQ answering pilots\' most common questions about the FAA HIMS program, medical certification requirements, treatment process, costs, timeline, success rates, and returning to flight operations.',
   'FAA HIMS FAQ, HIMS questions, pilot medical certification FAQ, aviation medical questions, HIMS program answers',
   `
     <div style="max-width:900px;margin:0 auto">
         <div class="info-box blue">
             <h2>FAA HIMS Program - Frequently Asked Questions</h2>
-            <p style="font-size:1.1em;line-height:1.8">Get expert answers to the most common questions about the FAA HIMS program, pilot medical certification, treatment requirements, costs, timeline, and successful program completion. Updated for 2026.</p>
+            <p style="font-size:1.1em;line-height:1.8">Get expert answers to the most common questions about the FAA HIMS program, pilot medical certification, treatment requirements, costs, timeline, and successful program completion. Updated for ${YEAR}.</p>
         </div>
         
         <div class="features">
@@ -855,6 +863,10 @@ createSEOLandingPage(
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".faq-question", ".faq-answer"]
+      },
       "mainEntity": [
         {
           "@type": "Question",
@@ -960,14 +972,14 @@ console.log('\n=== CREATING NEW HIGH-VALUE KEYWORD PAGES ===');
 // HIMS AME DIRECTORY
 createSEOLandingPage(
   'hims-ame-directory.html',
-  'HIMS AME Directory 2026 | Find FAA HIMS Aviation Medical Examiners Near You',
+  'HIMS AME Directory ${YEAR} | Find FAA HIMS Aviation Medical Examiners Near You',
   'Comprehensive directory and guide to finding HIMS-approved Aviation Medical Examiners (AMEs) nationwide. Expert guidance on selecting qualified HIMS AMEs for FAA medical certification consultations, evaluations, and ongoing monitoring support.',
   'HIMS AME, HIMS aviation medical examiner, find HIMS AME, HIMS AME near me, FAA HIMS doctor, HIMS physician directory',
   `
     <div style="max-width:900px;margin:0 auto">
         <div class="info-box blue">
             <h2>HIMS-Approved Aviation Medical Examiner Directory</h2>
-            <p style="font-size:1.1em;line-height:1.8">Find qualified HIMS-approved Aviation Medical Examiners (AMEs) across the United States for FAA medical certification consultations, comprehensive evaluations, and ongoing HIMS program monitoring support. Updated directory for 2026.</p>
+            <p style="font-size:1.1em;line-height:1.8">Find qualified HIMS-approved Aviation Medical Examiners (AMEs) across the United States for FAA medical certification consultations, comprehensive evaluations, and ongoing HIMS program monitoring support. Updated directory for ${YEAR}.</p>
         </div>
         
         <div class="features">
@@ -1025,7 +1037,7 @@ createSEOLandingPage(
 // HIMS TREATMENT FACILITIES
 createSEOLandingPage(
   'hims-treatment-facilities.html',
-  'FAA-Approved HIMS Treatment Facilities 2026 | Substance Abuse Treatment for Pilots',
+  'FAA-Approved HIMS Treatment Facilities ${YEAR} | Substance Abuse Treatment for Pilots',
   'Comprehensive guide to FAA-approved HIMS treatment facilities and programs nationwide. Find qualified substance abuse treatment centers specializing in aviation professionals seeking medical certification reinstatement.',
   'HIMS treatment facilities, FAA approved treatment, pilot substance abuse treatment, aviation rehab centers, HIMS treatment programs',
   `
@@ -1090,7 +1102,7 @@ createSEOLandingPage(
 // HIMS SUCCESS STORIES
 createSEOLandingPage(
   'hims-success-stories.html',
-  'HIMS Program Success Stories 2026 | Pilots Who Returned to Flying After Recovery',
+  'HIMS Program Success Stories ${YEAR} | Pilots Who Returned to Flying After Recovery',
   'Inspiring real success stories from pilots who completed the FAA HIMS program, achieved sustained recovery, and returned to successful commercial aviation careers with reinstated medical certificates. Proof that recovery and career restoration are possible.',
   'HIMS success stories, pilot recovery stories, HIMS program success, return to flying after HIMS, pilot rehabilitation success',
   `
