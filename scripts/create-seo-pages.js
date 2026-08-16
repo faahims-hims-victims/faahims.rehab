@@ -36,6 +36,8 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
     <meta name="description" content="${description}">
     <meta name="keywords" content="${keywords}">
     <link rel="canonical" href="${pageUrl}">
+    <link rel="alternate" hreflang="en" href="${pageUrl}">
+    <link rel="alternate" hreflang="x-default" href="${pageUrl}">
     
     <!-- Enhanced SEO Meta Tags -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -112,6 +114,19 @@ function createSEOLandingPage(filename, title, description, keywords, content, f
     {
       "@context": "https://schema.org",
       "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://faahims.rehab/#website",
+          "url": "https://faahims.rehab/",
+          "name": "FAA HIMS Program Community",
+          "alternateName": "HIMS Program",
+          "inLanguage": "en-US",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": { "@type": "EntryPoint", "urlTemplate": "https://faahims.rehab/?q={search_term_string}" },
+            "query-input": "required name=search_term_string"
+          }
+        },
         {
           "@type": "WebPage",
           "@id": "${pageUrl}#webpage",
@@ -879,6 +894,54 @@ createSEOLandingPage(
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Pilots who complete the HIMS program and maintain full compliance have success rates exceeding 85-90% for medical certificate reinstatement. Success depends on active engagement, complete abstinence, monitoring compliance, treatment participation, and sustained recovery commitment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you refuse to enter the HIMS program?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pilots can decline HIMS participation, but refusal typically results in denial of medical certification, preventing exercise of pilot privileges. For airline pilots, employers may also require participation as a condition of continued employment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if you fail a drug test in the HIMS program?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A positive or failed test typically results in immediate suspension of medical certification, potential restart of the monitoring period, additional treatment requirements, and possible permanent denial. Pilots should understand test protocols including PEth testing sensitivity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often are drug tests required in the HIMS program?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HIMS participants typically undergo random drug and alcohol testing 14 or more times per year during initial monitoring, with frequency potentially decreasing over time based on compliance history and FAA requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can pilots use SSRIs or antidepressants while flying?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The FAA permits certain SSRIs (fluoxetine, sertraline, citalopram, escitalopram) under special issuance with monitoring, requiring stable dosing, psychiatric evaluations, and cognitive testing before certification."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do all HIMS participants have substance abuse problems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Pilots enter HIMS for various reasons including single DUI arrests, mental health diagnoses, SSRI medication use, self-reported concerns, or employer referrals — participation does not always indicate a clinical substance dependence diagnosis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I fly while in the HIMS program?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pilots may return to flying after receiving a special issuance medical certificate, which typically requires completing initial treatment, demonstrating sustained sobriety (often 90+ days minimum), passing comprehensive evaluations, and FAA approval. Timeline varies by individual case."
           }
         }
       ]
