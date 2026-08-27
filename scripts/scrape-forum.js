@@ -339,7 +339,7 @@ Sitemap: https://faahims.rehab/feed.xml
           "@type": "WebSite",
           "@id": "https://faahims.rehab/#website",
           "url": "https://faahims.rehab/",
-          "name": "FAA HIMS Program Professional Community",
+          "name": "FAA HIMS Program",
           "description": "Professional community for pilots navigating FAA HIMS program requirements, medical certification, and aviation substance abuse recovery",
           "keywords": this.primaryKeywords.join(', '),
           "publisher": {
@@ -354,7 +354,7 @@ Sitemap: https://faahims.rehab/feed.xml
         {
           "@type": "Organization",
           "@id": "https://faahims.rehab/#organization",
-          "name": "FAA HIMS Professional Community",
+          "name": "FAA HIMS Program",
           "url": "https://faahims.rehab/",
           "logo": {
             "@type": "ImageObject",
@@ -499,7 +499,7 @@ Optimization: Core Web Vitals, Mobile-First, Accessibility`;
 
   generateManifest() {
     const manifest = {
-      "name": "FAA HIMS Program Professional Community",
+      "name": "FAA HIMS Program",
       "short_name": "HIMS Community",
       "description": "Professional community for pilots navigating FAA HIMS program requirements, medical certification, and aviation career recovery",
       "start_url": "/",
@@ -791,8 +791,8 @@ function createProfessionalIndex(scraper) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags - Optimized for "FAA HIMS Program" -->
-    <title>FAA HIMS Program Community | Pilot Medical Certification Support 2026</title>
-    <meta name="title" content="FAA HIMS Program Community | Pilot Medical Certification Support 2026">
+    <title>FAA HIMS Program | Pilot Medical Certification Community ${new Date().getFullYear()}</title>
+    <meta name="title" content="FAA HIMS Program | Pilot Medical Certification Community ${new Date().getFullYear()}">
     <meta name="description" content="Professional FAA HIMS program community for pilots seeking medical certification. Expert guidance on HIMS requirements, AME consultations, treatment, and returning to flight status.">
     <meta name="keywords" content="FAA HIMS program, pilot medical certification, HIMS AME, FAA special issuance, aviation medical examiner, pilot substance abuse recovery, medical certificate reinstatement, HIMS requirements, aviation medical certificate">
     <link rel="canonical" href="https://faahims.rehab/">
@@ -802,7 +802,7 @@ function createProfessionalIndex(scraper) {
     <!-- Enhanced SEO -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
-    <meta name="author" content="FAA HIMS Professional Community">
+    <meta name="author" content="FAA HIMS Program">
     <meta name="language" content="English">
     <meta name="revisit-after" content="3 days">
     <meta name="distribution" content="global">
@@ -813,18 +813,18 @@ function createProfessionalIndex(scraper) {
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://faahims.rehab/">
-    <meta property="og:title" content="FAA HIMS Program Community - Pilot Medical Certification">
+    <meta property="og:title" content="FAA HIMS Program | Pilot Medical Certification Community">
     <meta property="og:description" content="Professional guidance for pilots navigating FAA HIMS program requirements, medical certification, and aviation career recovery.">
     <meta property="og:image" content="https://faahims.rehab/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="FAA HIMS Program Community">
+    <meta property="og:site_name" content="FAA HIMS Program">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://faahims.rehab/">
-    <meta name="twitter:title" content="FAA HIMS Program - Pilot Medical Certification Community">
+    <meta name="twitter:title" content="FAA HIMS Program | Pilot Medical Certification Community">
     <meta name="twitter:description" content="Expert support for pilots navigating FAA HIMS program requirements and medical certification.">
     <meta name="twitter:image" content="https://faahims.rehab/twitter-card.jpg">
     
@@ -850,7 +850,7 @@ function createProfessionalIndex(scraper) {
     {
       "@context": "https://schema.org",
       "@type": "MedicalWebPage",
-      "name": "FAA HIMS Program Professional Community",
+      "name": "FAA HIMS Program",
       "description": "Professional community for pilots navigating FAA HIMS program requirements, pilot medical certification, and aviation substance abuse recovery",
       "url": "https://faahims.rehab/",
       "datePublished": "${scraper.currentDateTime}",
@@ -867,7 +867,7 @@ function createProfessionalIndex(scraper) {
       },
       "publisher": {
         "@type": "Organization",
-        "name": "FAA HIMS Professional Community",
+        "name": "FAA HIMS Program",
         "url": "https://faahims.rehab/"
       }
     }
@@ -878,8 +878,8 @@ function createProfessionalIndex(scraper) {
       "@type": "WebSite",
       "@id": "https://faahims.rehab/#website",
       "url": "https://faahims.rehab/",
-      "name": "FAA HIMS Program Community",
-      "alternateName": "HIMS Program",
+      "name": "FAA HIMS Program",
+      "alternateName": ["FAA HIMS Program Community", "FAA HIMS", "faahims.rehab"],
       "inLanguage": "en-US",
       "potentialAction": {
         "@type": "SearchAction",
@@ -892,7 +892,7 @@ function createProfessionalIndex(scraper) {
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "FAA HIMS Program Community",
+      "name": "FAA HIMS Program",
       "url": "https://faahims.rehab/",
       "logo": "https://faahims.rehab/android-chrome-512x512.png"
     }
@@ -1185,7 +1185,8 @@ function createProfessionalIndex(scraper) {
     
     <header class="header" role="banner">
         <div class="container">
-            <h1>FAA HIMS Program Professional Community</h1>
+            <h1>FAA HIMS Program</h1>
+            <p class="hero-sub">Professional Pilot Community</p>
             <p>Expert Guidance on Pilot Medical Certification & Aviation Career Recovery</p>
             <p style="font-size:1.1em;margin-top:10px;opacity:0.9">Supporting Pilots Through HIMS Requirements Since 2018</p>
         </div>
@@ -1328,7 +1329,7 @@ function createProfessionalIndex(scraper) {
     
     <footer role="contentinfo">
         <div class="container">
-            <h3>FAA HIMS Program Professional Community</h3>
+            <h3>FAA HIMS Program</h3>
             <p style="font-size:1.1em;margin:15px 0">
                 <a href="https://hims-victims.freeforums.net" title="Visit HIMS Community Forum">hims-victims.freeforums.net</a>
             </p>
