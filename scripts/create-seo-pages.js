@@ -17,6 +17,15 @@ console.log(`Creating SEO pages - Build #${buildNumber} at ${displayDate} UTC`);
 console.log(`Target: Maximum Google SERP rankings for FAA HIMS keywords`);
 
 function createSEOLandingPage(filename, title, description, keywords, content, focusKeywords, isHighPriority = false) {
+  // ${YEAR} written inside single-quoted call-site strings never interpolates —
+  // it shipped literally into <title>, <h1>, og:title and JSON-LD on all 8
+  // pages (61 occurrences). Substituting here covers every current and future
+  // call site regardless of which quote style the author used.
+  const substYear = (v) => (typeof v === 'string' ? v.replace(/\$\{\s*YEAR\s*\}/g, YEAR) : v);
+  title = substYear(title);
+  description = substYear(description);
+  keywords = substYear(keywords);
+  content = substYear(content);
   const pageUrl = `https://faahims.rehab/${filename}`;
   const ogImage = 'https://faahims.rehab/android-chrome-512x512.png';
   const twitterImage = 'https://faahims.rehab/android-chrome-512x512.png';
