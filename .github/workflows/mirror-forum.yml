@@ -2,7 +2,9 @@ name: FAA HIMS SEO Optimization & Forum Mirror
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    # 17 past the hour: '0 */6' sits in GitHub's most congested scheduler slot,
+    # which is why runs drifted 5.5-7h and one slot was dropped on Aug 27.
+    - cron: '17 */6 * * *'
   workflow_dispatch:
   push:
     branches: [ main ]
@@ -54,6 +56,11 @@ jobs:
       
     - name: Generate enhanced sitemap
       run: node scripts/generate-sitemap.js
+      
+    - name: Substitute build tokens and guard against leaks
+      env:
+        GITHUB_RUN_NUMBER: ${{ github.run_number }}
+      run: node scripts/fix-tokens.js
       
     - name: Verify generated files
       run: |
