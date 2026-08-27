@@ -5,7 +5,7 @@
       "@type": "WebSite",
       "@id": "https://faahims.rehab/#website",
       "url": "https://faahims.rehab/",
-      "name": "FAA HIMS Program Professional Community",
+      "name": "FAA HIMS Program",
       "description": "Professional community for pilots navigating FAA HIMS program requirements, medical certification, and aviation substance abuse recovery",
       "keywords": "FAA HIMS program, HIMS program requirements, FAA medical certification, pilot medical certificate, HIMS AME",
       "publisher": {
@@ -20,7 +20,7 @@
     {
       "@type": "Organization",
       "@id": "https://faahims.rehab/#organization",
-      "name": "FAA HIMS Professional Community",
+      "name": "FAA HIMS Program",
       "url": "https://faahims.rehab/",
       "logo": {
         "@type": "ImageObject",
@@ -50,8 +50,8 @@
       "about": {
         "@id": "https://faahims.rehab/#organization"
       },
-      "datePublished": "2026-08-27T06:43:00.445Z",
-      "dateModified": "2026-08-27T06:43:00.445Z",
+      "datePublished": "2026-08-27T06:55:18.230Z",
+      "dateModified": "2026-08-27T06:55:18.230Z",
       "inLanguage": "en-US"
     },
     {
